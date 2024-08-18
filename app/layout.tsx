@@ -10,6 +10,8 @@ import { Analytics } from "@/components/analytics";
 import ModalProvider from "@/components/modals/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 
+export const runtime = 'edge';
+
 interface RootLayoutProps {
   children: React.ReactNode;
 }
