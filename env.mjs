@@ -5,7 +5,7 @@ export const env = createEnv({
   server: {
     // This is optional because it's only used in development.
     // See https://next-auth.js.org/deployment.
-    NEXTAUTH_URL: z.string().url().optional(),
+    NEXTAUTH_URL: z.string().optional(),
     AUTH_SECRET: z.string().optional(),
     GOOGLE_CLIENT_ID: z.string().optional(),
     GOOGLE_CLIENT_SECRET: z.string().optional(),
