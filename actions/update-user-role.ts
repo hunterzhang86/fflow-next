@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { auth } from "@/auth";
 import { UserRole } from "@prisma/client";
 
-import { prisma } from "@/lib/db";
+import { db } from "@/lib/db";
 import { userRoleSchema } from "@/lib/validations/user";
 
 export type FormData = {
@@ -22,7 +22,7 @@ export async function updateUserRole(userId: string, data: FormData) {
     const { role } = userRoleSchema.parse(data);
 
     // Update the user role.
-    await prisma.user.update({
+    await db.user.update({
       where: {
         id: userId,
       },

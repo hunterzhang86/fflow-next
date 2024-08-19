@@ -1,6 +1,8 @@
 import { auth } from "@/auth";
 
-import { prisma } from "@/lib/db";
+import { db } from "@/lib/db";
+import { eq } from "drizzle-orm";
+import { users } from "@/models/schema";
 
 export const DELETE = auth(async (req) => {
   if (!req.auth) {
@@ -13,11 +15,7 @@ export const DELETE = auth(async (req) => {
   }
 
   try {
-    await prisma.user.delete({
-      where: {
-        id: currentUser.id,
-      },
-    });
+    await db.delete(users).where(eq(users.id, currentUser.id as string));
   } catch (error) {
     return new Response("Internal server error", { status: 500 });
   }

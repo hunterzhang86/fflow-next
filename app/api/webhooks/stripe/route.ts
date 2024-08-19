@@ -2,7 +2,9 @@ import { headers } from "next/headers";
 import Stripe from "stripe";
 
 import { env } from "@/env.mjs";
-import { prisma } from "@/lib/db";
+import { db } from "@/lib/db";
+import { eq } from "drizzle-orm";
+import { users } from "@/models/schema";
 import { stripe } from "@/lib/stripe";
 
 export async function POST(req: Request) {
@@ -32,19 +34,14 @@ export async function POST(req: Request) {
     // Update the user stripe into in our database.
     // Since this is the initial subscription, we need to update
     // the subscription id and customer id.
-    await prisma.user.update({
-      where: {
-        id: session?.metadata?.userId,
-      },
-      data: {
-        stripeSubscriptionId: subscription.id,
-        stripeCustomerId: subscription.customer as string,
-        stripePriceId: subscription.items.data[0].price.id,
-        stripeCurrentPeriodEnd: new Date(
-          subscription.current_period_end * 1000,
-        ),
-      },
-    });
+    await db.update(users).set({
+      stripeSubscriptionId: subscription.id,
+      stripeCustomerId: subscription.customer as string,
+      stripePriceId: subscription.items.data[0].price.id,
+      stripeCurrentPeriodEnd: new Date(
+        subscription.current_period_end * 1000,
+      ),
+    }).where(eq(users.id, session?.metadata?.userId as string));
   }
 
   if (event.type === "invoice.payment_succeeded") {
@@ -59,17 +56,12 @@ export async function POST(req: Request) {
       );
 
       // Update the price id and set the new period end.
-      await prisma.user.update({
-        where: {
-          stripeSubscriptionId: subscription.id,
-        },
-        data: {
+      await db.update(users).set({
           stripePriceId: subscription.items.data[0].price.id,
           stripeCurrentPeriodEnd: new Date(
             subscription.current_period_end * 1000,
           ),
-        },
-      });
+      }).where(eq(users.stripeSubscriptionId, subscription.id));
     }
   }
 

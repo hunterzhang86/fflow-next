@@ -77,7 +77,7 @@ https://github.com/mickasmt/next-saas-stripe-starter/assets/62285783/828a4e0f-30
 
 - [Next.js](https://nextjs.org/) – React framework for building performant apps with the best developer experience
 - [Auth.js](https://authjs.dev/) – Handle user authentication with ease with providers like Google, Twitter, GitHub, etc.
-- [Prisma](https://www.prisma.io/) – Typescript-first ORM for Node.js
+- [Drizzle](https://orm.drizzle.team/) – Typescript-first ORM for Node.js
 - [React Email](https://react.email/) – Versatile email framework for efficient and flexible email development
 
 ### Platforms

@@ -39,7 +39,7 @@ const logos = [
   },
   {
     title: "Prisma",
-    href: "https://www.prisma.io/",
+    href: "https://www.db.io/",
     icon: (
       <svg
         width="90"

@@ -1,9 +1,11 @@
 "use server";
 
 import { auth } from "@/auth";
-import { prisma } from "@/lib/db";
+import { db } from "@/lib/db";
 import { userNameSchema } from "@/lib/validations/user";
 import { revalidatePath } from "next/cache";
+import { users } from "@/models/schema";
+import { eq } from "drizzle-orm";
 
 export type FormData = {
   name: string;
@@ -20,14 +22,11 @@ export async function updateUserName(userId: string, data: FormData) {
     const { name } = userNameSchema.parse(data);
 
     // Update the user name.
-    await prisma.user.update({
-      where: {
-        id: userId,
-      },
-      data: {
+    await db.update(users)
+      .set({
         name: name,
-      },
-    })
+      })
+      .where(eq(users.id, userId));
 
     revalidatePath('/dashboard/settings');
     return { status: "success" };
