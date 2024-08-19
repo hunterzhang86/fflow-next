@@ -29,7 +29,6 @@ export function constructMetadata({
     keywords: [
       "Next.js",
       "React",
-      "Prisma",
       "Neon",
       "Auth.js",
       "shadcn ui",

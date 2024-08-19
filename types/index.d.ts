@@ -1,7 +1,27 @@
-import { User } from "@prisma/client";
 import type { Icon } from "lucide-react";
 
 import { Icons } from "@/components/shared/icons";
+import exp from "constants";
+
+export enum UserRole {
+  ADMIN = 'Admin',
+  USER = 'User'
+}
+
+export type User = {
+  id: string;
+  name: string;
+  email: string;
+  emailVerified: Date;
+  image: string;
+  createdAt: Date;
+  updatedAt: Date;
+  role: UserRole;
+  stripeCustomerId: string;
+  stripeSubscriptionId: string;
+  stripePriceId: string;
+  stripeCurrentPeriodEnd: Date;
+};
 
 export type SiteConfig = {
   name: string;

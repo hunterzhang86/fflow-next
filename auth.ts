@@ -1,6 +1,6 @@
 import authConfig from "@/auth.config";
 import { DrizzleAdapter } from "@auth/drizzle-adapter"
-import { UserRole } from "@prisma/client";
+import { UserRole } from "@/types";
 import NextAuth, { type DefaultSession } from "next-auth";
 
 import { db } from "@/lib/db";

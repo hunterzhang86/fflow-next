@@ -2,13 +2,14 @@
 
 import { revalidatePath } from "next/cache";
 import { auth } from "@/auth";
-import { UserRole } from "@prisma/client";
 
 import { db } from "@/lib/db";
 import { userRoleSchema } from "@/lib/validations/user";
+import { users } from "@/models/schema";
+import { eq } from "drizzle-orm";
 
 export type FormData = {
-  role: UserRole;
+  role: string;
 };
 
 export async function updateUserRole(userId: string, data: FormData) {
@@ -22,14 +23,7 @@ export async function updateUserRole(userId: string, data: FormData) {
     const { role } = userRoleSchema.parse(data);
 
     // Update the user role.
-    await db.user.update({
-      where: {
-        id: userId,
-      },
-      data: {
-        role: role,
-      },
-    });
+    await db.update(users).set({}).where(eq(users.id, userId));
 
     revalidatePath("/dashboard/settings");
     return { status: "success" };
