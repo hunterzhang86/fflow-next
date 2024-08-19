@@ -1,10 +1,12 @@
 import authConfig from "@/auth.config";
 import { DrizzleAdapter } from "@auth/drizzle-adapter"
+import Google from "next-auth/providers/google"
 import { UserRole } from "@/types";
 import NextAuth, { type DefaultSession } from "next-auth";
-
 import { db } from "@/lib/db";
 import { getUserById } from "@/lib/user";
+import { accounts, sessions, users, verificationTokens } from "@/models/schema"
+
 
 // More info: https://authjs.dev/getting-started/typescript#module-augmentation
 declare module "next-auth" {
@@ -19,7 +21,12 @@ export const {
   handlers: { GET, POST },
   auth,
 } = NextAuth({
-  adapter: DrizzleAdapter(db),
+  adapter: DrizzleAdapter(db, {
+    usersTable: users,
+    accountsTable: accounts,
+    sessionsTable: sessions,
+    verificationTokensTable: verificationTokens,
+  }),
   session: { strategy: "jwt" },
   pages: {
     signIn: "/login",

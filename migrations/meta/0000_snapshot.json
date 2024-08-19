@@ -1,5 +1,5 @@
 {
-  "id": "db09408c-0935-4ef6-b681-e00365451de8",
+  "id": "3af6d28e-f4b7-4a9f-82ef-4f46a6d55228",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -8,33 +8,27 @@
       "name": "accounts",
       "schema": "",
       "columns": {
-        "id": {
-          "name": "id",
-          "type": "varchar(191)",
-          "primaryKey": true,
-          "notNull": true
-        },
         "userId": {
           "name": "userId",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
         "type": {
           "name": "type",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
         "provider": {
           "name": "provider",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
         "providerAccountId": {
           "name": "providerAccountId",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
@@ -64,7 +58,7 @@
         },
         "scope": {
           "name": "scope",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },
@@ -79,6 +73,12 @@
           "type": "varchar(191)",
           "primaryKey": false,
           "notNull": false
+        },
+        "id": {
+          "name": "id",
+          "type": "varchar(191)",
+          "primaryKey": true,
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",
@@ -133,7 +133,21 @@
           "with": {}
         }
       },
-      "foreignKeys": {},
+      "foreignKeys": {
+        "accounts_userId_users_id_fk": {
+          "name": "accounts_userId_users_id_fk",
+          "tableFrom": "accounts",
+          "tableTo": "users",
+          "columnsFrom": [
+            "userId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
@@ -141,27 +155,21 @@
       "name": "sessions",
       "schema": "",
       "columns": {
-        "id": {
-          "name": "id",
-          "type": "varchar(191)",
-          "primaryKey": true,
-          "notNull": true
-        },
         "sessionToken": {
           "name": "sessionToken",
-          "type": "varchar(191)",
-          "primaryKey": false,
+          "type": "text",
+          "primaryKey": true,
           "notNull": true
         },
         "userId": {
           "name": "userId",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
         "expires": {
           "name": "expires",
-          "type": "timestamp (3)",
+          "type": "timestamp",
           "primaryKey": false,
           "notNull": true
         }
@@ -183,17 +191,23 @@
           "with": {}
         }
       },
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "sessions_sessionToken_unique": {
-          "name": "sessions_sessionToken_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "sessionToken"
-          ]
+      "foreignKeys": {
+        "sessions_userId_users_id_fk": {
+          "name": "sessions_userId_users_id_fk",
+          "tableFrom": "sessions",
+          "tableTo": "users",
+          "columnsFrom": [
+            "userId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
         }
-      }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
     },
     "public.users": {
       "name": "users",
@@ -201,31 +215,31 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": true,
           "notNull": true
         },
         "name": {
           "name": "name",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },
         "email": {
           "name": "email",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },
         "emailVerified": {
           "name": "emailVerified",
-          "type": "timestamp (3)",
+          "type": "timestamp",
           "primaryKey": false,
           "notNull": false
         },
         "image": {
           "name": "image",
-          "type": "varchar(191)",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },

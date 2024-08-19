@@ -11,11 +11,11 @@ export async function getUserSubscriptionPlan(
   if(!userId) throw new Error("Missing parameters");
 
   const usersArray = await db.select({
-    stripeSubscriptionId: users.stripeSubscriptionId,
-    stripeCurrentPeriodEnd: users.stripeCurrentPeriodEnd,
-    stripeCustomerId: users.stripeCustomerId,
-    stripePriceId: users.stripePriceId,
-  }).from(users).where(eq(users.id, userId)).limit(1);
+    stripeSubscriptionId: user.stripeSubscriptionId,
+    stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd,
+    stripeCustomerId: user.stripeCustomerId,
+    stripePriceId: user.stripePriceId,
+  }).from(user).where(eq(user.id, userId)).limit(1);
 
   const user = usersArray[0];
 

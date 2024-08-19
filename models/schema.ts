@@ -1,16 +1,26 @@
 import { pgTable, varchar, text, integer, timestamp, uniqueIndex, index } from 'drizzle-orm/pg-core';
+import type { AdapterAccountType } from "next-auth/adapters"
 
 export const accounts = pgTable('accounts', {
+  userId: text("userId")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  type: text("type").$type<AdapterAccountType>().notNull(),
+  provider: text("provider").notNull(),
+  providerAccountId: text("providerAccountId").notNull(),
+  refresh_token: text("refresh_token"),
+  access_token: text("access_token"),
+  expires_at: integer("expires_at"),
+  token_type: text("token_type"),
+  scope: text("scope"),
+  id_token: text("id_token"),
+  session_state: text("session_state"),
+
   id: varchar('id', { length: 191 }).primaryKey().notNull(),
-  userId: varchar('userId', { length: 191 }).notNull(),
-  type: varchar('type', { length: 191 }).notNull(),
-  provider: varchar('provider', { length: 191 }).notNull(),
-  providerAccountId: varchar('providerAccountId', { length: 191 }).notNull(),
   refreshToken: text('refresh_token'),
   accessToken: text('access_token'),
   expiresAt: integer('expires_at'),
   tokenType: varchar('token_type', { length: 191 }),
-  scope: varchar('scope', { length: 191 }),
   idToken: text('id_token'),
   sessionState: varchar('session_state', { length: 191 }),
   createdAt: timestamp('created_at', { precision: 3 }).defaultNow().notNull(),
@@ -21,21 +31,23 @@ export const accounts = pgTable('accounts', {
 }));
 
 export const sessions = pgTable('sessions', {
-  id: varchar('id', { length: 191 }).primaryKey().notNull(),
-  sessionToken: varchar('sessionToken', { length: 191 }).notNull().unique(),
-  userId: varchar('userId', { length: 191 }).notNull(),
-  expires: timestamp('expires', { precision: 3 }).notNull(),
+  sessionToken: text("sessionToken").primaryKey(),
+  userId: text("userId")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  expires: timestamp("expires", { mode: "date" }).notNull(),
 }, (table) => ({
   idxUserId: index('idx_sessions_userId').on(table.userId),
 }));
 
 export const users = pgTable('users', {
-  id: varchar('id', { length: 191 }).primaryKey().notNull(),
-  name: varchar('name', { length: 191 }),
-  role: varchar('role', { length: 191 }),
-  email: varchar('email', { length: 191 }).unique(),
-  emailVerified: timestamp('emailVerified', { precision: 3 }),
-  image: varchar('image', { length: 191 }),
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  name: text("name"),
+  email: text("email").unique(),
+  emailVerified: timestamp("emailVerified", { mode: "date" }),
+  image: text("image"),
   createdAt: timestamp('created_at', { precision: 3 }).defaultNow().notNull(),
   updatedAt: timestamp('updated_at', { precision: 3 }).defaultNow().notNull(),
   stripeCustomerId: varchar('stripe_customer_id', { length: 191 }).unique(),
