@@ -1,4 +1,4 @@
-import { UserRole, SidebarNavItem } from "types";
+import { UserRole, SidebarNavItem } from "@/types/index";
 
 export const sidebarLinks: SidebarNavItem[] = [
   {

@@ -72,7 +72,7 @@ export function ComparePlans() {
                     key={col}
                     className="p-4 text-center text-[15px] text-muted-foreground lg:text-base"
                   >
-                    {renderCell(row[col])}
+                    {renderCell(row[col] as string | boolean | null)}
                   </td>
                 ))}
               </tr>

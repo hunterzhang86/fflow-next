@@ -32,6 +32,7 @@ export const sessions = pgTable('sessions', {
 export const users = pgTable('users', {
   id: varchar('id', { length: 191 }).primaryKey().notNull(),
   name: varchar('name', { length: 191 }),
+  role: varchar('role', { length: 191 }),
   email: varchar('email', { length: 191 }).unique(),
   emailVerified: timestamp('emailVerified', { precision: 3 }),
   image: varchar('image', { length: 191 }),

@@ -1,4 +1,4 @@
-import { PlansRow, SubscriptionPlan } from "types";
+import { PlansRow, SubscriptionPlan } from "@/types/index";
 import { env } from "@/env.mjs";
 
 export const pricingData: SubscriptionPlan[] = [
@@ -89,16 +89,16 @@ export const comparePlans: PlansRow[] = [
   {
     feature: "Custom Branding",
     starter: null,
-    pro: "500/mo",
-    business: "1,500/mo",
+    pro: true,
+    business: true,
     enterprise: "Unlimited",
     tooltip: "Custom branding is available from the Pro plan onwards.",
   },
   {
     feature: "Priority Support",
     starter: null,
-    pro: "Email",
-    business: "Email & Chat",
+    pro: true,
+    business: true,
     enterprise: "24/7 Support",
   },
   {
@@ -115,14 +115,14 @@ export const comparePlans: PlansRow[] = [
     starter: null,
     pro: null,
     business: null,
-    enterprise: true,
+    enterprise: "Available",
     tooltip: "Enterprise plan includes a dedicated account manager.",
   },
   {
     feature: "API Access",
-    starter: "Limited",
-    pro: "Standard",
-    business: "Enhanced",
+    starter: false,
+    pro: true,
+    business: true,
     enterprise: "Full",
   },
   {
@@ -137,7 +137,7 @@ export const comparePlans: PlansRow[] = [
     feature: "Custom Integrations",
     starter: false,
     pro: false,
-    business: "Available",
+    business: true,
     enterprise: "Available",
     tooltip:
       "Custom integrations are available in Business and Enterprise plans.",
@@ -145,8 +145,8 @@ export const comparePlans: PlansRow[] = [
   {
     feature: "Roles and Permissions",
     starter: null,
-    pro: "Basic",
-    business: "Advanced",
+    pro: true,
+    business: true,
     enterprise: "Advanced",
     tooltip:
       "User roles and permissions management improves with higher plans.",
@@ -154,8 +154,8 @@ export const comparePlans: PlansRow[] = [
   {
     feature: "Onboarding Assistance",
     starter: false,
-    pro: "Self-service",
-    business: "Assisted",
+    pro: true,
+    business: true,
     enterprise: "Full Service",
     tooltip: "Higher plans include more comprehensive onboarding assistance.",
   },

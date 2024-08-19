@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn, formatDate } from "@/lib/utils";
-import { UserSubscriptionPlan } from "types";
+import { UserSubscriptionPlan } from "@/types";
 
 interface BillingInfoProps extends React.HTMLAttributes<HTMLFormElement> {
   userSubscriptionPlan: UserSubscriptionPlan;
@@ -43,7 +43,7 @@ export function BillingInfo({ userSubscriptionPlan }: BillingInfoProps) {
             {isCanceled
               ? "Your plan will be canceled on "
               : "Your plan renews on "}
-            {formatDate(stripeCurrentPeriodEnd)}.
+            {formatDate(stripeCurrentPeriodEnd as string | number)}.
           </p>
         ) : null}
 

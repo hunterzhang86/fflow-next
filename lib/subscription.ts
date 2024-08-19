@@ -1,6 +1,6 @@
 import { pricingData } from "@/config/subscriptions";
 import { stripe } from "@/lib/stripe";
-import { UserSubscriptionPlan } from "types";
+import { UserSubscriptionPlan } from "@/types";
 import { db } from "@/lib/db";
 import { users } from "@/models/schema";
 import { eq } from "drizzle-orm";
@@ -54,9 +54,9 @@ export async function getUserSubscriptionPlan(
   return {
     ...plan,
     ...user,
-    stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd?.getTime() as number,
+    stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd?.getTime() as number | null,
     isPaid,
     interval,
     isCanceled
-  }
+  } as UserSubscriptionPlan;
 }
