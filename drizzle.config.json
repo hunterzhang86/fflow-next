@@ -1,4 +1,5 @@
 {
 	"out": "./migrations",
-	"schema": "models/schema.ts"
+	"schema": "models/schema.ts",
+	"dialect": "postgresql"
 }
