@@ -129,3 +129,9 @@ export enum UserRole {
     ADMIN = 'ADMIN',
     USER = 'USER'
 };
+
+export interface ApiResponse<T> {
+    code: number;
+    message: string;
+    data: T;
+};

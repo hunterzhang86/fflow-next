@@ -1,7 +1,18 @@
 import { countUsers } from "@/lib/user";
-
+import { ApiResponse } from "@/types";
 export async function GET(req: Request) {
   const count = await countUsers();
-  console.log("#### user count:", count);
-  return new Response(count.toString(), { status: 200 });
+
+  const response: ApiResponse<number> = {
+    code: 200,
+    message: "success",
+    data: count
+  };
+
+  return new Response(JSON.stringify(response), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
 }

@@ -22,9 +22,10 @@ export default function InfoLanding({
   useEffect(() => {
     async function fetchUserCount() {
       try {
-        const response = await fetch("/api/user/count");
-        const data = await response.text();
-        setUserCount(response ? parseInt(data) : 0);
+        const rsp = await fetch("/api/user/count");
+        const rspJson = await rsp.json();
+        console.log(data);
+        setUserCount(rsp ? parseInt(rspJson.data) : 0);
       } catch (error) {
         console.error("Failed to fetch user count:", error);
       }
