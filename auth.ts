@@ -1,6 +1,5 @@
 import authConfig from "@/auth.config";
 import { DrizzleAdapter } from "@auth/drizzle-adapter"
-import Google from "next-auth/providers/google"
 import { UserRole } from "@/types";
 import NextAuth, { type DefaultSession } from "next-auth";
 import { db } from "@/lib/db";

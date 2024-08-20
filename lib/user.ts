@@ -1,6 +1,6 @@
 import { db } from "@/lib/db";
 import { users } from "@/models/schema";
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 
 
 export const getUserByEmail = async (email: string) => {
@@ -26,5 +26,18 @@ export const getUserById = async (id: string) => {
     return user || null;
   } catch {
     return null;
+  }
+};
+
+// 统计用户数量
+export const countUsers = async () => {
+  try {
+    const userCountResult = await db.execute(
+      sql`SELECT COUNT(*) FROM ${users}`
+    );
+    return userCountResult.rowCount;
+  } catch(e) {
+    console.error(e);
+    return 0;
   }
 };

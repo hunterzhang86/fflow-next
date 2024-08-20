@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { InfoLdg } from "@/types";
 
@@ -14,6 +17,22 @@ export default function InfoLanding({
   data,
   reverse = false,
 }: InfoLandingProps) {
+  const [userCount, setUserCount] = useState<number>(0);
+
+  useEffect(() => {
+    async function fetchUserCount() {
+      try {
+        const response = await fetch("/api/user/count");
+        const data = await response.text();
+        setUserCount(response ? parseInt(data) : 0);
+      } catch (error) {
+        console.error("Failed to fetch user count:", error);
+      }
+    }
+
+    fetchUserCount();
+  }, []);
+
   return (
     <div className="py-10 sm:py-20">
       <MaxWidthWrapper className="grid gap-10 px-2.5 lg:grid-cols-2 lg:items-center lg:px-7">
@@ -35,6 +54,7 @@ export default function InfoLanding({
                   </dt>
                   <dd className="text-sm text-muted-foreground">
                     {item.description}
+                    ----- {userCount} -----
                   </dd>
                 </div>
               );
