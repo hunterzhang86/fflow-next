@@ -10,5 +10,9 @@
     "goPricing": "Go Pricing",
     "starOn": "Star on",
     "github": "GitHub"
+  },
+  "layout": {
+    "english": "English",
+    "chinese": "Chinese"
   }
 }

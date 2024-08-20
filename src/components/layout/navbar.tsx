@@ -13,6 +13,7 @@ import { useScroll } from "@/hooks/use-scroll";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { DocsSearch } from "@/components/docs/search";
+import LocaleSwitcher from "@/components/locale/locale-switcher";
 import { ModalContext } from "@/components/modals/providers";
 import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
@@ -99,7 +100,7 @@ export function NavBar({ scroll = false }: NavBarProps) {
               </div>
             </div>
           ) : null}
-
+          <LocaleSwitcher />
           {session ? (
             <Link
               href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}

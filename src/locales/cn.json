@@ -10,5 +10,9 @@
     "goPricing": "查看定价",
     "starOn": "在",
     "github": "GitHub 上加星"
+  },
+  "layout": {
+    "english": "英文",
+    "chinese": "中文"
   }
 }
