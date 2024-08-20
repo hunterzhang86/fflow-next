@@ -4,6 +4,8 @@ import { db } from "@/db/db";
 import { eq } from "drizzle-orm";
 import { users } from "@/db/schema";
 
+export const runtime = 'edge';
+
 export const DELETE = auth(async (req) => {
   if (!req.auth) {
     return new Response("Not authenticated", { status: 401 });

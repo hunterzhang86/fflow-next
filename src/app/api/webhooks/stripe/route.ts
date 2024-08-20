@@ -7,6 +7,8 @@ import { eq } from "drizzle-orm";
 import { users } from "@/db/schema";
 import { stripe } from "@/lib/stripe";
 
+export const runtime = 'edge';
+
 export async function POST(req: Request) {
   const body = await req.text();
   const signature = headers().get("Stripe-Signature") as string;

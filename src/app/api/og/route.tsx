@@ -2,7 +2,7 @@ import { ImageResponse } from "@vercel/og"
 
 import { ogImageSchema } from "@/lib/validations/og"
 
-export const runtime = "edge"
+export const runtime = 'edge';
 
 const interRegular = fetch(
   new URL("../../../assets/fonts/Inter-Regular.ttf", import.meta.url)
