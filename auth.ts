@@ -4,7 +4,7 @@ import { UserRole } from "@/types";
 import NextAuth, { type DefaultSession } from "next-auth";
 import { db } from "@/lib/db";
 import { getUserById } from "@/lib/user";
-import { accounts, sessions, users, verificationTokens } from "@/models/schema"
+import { accounts, sessions, users, verificationTokens } from "@/types/schema"
 
 
 // More info: https://authjs.dev/getting-started/typescript#module-augmentation

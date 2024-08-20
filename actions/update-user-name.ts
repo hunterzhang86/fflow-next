@@ -4,7 +4,7 @@ import { auth } from "@/auth";
 import { db } from "@/lib/db";
 import { userNameSchema } from "@/lib/validations/user";
 import { revalidatePath } from "next/cache";
-import { users } from "@/models/schema";
+import { users } from "@/types/schema";
 import { eq } from "drizzle-orm";
 
 export type FormData = {

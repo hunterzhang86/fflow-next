@@ -2,7 +2,7 @@ import { pricingData } from "@/config/subscriptions";
 import { stripe } from "@/lib/stripe";
 import { UserSubscriptionPlan } from "@/types";
 import { db } from "@/lib/db";
-import { users } from "@/models/schema";
+import { users } from "@/types/schema";
 import { eq } from "drizzle-orm";
 
 export async function getUserSubscriptionPlan(
