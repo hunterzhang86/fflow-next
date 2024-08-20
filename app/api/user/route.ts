@@ -1,8 +1,8 @@
 import { auth } from "@/auth";
 
-import { db } from "@/lib/db";
+import { db } from "@/db/db";
 import { eq } from "drizzle-orm";
-import { users } from "@/types/schema";
+import { users } from "@/db/schema";
 
 export const DELETE = auth(async (req) => {
   if (!req.auth) {

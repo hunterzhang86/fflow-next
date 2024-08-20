@@ -2,9 +2,9 @@ import authConfig from "@/auth.config";
 import { DrizzleAdapter } from "@auth/drizzle-adapter"
 import { UserRole } from "@/types";
 import NextAuth, { type DefaultSession } from "next-auth";
-import { db } from "@/lib/db";
+import { db } from "@/db/db";
 import { getUserById } from "@/lib/user";
-import { accounts, sessions, users, verificationTokens } from "@/types/schema"
+import { accounts, sessions, users, verificationTokens } from "@/db/schema"
 
 
 // More info: https://authjs.dev/getting-started/typescript#module-augmentation
