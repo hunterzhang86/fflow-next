@@ -10,12 +10,19 @@ import {
 import { ModeToggle } from "@/components/layout/mode-toggle";
 import { UserAccountNav } from "@/components/layout/user-account-nav";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import {unstable_setRequestLocale} from 'next-intl/server';
 
 interface ProtectedLayoutProps {
   children: React.ReactNode;
+  params: { locale: string };
 }
 
-export default async function Dashboard({ children }: ProtectedLayoutProps) {
+export default async function Dashboard({
+  children,
+  params: { locale },
+}: ProtectedLayoutProps) {
+  unstable_setRequestLocale(locale);
+
   const user = await getCurrentUser();
 
   if (!user) redirect("/login");

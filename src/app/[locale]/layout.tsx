@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import {unstable_setRequestLocale} from 'next-intl/server';
 
 import { fontGeist, fontHeading, fontSans, fontUrban } from "@/assets/fonts";
 import { SessionProvider } from "next-auth/react";
@@ -12,13 +13,22 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 
 export const runtime = 'edge';
 
+const locales = ['en', 'cn'];
+
 interface RootLayoutProps {
   children: React.ReactNode;
+  params: { locale: string };
 }
 
 export const metadata = constructMetadata();
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export function generateStaticParams() {
+  return locales.map((locale) => ({locale}));
+}
+
+export default function RootLayout({ children, params: {locale}}: RootLayoutProps) {
+  unstable_setRequestLocale(locale);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head />

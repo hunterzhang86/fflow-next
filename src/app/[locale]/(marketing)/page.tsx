@@ -6,11 +6,16 @@ import InfoLanding from "@/components/sections/info-landing";
 import Powered from "@/components/sections/powered";
 import PreviewLanding from "@/components/sections/preview-landing";
 import Testimonials from "@/components/sections/testimonials";
+import {unstable_setRequestLocale} from 'next-intl/server';
+import { useTranslations } from "next-intl";
 
-export default function IndexPage() {
+export default function IndexPage({params: {locale}}) {
+  unstable_setRequestLocale(locale);
+  const t = useTranslations('HomePage');
+
   return (
     <>
-      <HeroLanding />
+      <HeroLanding/>
       <PreviewLanding />
       <Powered />
       <BentoGrid />
