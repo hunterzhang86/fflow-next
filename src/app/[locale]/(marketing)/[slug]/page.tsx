@@ -64,7 +64,7 @@ export default async function PagePage({
         )}
       </div>
       <hr className="my-4" />
-      <Mdx code={page.body.code} images={images} />
+      <Mdx code={page.body.raw} images={images} />
     </article>
   );
 }

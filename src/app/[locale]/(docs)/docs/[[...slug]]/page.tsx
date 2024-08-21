@@ -72,7 +72,7 @@ export default async function DocPage({ params }: DocPageProps) {
       <div className="mx-auto w-full min-w-0">
         <DocsPageHeader heading={doc.title} text={doc.description} />
         <div className="pb-4 pt-11">
-          <Mdx code={doc.body.code} images={images} />
+          <Mdx code={doc.body.raw} images={images} />
         </div>
         <hr className="my-4 md:my-6" />
         <DocsPager doc={doc} />

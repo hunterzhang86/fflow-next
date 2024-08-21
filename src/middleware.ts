@@ -14,7 +14,7 @@ export default async function middlewareHandler(req: NextRequest) {
     const { pathname } = req.nextUrl;
 
     // 排除静态资源路径和 API 路径
-    const staticFilePattern = /^\/(_next\/static|favicon\.ico|site\.webmanifest)\//;
+    const staticFilePattern = /^\/(_next\/static\/|favicon\.ico|site\.webmanifest)/;
     const apiPattern = /^\/api\//;
     if (staticFilePattern.test(pathname) || apiPattern.test(pathname)) {
         return NextResponse.next();

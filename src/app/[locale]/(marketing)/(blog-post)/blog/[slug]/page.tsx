@@ -140,7 +140,7 @@ export default async function PostPage({
               sizes="(max-width: 768px) 770px, 1000px"
             />
             <div className="px-[.8rem] pb-10 md:px-8">
-              <Mdx code={post.body.code} images={images} />
+              <Mdx code={post.body.raw} images={images} />
             </div>
           </div>
 

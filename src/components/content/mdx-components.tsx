@@ -1,11 +1,11 @@
 import * as React from "react";
-import NextImage, { ImageProps } from "next/image";
 import Link from "next/link";
-import { useMDXComponent } from "next-contentlayer2/hooks";
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { cn } from "@/lib/utils";
 import { MdxCard } from "@/components/content/mdx-card";
-import BlurImage from "@/components/shared/blur-image";
 import { Callout } from "@/components/shared/callout";
 import { CopyButton } from "@/components/shared/copy-button";
 
@@ -156,15 +156,23 @@ const components = {
       )}
     </div>
   ),
-  code: ({ className, ...props }) => (
-    <code
-      className={cn(
-        "relative rounded-md border bg-muted px-[0.4rem] py-1 font-mono text-sm text-foreground",
-        className,
-      )}
-      {...props}
-    />
-  ),
+  code: ({ className, inline, children, ...props }) => {
+    const match = /language-(\w+)/.exec(className || "");
+    return !inline && match ? (
+      <SyntaxHighlighter
+        style={vscDarkPlus}
+        language={match[1]}
+        PreTag="div"
+        {...props}
+      >
+        {String(children).replace(/\n$/, "")}
+      </SyntaxHighlighter>
+    ) : (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    );
+  },
   Callout,
   Card: MdxCard,
   Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
@@ -205,33 +213,5 @@ interface MdxProps {
 }
 
 export function Mdx({ code, images }: MdxProps) {
-  const Component = useMDXComponent(code);
-
-  const MDXImage = (props: any) => {
-    if (!images) return null;
-    const blurDataURL = images.find(
-      (image) => image.src === props.src,
-    )?.blurDataURL;
-
-    return (
-      <div className="mt-5 w-full overflow-hidden rounded-lg border">
-        <BlurImage
-          {...props}
-          blurDataURL={blurDataURL}
-          className="size-full object-cover object-center"
-        />
-      </div>
-    );
-  };
-
-  return (
-    <div className="mdx">
-      <Component
-        components={{
-          ...components,
-          Image: MDXImage,
-        }}
-      />
-    </div>
-  );
+  return <ReactMarkdown components={components}>{code}</ReactMarkdown>;
 }
