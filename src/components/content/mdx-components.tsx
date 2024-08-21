@@ -3,17 +3,10 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-
-
 import { cn } from "@/lib/utils";
 import { MdxCard } from "@/components/content/mdx-card";
 import { Callout } from "@/components/shared/callout";
 import { CopyButton } from "@/components/shared/copy-button";
-
-
-
-
 
 const components = {
   h1: ({ className, ...props }) => (
