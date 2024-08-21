@@ -30,8 +30,8 @@ const defaultComputedFields: ComputedFields = {
 
 export const Doc = defineDocumentType(() => ({
   name: "Doc",
-  filePathPattern: `docs/**/*.mdx`,
-  contentType: "mdx",
+  filePathPattern: `docs/**/*.md`,
+  contentType: "markdown",
   fields: {
     title: {
       type: "string",
@@ -50,8 +50,8 @@ export const Doc = defineDocumentType(() => ({
 
 export const Guide = defineDocumentType(() => ({
   name: "Guide",
-  filePathPattern: `guides/**/*.mdx`,
-  contentType: "mdx",
+  filePathPattern: `guides/**/*.md`,
+  contentType: "markdown",
   fields: {
     title: {
       type: "string",
@@ -78,8 +78,8 @@ export const Guide = defineDocumentType(() => ({
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: `blog/**/*.mdx`,
-  contentType: "mdx",
+  filePathPattern: `blog/**/*.md`,
+  contentType: "markdown",
   fields: {
     title: {
       type: "string",
@@ -126,8 +126,8 @@ export const Post = defineDocumentType(() => ({
 
 export const Page = defineDocumentType(() => ({
   name: "Page",
-  filePathPattern: `pages/**/*.mdx`,
-  contentType: "mdx",
+  filePathPattern: `pages/**/*.md`,
+  contentType: "markdown",
   fields: {
     title: {
       type: "string",
@@ -143,7 +143,7 @@ export const Page = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "./content",
   documentTypes: [Page, Doc, Guide, Post],
-  mdx: {
+  markdown: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
