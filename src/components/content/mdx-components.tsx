@@ -136,7 +136,7 @@ const components = {
     __rawString__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & { __rawString__?: string }) => (
-    <div className="group relative w-full overflow-hidden">
+    <div className="group relative mt-2 w-full overflow-hidden rounded-md bg-[#1e1e1e]">
       <pre className={cn(className)} {...props} />
       {__rawString__ && (
         <CopyButton
