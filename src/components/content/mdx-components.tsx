@@ -4,10 +4,16 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+
+
 import { cn } from "@/lib/utils";
 import { MdxCard } from "@/components/content/mdx-card";
 import { Callout } from "@/components/shared/callout";
 import { CopyButton } from "@/components/shared/copy-button";
+
+
+
+
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -138,13 +144,7 @@ const components = {
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & { __rawString__?: string }) => (
     <div className="group relative w-full overflow-hidden">
-      <pre
-        className={cn(
-          "max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-900 py-4 dark:bg-zinc-900",
-          className,
-        )}
-        {...props}
-      />
+      <pre className={cn(className)} {...props} />
       {__rawString__ && (
         <CopyButton
           value={__rawString__}
@@ -159,16 +159,31 @@ const components = {
   code: ({ className, inline, children, ...props }) => {
     const match = /language-(\w+)/.exec(className || "");
     return !inline && match ? (
-      <SyntaxHighlighter
-        style={vscDarkPlus}
-        language={match[1]}
-        PreTag="div"
+      <div className="group relative">
+        <CopyButton
+          value={String(children).replace(/\n$/, "")}
+          className={cn(
+            "absolute right-4 top-4 z-20",
+            "duration-250 opacity-0 transition-all group-hover:opacity-100",
+          )}
+        />
+        <SyntaxHighlighter
+          style={vscDarkPlus}
+          language={match[1]}
+          PreTag="div"
+          {...props}
+        >
+          {String(children).replace(/\n$/, "")}
+        </SyntaxHighlighter>
+      </div>
+    ) : (
+      <code
+        className={cn(
+          "relative my-2 rounded-3xl border font-mono text-sm",
+          className,
+        )}
         {...props}
       >
-        {String(children).replace(/\n$/, "")}
-      </SyntaxHighlighter>
-    ) : (
-      <code className={className} {...props}>
         {children}
       </code>
     );
