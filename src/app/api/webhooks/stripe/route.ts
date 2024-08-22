@@ -16,11 +16,13 @@ export async function POST(req: Request) {
   let event: Stripe.Event;
 
   try {
-    event = stripe.webhooks.constructEvent(
+    let asyncEvent = stripe.webhooks.constructEventAsync(
       body,
       signature,
       env.STRIPE_WEBHOOK_SECRET,
     );
+
+    event = await asyncEvent;
   } catch (error) {
     return new Response(`Webhook Error: ${error.message}`, { status: 400 });
   }
