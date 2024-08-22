@@ -1,0 +1,1 @@
+ALTER TABLE "user" ALTER COLUMN "role" SET DATA TYPE varchar(64);

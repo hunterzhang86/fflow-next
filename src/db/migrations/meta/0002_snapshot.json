@@ -1,6 +1,6 @@
 {
-  "id": "0afc6570-9125-4f2a-99e9-955c4ee3a113",
-  "prevId": "dcad1c91-913a-4912-b2f1-844487fd8c94",
+  "id": "2490dfe5-4715-400e-bd71-94eb601b4096",
+  "prevId": "0afc6570-9125-4f2a-99e9-955c4ee3a113",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -268,7 +268,7 @@
         },
         "role": {
           "name": "role",
-          "type": "varchar(63)",
+          "type": "varchar(64)",
           "primaryKey": false,
           "notNull": false
         },

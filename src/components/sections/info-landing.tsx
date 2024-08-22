@@ -32,7 +32,7 @@ export default function InfoLanding({
     }
 
     fetchUserCount();
-  }, []);
+  });
 
   return (
     <div className="py-10 sm:py-20">
