@@ -34,7 +34,8 @@ export async function openCustomerPortal(
       redirectUrl = stripeSession.url as string;
     }
   } catch (error) {
-    throw new Error("Failed to generate user stripe session", error);
+    console.error("Failed to generate user stripe session: ", error);
+    throw new Error("Failed to generate user stripe session");
   }
 
   redirect(redirectUrl);
