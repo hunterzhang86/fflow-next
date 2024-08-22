@@ -19,7 +19,8 @@ function SignInModal({
   showSignInModal: boolean;
   setShowSignInModal: Dispatch<SetStateAction<boolean>>;
 }) {
-  const [signInClicked, setSignInClicked] = useState(false);
+  const [googleSignInClicked, setGoogleSignInClicked] = useState(false);
+  const [githubSignInClicked, setGitHubSignInClicked] = useState(false);
 
   return (
     <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
@@ -38,9 +39,9 @@ function SignInModal({
         <div className="flex flex-col space-y-4 bg-secondary/50 px-4 py-8 md:px-16">
           <Button
             variant="default"
-            disabled={signInClicked}
+            disabled={googleSignInClicked}
             onClick={() => {
-              setSignInClicked(true);
+              setGoogleSignInClicked(true);
               signIn("google", { redirect: false }).then(() =>
                 setTimeout(() => {
                   setShowSignInModal(false);
@@ -48,7 +49,7 @@ function SignInModal({
               );
             }}
           >
-            {signInClicked ? (
+            {googleSignInClicked ? (
               <Icons.spinner className="mr-2 size-4 animate-spin" />
             ) : (
               <Icons.google className="mr-2 size-4" />
@@ -57,9 +58,9 @@ function SignInModal({
           </Button>
           <Button
             variant="default"
-            disabled={signInClicked}
+            disabled={githubSignInClicked}
             onClick={() => {
-              setSignInClicked(true);
+              setGitHubSignInClicked(true);
               signIn("github", { redirect: false }).then(() =>
                 setTimeout(() => {
                   setShowSignInModal(false);
@@ -67,7 +68,7 @@ function SignInModal({
               );
             }}
           >
-            {signInClicked ? (
+            {githubSignInClicked ? (
               <Icons.spinner className="mr-2 size-4 animate-spin" />
             ) : (
               <Icons.gitHub className="mr-2 size-4" />
