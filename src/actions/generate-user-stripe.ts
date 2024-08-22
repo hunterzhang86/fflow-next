@@ -21,11 +21,15 @@ export async function generateUserStripe(priceId: string): Promise<responseActio
     const session = await auth()
     const user = session?.user;
 
+    console.log("Current user: ", user);
+
     if (!user || !user.email || !user.id) {
       throw new Error("Unauthorized");
     }
 
-    const subscriptionPlan = await getUserSubscriptionPlan(user.id)
+    const subscriptionPlan = await getUserSubscriptionPlan(user.id);
+
+    console.log("User subscription plan: ", subscriptionPlan);
 
     if (subscriptionPlan.isPaid && subscriptionPlan.stripeCustomerId) {
       // User on Paid Plan - Create a portal session to manage subscription.
@@ -55,6 +59,7 @@ export async function generateUserStripe(priceId: string): Promise<responseActio
         },
       })
 
+      console.log("Stripe session: ", stripeSession);
       redirectUrl = stripeSession.url as string
     }
   } catch (error) {

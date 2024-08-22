@@ -17,6 +17,8 @@ export async function getUserSubscriptionPlan(
     stripePriceId: users.stripePriceId,
   }).from(users).where(eq(users.id, userId)).limit(1);
 
+  console.log("The usersArray: ", usersArray);
+
   const user = usersArray[0];
 
   if (!user) {
