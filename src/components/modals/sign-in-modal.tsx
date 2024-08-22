@@ -1,4 +1,3 @@
-import { signIn } from "next-auth/react";
 import {
   Dispatch,
   SetStateAction,
@@ -6,11 +5,12 @@ import {
   useMemo,
   useState,
 } from "react";
+import { signIn } from "next-auth/react";
 
-import { Icons } from "@/components/shared/icons";
+import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
 import { Modal } from "@/components/ui/modal";
-import { siteConfig } from "@/config/site";
+import { Icons } from "@/components/shared/icons";
 
 function SignInModal({
   showSignInModal,
@@ -54,6 +54,25 @@ function SignInModal({
               <Icons.google className="mr-2 size-4" />
             )}{" "}
             Sign In with Google
+          </Button>
+          <Button
+            variant="default"
+            disabled={signInClicked}
+            onClick={() => {
+              setSignInClicked(true);
+              signIn("github", { redirect: false }).then(() =>
+                setTimeout(() => {
+                  setShowSignInModal(false);
+                }, 400),
+              );
+            }}
+          >
+            {signInClicked ? (
+              <Icons.spinner className="mr-2 size-4 animate-spin" />
+            ) : (
+              <Icons.gitHub className="mr-2 size-4" />
+            )}{" "}
+            Sign In with GitHub
           </Button>
         </div>
       </div>

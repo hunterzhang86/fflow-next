@@ -4,17 +4,13 @@ import NextAuth, { type DefaultSession } from "next-auth";
 import { db } from "@/db/db";
 import { getUserById } from "@/lib/user";
 import { accounts, sessions, users, verificationTokens } from "@/db/schema"
-import type { NextAuthConfig } from "next-auth";
 import Google from "next-auth/providers/google";
 import Github from "next-auth/providers/github";
 import Resend from "next-auth/providers/resend";
 import { AdapterUser } from "next-auth/adapters";
 import { Account, Profile, User } from "next-auth";
 
-
 import { env } from "@/env.mjs";
-import { sendVerificationRequest } from "@/lib/email";
-
 
 // More info: https://authjs.dev/getting-started/typescript#module-augmentation
 declare module "next-auth" {
@@ -110,7 +106,6 @@ export const {
     Resend({
       apiKey: env.RESEND_API_KEY,
       from: env.EMAIL_FROM,
-      // sendVerificationRequest,
     }),
   ],
   // debug: process.env.NODE_ENV !== "production"
