@@ -60,44 +60,52 @@ export default function Home() {
   return (
     <>
       <main className="w-auto place-content-center items-center justify-center">
-        {messages.map((message: MessageProps) => {
-          return <Message key={message.id} {...message} />;
-        })}
+        <div className="w-full">
+          {messages.map((message: MessageProps) => {
+            return <Message key={message.id} {...message} />;
+          })}
 
-        {/* loading */}
-        {streaming && <MessageLoading />}
+          {/* loading */}
+          {streaming && <MessageLoading />}
+          {messages.length > 1 && <div className="mb-20 mt-auto w-full" />}
 
-        {/* initial question */}
-        {messages.length === 1 && (
-          <div className="mt-4 grid gap-2 md:mt-6 md:grid-cols-2 md:gap-4">
-            {INITIAL_QUESTIONS.map((message) => {
-              return (
-                <button
-                  key={message.content}
-                  type="button"
-                  className="cursor-pointer select-none rounded-xl border border-gray-200 bg-white p-3 text-left font-normal hover:border-zinc-400 hover:bg-zinc-50 dark:bg-emerald-950 md:px-4 md:py-3"
-                  onClick={() => onClickQuestion(message.content)}
-                >
-                  {message.content}
-                </button>
-              );
-            })}
+          {/* initial question */}
+          {messages.length === 1 && (
+            <div className="mt-4 grid gap-2 md:mt-6 md:grid-cols-2 md:gap-4">
+              {INITIAL_QUESTIONS.map((message) => {
+                return (
+                  <button
+                    key={message.content}
+                    type="button"
+                    className="cursor-pointer select-none rounded-xl border border-gray-200 bg-white p-3 text-left font-normal hover:border-zinc-400 hover:bg-zinc-50 dark:bg-emerald-950 md:px-4 md:py-3"
+                    onClick={() => onClickQuestion(message.content)}
+                  >
+                    {message.content}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
+          {/* bottom ref */}
+          <div ref={messagesEndRef} />
+        </div>
+
+        <div className="w-full">
+          <div className="fixed bottom-0 left-1/2 w-full max-w-screen-md -translate-x-1/2 place-content-center items-center justify-center rounded-xl p-6 md:px-5">
+            <Form
+              ref={formRef}
+              onSubmit={onSubmit}
+              inputProps={{
+                disabled: streaming,
+                value: input,
+                onChange: handleInputChange,
+              }}
+              buttonProps={{
+                disabled: streaming,
+              }}
+            />
           </div>
-        )}
-
-        <div className="fixed bottom-0 left-1/2 w-full max-w-screen-md -translate-x-1/2 place-content-center items-center justify-center rounded-xl p-6 md:px-5">
-          <Form
-            ref={formRef}
-            onSubmit={onSubmit}
-            inputProps={{
-              disabled: streaming,
-              value: input,
-              onChange: handleInputChange,
-            }}
-            buttonProps={{
-              disabled: streaming,
-            }}
-          />
         </div>
       </main>
     </>
