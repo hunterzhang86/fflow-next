@@ -4,7 +4,6 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Message as MessageProps, useChat } from "ai/react";
 
 import { INITIAL_QUESTIONS } from "@/lib/const";
-import cx from "@/lib/cx";
 import Form from "@/components/chat/form";
 import Message from "@/components/chat/message";
 import MessageLoading from "@/components/chat/message-loading";
