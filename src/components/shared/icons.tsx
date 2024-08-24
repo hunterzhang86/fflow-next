@@ -31,6 +31,7 @@ import {
   Trash,
   User,
   X,
+  Bot,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -41,6 +42,7 @@ export const Icons = {
   arrowUpRight: ArrowUpRight,
   billing: CreditCard,
   bookOpen: BookOpen,
+  bot: Bot,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
   check: Check,
