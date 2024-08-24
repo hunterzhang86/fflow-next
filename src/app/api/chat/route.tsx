@@ -12,7 +12,8 @@ import { StreamingTextResponse, Message as VercelChatMessage } from "ai";
 import { AgentExecutor, createOpenAIFunctionsAgent } from "langchain/agents";
 import { createRetrieverTool } from "langchain/tools/retriever";
 
-import { UpstashVectorStore } from "@/components/vectorstore/upstash-vector-store";
+import { Index } from "@upstash/vector";
+import { UpstashVectorStore } from "@langchain/community/vectorstores/upstash";
 
 export const runtime = 'edge';
 
@@ -20,7 +21,7 @@ const redis = Redis.fromEnv();
 
 const ratelimit = new Ratelimit({
   redis: redis,
-  limiter: Ratelimit.slidingWindow(1, "10 s"),
+  limiter: Ratelimit.slidingWindow(100, "10 s"),
 });
 
 const convertVercelMessageToLangChainMessage = (message: VercelChatMessage) => {
@@ -75,10 +76,18 @@ export async function POST(req: NextRequest) {
       streaming: true,
     });
 
-    /**
-     * Create vector store and retriever
-     */
-    const vectorstore = await new UpstashVectorStore(new OpenAIEmbeddings());
+    const embeddings = new OpenAIEmbeddings({});
+
+    // Creating the index with the provided credentials.
+    const indexWithCredentials = new Index({
+      url: process.env.UPSTASH_VECTOR_REST_URL as string,
+      token: process.env.UPSTASH_VECTOR_REST_TOKEN as string,
+    });
+    
+    const vectorstore = new UpstashVectorStore(embeddings, {
+      index: indexWithCredentials,
+    });    
+
     const retriever = vectorstore.asRetriever({
       k: 6,
       searchType: "mmr",
@@ -160,6 +169,7 @@ export async function POST(req: NextRequest) {
       const textEncoder = new TextEncoder();
       const transformStream = new ReadableStream({
         async start(controller) {
+          console.log("Streaming response...");
           for await (const chunk of logStream) {
             if (chunk.ops?.length > 0 && chunk.ops[0].op === "add") {
               const addOp = chunk.ops[0];
@@ -172,6 +182,7 @@ export async function POST(req: NextRequest) {
               }
             }
           }
+          console.log("Streaming response...");
           controller.close();
         },
       });
