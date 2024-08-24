@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
+import { UpstashVectorStore } from "@langchain/community/vectorstores/upstash";
 import { AIMessage, ChatMessage, HumanMessage } from "@langchain/core/messages";
 import {
   ChatPromptTemplate,
@@ -8,14 +9,12 @@ import {
 import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
+import { Index } from "@upstash/vector";
 import { StreamingTextResponse, Message as VercelChatMessage } from "ai";
 import { AgentExecutor, createOpenAIFunctionsAgent } from "langchain/agents";
 import { createRetrieverTool } from "langchain/tools/retriever";
 
-import { Index } from "@upstash/vector";
-import { UpstashVectorStore } from "@langchain/community/vectorstores/upstash";
-
-export const runtime = 'edge';
+export const runtime = "edge";
 
 const redis = Redis.fromEnv();
 
@@ -70,7 +69,7 @@ export async function POST(req: NextRequest) {
     const currentMessageContent = messages[messages.length - 1].content;
 
     const chatModel = new ChatOpenAI({
-      modelName: "gpt-3.5-turbo-1106",
+      modelName: "gpt-4o",
       temperature: 0.2,
       // IMPORTANT: Must "streaming: true" on OpenAI to enable final output streaming below.
       streaming: true,
@@ -83,16 +82,16 @@ export async function POST(req: NextRequest) {
       url: process.env.UPSTASH_VECTOR_REST_URL as string,
       token: process.env.UPSTASH_VECTOR_REST_TOKEN as string,
     });
-    
+
     const vectorstore = new UpstashVectorStore(embeddings, {
       index: indexWithCredentials,
-    });    
+    });
 
     const retriever = vectorstore.asRetriever({
       k: 6,
       searchType: "mmr",
       searchKwargs: {
-        fetchK: 20,
+        fetchK: 5,
         lambda: 0.5,
       },
       verbose: false,
@@ -117,15 +116,11 @@ export async function POST(req: NextRequest) {
      */
 
     const AGENT_SYSTEM_TEMPLATE = `
-    You are an artificial intelligence university bot named DegreeGuru, programmed to respond to inquiries about Stanford in a highly systematic and data-driven manner.
-
-    Begin your answers with a formal greeting and sign off with a closing statement about promoting knowledge.
-
-    Your responses should be precise and factual, with an emphasis on using the context provided and providing links from the context whenever posible. If some link does not look like it belongs to stanford, don't use the link and the information in your response.
-
-    Don't repeat yourself in your responses even if some information is repeated in the context.
+    你是一位名为 FFlow 的咨询机器人，旨在以高度系统化和数据驱动的方式回应和背景信息相关的咨询。
     
-    Reply with apologies and tell the user that you don't know the answer only when you are faced with a question whose answer is not available in the context.
+    你的回答应当精确且事实准确，重点是使用提供的背景信息，并在可能的情况下提供来自背景的链接。
+    
+    即使背景信息中有重复的内容，也请不要重复回答。
     `;
 
     const prompt = ChatPromptTemplate.fromMessages([
