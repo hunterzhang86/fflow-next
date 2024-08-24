@@ -169,6 +169,16 @@ export async function POST(req: NextRequest) {
       const textEncoder = new TextEncoder();
       const transformStream = new ReadableStream({
         async start(controller) {
+          if (process.env.NODE_ENV === "development") {
+            controller.enqueue(
+              textEncoder.encode(
+                "Hello, I'm DegreeGuru, your academic companion. How can I help you today?",
+              ),
+            );
+            controller.close();
+            return;
+          }
+
           console.log("Streaming response...");
           for await (const chunk of logStream) {
             if (chunk.ops?.length > 0 && chunk.ops[0].op === "add") {
