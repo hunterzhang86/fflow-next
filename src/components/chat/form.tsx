@@ -10,13 +10,7 @@ export interface Props extends ComponentProps<"form"> {
 
 const Form = ({ inputProps, buttonProps, onSubmit }: Props, ref: any) => {
   return (
-    <form
-      onSubmit={onSubmit}
-      className="relative m-auto flex items-center justify-center gap-4"
-      ref={ref}
-    >
-      {/*<Avatar isUser={true} className="md:size-10 bg-gray-300" />*/}
-
+    <form onSubmit={onSubmit} className="flex w-full items-center" ref={ref}>
       <input
         placeholder="Your question..."
         required
@@ -30,15 +24,7 @@ const Form = ({ inputProps, buttonProps, onSubmit }: Props, ref: any) => {
         type="text"
       />
 
-      <button
-        {...buttonProps}
-        type="submit"
-        tabIndex={-1}
-        className={cx(
-          "absolute right-3 top-1/2 -translate-y-1/2",
-          "opacity-50",
-        )}
-      >
+      <button {...buttonProps} type="submit" tabIndex={-1}>
         <IconArrowBack stroke={1.5} />
       </button>
     </form>

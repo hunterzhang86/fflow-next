@@ -22,9 +22,7 @@ export default function Home() {
         {
           id: "0",
           role: "system",
-          content: `**Welcome to FFlow Next**
-
-Your ultimate companion in navigating the academic landscape of Stanford.`,
+          content: `**Welcome to FFlow Next**`,
         },
       ],
       onResponse: () => {
@@ -60,8 +58,8 @@ Your ultimate companion in navigating the academic landscape of Stanford.`,
   );
 
   return (
-    <main className="relative mx-auto flex min-h-svh max-w-screen-md overflow-y-auto p-4 !pb-32 md:p-6 md:!pb-40">
-      <div className="w-full">
+    <>
+      <main className="w-auto place-content-center items-center justify-center">
         {messages.map((message: MessageProps) => {
           return <Message key={message.id} {...message} />;
         })}
@@ -77,7 +75,7 @@ Your ultimate companion in navigating the academic landscape of Stanford.`,
                 <button
                   key={message.content}
                   type="button"
-                  className="cursor-pointer select-none rounded-xl border border-gray-200 bg-white p-3 text-left font-normal hover:border-zinc-400 hover:bg-zinc-50 md:px-4 md:py-3"
+                  className="cursor-pointer select-none rounded-xl border border-gray-200 bg-white p-3 text-left font-normal hover:border-zinc-400 hover:bg-zinc-50 dark:bg-emerald-950 md:px-4 md:py-3"
                   onClick={() => onClickQuestion(message.content)}
                 >
                   {message.content}
@@ -87,20 +85,7 @@ Your ultimate companion in navigating the academic landscape of Stanford.`,
           </div>
         )}
 
-        {/* bottom ref */}
-        <div ref={messagesEndRef} />
-      </div>
-
-      <div
-        className={cx(
-          "fixed inset-x-0 bottom-0 z-10",
-          "flex items-center justify-center",
-          "bg-white",
-        )}
-      >
-        <span className="pointer-events-none absolute inset-x-0 bottom-full h-10 bg-gradient-to-b from-white/0 to-white" />
-
-        <div className="w-full max-w-screen-md rounded-xl px-4 py-6 md:px-5">
+        <div className="fixed bottom-0 left-1/2 w-full max-w-screen-md -translate-x-1/2 place-content-center items-center justify-center rounded-xl p-6 md:px-5">
           <Form
             ref={formRef}
             onSubmit={onSubmit}
@@ -114,7 +99,7 @@ Your ultimate companion in navigating the academic landscape of Stanford.`,
             }}
           />
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

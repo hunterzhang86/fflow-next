@@ -7,7 +7,7 @@ const MessageLoading: React.FC = () => {
     <article
       className={cx(
         "mb-2 flex items-center gap-4 p-4 md:p-5 rounded-2xl",
-        "bg-emerald-50/80",
+        "bg-emerald-50/80 dark:bg-emerald-950",
       )}
     >
       <Avatar />
