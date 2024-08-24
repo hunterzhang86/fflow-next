@@ -90,8 +90,8 @@ export default function Home() {
           <div ref={messagesEndRef} />
         </div>
 
-        <div className="w-full">
-          <div className="fixed bottom-0 left-1/2 w-full max-w-screen-md -translate-x-1/2 place-content-center items-center justify-center rounded-xl p-6 md:px-5">
+        <div className="fixed bottom-0 left-0 w-full md:left-auto md:right-auto md:max-w-[calc(100%-520px)]">
+          <div className="rounded-xl p-4 md:px-1">
             <Form
               ref={formRef}
               onSubmit={onSubmit}
