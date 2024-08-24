@@ -12,7 +12,7 @@ import { StreamingTextResponse, Message as VercelChatMessage } from "ai";
 import { AgentExecutor, createOpenAIFunctionsAgent } from "langchain/agents";
 import { createRetrieverTool } from "langchain/tools/retriever";
 
-import { UpstashVectorStore } from "@langchain/community/vectorstores/upstash";
+import { UpstashVectorStore } from "@/components/vectorstore/upstash-vector-store";
 
 export const runtime = 'edge';
 
