@@ -1,14 +1,27 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { APIKey, createAPIKey, deleteAPIKey, getAPIKeys } from "@/lib/apikeys";
-import { Button, Table, Space, message, Tooltip, Row, Col } from "antd";
 import { CopyOutlined, DeleteOutlined } from "@ant-design/icons";
+import {
+  Button,
+  Col,
+  ConfigProvider,
+  message,
+  Row,
+  Space,
+  Table,
+  theme,
+  Tooltip,
+} from "antd";
 import { ColumnsType } from "antd/es/table";
+import dayjs from "dayjs";
+
+import { APIKey, createAPIKey, deleteAPIKey, getAPIKeys } from "@/lib/apikeys";
 import { DashboardHeader } from "@/components/dashboard/header";
-import dayjs from 'dayjs';
+import { useTheme } from "next-themes";
 
 export default function APIKeysPage() {
+  const { theme: currentTheme } = useTheme();
   const [apiKeys, setApiKeys] = useState<APIKey[]>([]);
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState({
@@ -66,7 +79,7 @@ export default function APIKeysPage() {
   }
 
   function maskApiKey(key: string) {
-    return `${key.slice(0, 10)}${'*'.repeat(15)}`;
+    return `${key.slice(0, 10)}${"*".repeat(15)}`;
   }
 
   const columns: ColumnsType<APIKey> = [
@@ -91,7 +104,7 @@ export default function APIKeysPage() {
       title: "Created At",
       dataIndex: "createdAt",
       key: "createdAt",
-      render: (date: string) => dayjs(date).format('YYYY-MM-DD HH:mm:ss'),
+      render: (date: string) => dayjs(date).format("YYYY-MM-DD HH:mm:ss"),
     },
     {
       title: "Actions",
@@ -109,7 +122,11 @@ export default function APIKeysPage() {
   ];
 
   return (
-    <>
+    <ConfigProvider
+      theme={{
+        algorithm: currentTheme === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm,
+      }}
+    >
       <DashboardHeader heading="API Keys" text="Manage your API keys here." />
       <Table
         columns={columns}
@@ -129,13 +146,17 @@ export default function APIKeysPage() {
         title={() => (
           <Row justify="end">
             <Col>
-              <Button type="primary" onClick={handleCreateKey} disabled={loading}>
+              <Button
+                type="primary"
+                onClick={handleCreateKey}
+                disabled={loading}
+              >
                 Create New API Key
               </Button>
             </Col>
           </Row>
         )}
       />
-    </>
+    </ConfigProvider>
   );
 }
