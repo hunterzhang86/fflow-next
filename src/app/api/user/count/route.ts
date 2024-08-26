@@ -11,13 +11,7 @@ export const GET = auth(async () => {
   }
   const count = await countUsers();
 
-  const response: ApiResponse<number> = {
-    code: 200,
-    message: "success",
-    data: count
-  };
-
-  return new Response(JSON.stringify(response), {
+  return new Response(ApiResponse.success(count), {
     status: 200,
     headers: {
       'Content-Type': 'application/json'

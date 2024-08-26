@@ -1,9 +1,8 @@
 import { auth } from "@/auth";
 
 import { db } from "@/db/db";
-import { eq } from "drizzle-orm";
 import { users } from "@/db/schema";
-
+import { eq } from "drizzle-orm";
 export const runtime = 'edge';
 
 export const DELETE = auth(async (req) => {
