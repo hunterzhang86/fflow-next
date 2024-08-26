@@ -15,10 +15,10 @@ import {
 } from "antd";
 import { ColumnsType } from "antd/es/table";
 import dayjs from "dayjs";
+import { useTheme } from "next-themes";
 
 import { APIKey, createAPIKey, deleteAPIKey, getAPIKeys } from "@/lib/apikeys";
 import { DashboardHeader } from "@/components/dashboard/header";
-import { useTheme } from "next-themes";
 
 export default function APIKeysPage() {
   const { theme: currentTheme } = useTheme();
@@ -124,7 +124,10 @@ export default function APIKeysPage() {
   return (
     <ConfigProvider
       theme={{
-        algorithm: currentTheme === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        algorithm:
+          currentTheme === "dark"
+            ? theme.darkAlgorithm
+            : theme.defaultAlgorithm,
       }}
     >
       <DashboardHeader heading="API Keys" text="Manage your API keys here." />
