@@ -23,4 +23,4 @@ export const GET = auth(async () => {
       'Content-Type': 'application/json'
     }
   });
-}
+});

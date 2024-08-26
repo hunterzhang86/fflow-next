@@ -1,6 +1,5 @@
 // @ts-nocheck
-import { NextRequest, NextResponse } from "next/server";
-import { getCurrentUser } from "@/lib/user";
+import { NextResponse } from "next/server";
 import { UpstashVectorStore } from "@langchain/community/vectorstores/upstash";
 import { AIMessage, ChatMessage, HumanMessage } from "@langchain/core/messages";
 import {
@@ -14,6 +13,8 @@ import { Index } from "@upstash/vector";
 import { StreamingTextResponse, Message as VercelChatMessage } from "ai";
 import { AgentExecutor, createOpenAIFunctionsAgent } from "langchain/agents";
 import { createRetrieverTool } from "langchain/tools/retriever";
+import { auth } from "@/auth";
+import { NextAuthRequest } from "next-auth/lib";
 
 export const runtime = "edge";
 
@@ -34,7 +35,7 @@ const convertVercelMessageToLangChainMessage = (message: VercelChatMessage) => {
   }
 };
 
-export const POST = auth(async (req: NextRequest) => {
+export const POST = auth(async (req: NextAuthRequest) => {
   const user = req.auth;
 
   if (!user) {
