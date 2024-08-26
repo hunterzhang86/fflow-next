@@ -32,6 +32,7 @@ import {
   User,
   X,
   Bot,
+  Key,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -50,6 +51,7 @@ export const Icons = {
   copy: Copy,
   dashboard: LayoutPanelLeft,
   ellipsis: MoreVertical,
+  apiKeys: Key,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

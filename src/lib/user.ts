@@ -1,7 +1,7 @@
 import { db } from "@/db/db";
 import { users } from "@/db/schema";
 import { eq, sql } from "drizzle-orm";
-
+import { NextAuthRequest } from 'next-auth/lib';
 
 export const getUserByEmail = async (email: string) => {
   try {
@@ -36,7 +36,7 @@ export const countUsers = async () => {
       sql`SELECT COUNT(*) FROM ${users}`
     );
     return userCountResult.rowCount;
-  } catch(e) {
+  } catch (e) {
     console.error(e);
     return 0;
   }

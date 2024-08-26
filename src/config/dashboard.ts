@@ -19,6 +19,7 @@ export const sidebarLinks: SidebarNavItem[] = [
       },
       { href: "/dashboard/charts", icon: "lineChart", title: "Charts" },
       { href: "/dashboard/chat", icon: "bot", title: "Chat Bot" },
+      { href: "/dashboard/apikeys", icon: "apiKeys", title: "API Keys" },
       {
         href: "/admin/orders",
         icon: "package",

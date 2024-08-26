@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
+import { getCurrentUser } from "@/lib/user";
 import { UpstashVectorStore } from "@langchain/community/vectorstores/upstash";
 import { AIMessage, ChatMessage, HumanMessage } from "@langchain/core/messages";
 import {
@@ -33,7 +34,13 @@ const convertVercelMessageToLangChainMessage = (message: VercelChatMessage) => {
   }
 };
 
-export async function POST(req: NextRequest) {
+export const POST = auth(async (req: NextRequest) => {
+  const user = req.auth;
+
+  if (!user) {
+    return new Response("Not authenticated", { status: 401 });
+  }
+
   try {
     const ip = req.ip ?? "127.0.0.1";
     const { success } = await ratelimit.limit(ip);
@@ -221,4 +228,4 @@ export async function POST(req: NextRequest) {
     console.log(e.message);
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
-}
+});

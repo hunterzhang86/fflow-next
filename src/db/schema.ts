@@ -92,3 +92,13 @@ export const authenticators = pgTable(
     }),
   })
 )
+
+export const apiKeys = pgTable('api_keys', {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  userId: text('user_id').notNull(),
+  key: text('key').notNull().unique(),
+  createdAt: timestamp('created_at', { precision: 3 }).defaultNow().notNull(),
+  updatedAt: timestamp('updated_at', { precision: 3 }).defaultNow().notNull(),
+});
