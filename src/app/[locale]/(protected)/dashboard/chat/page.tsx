@@ -7,6 +7,7 @@ import { INITIAL_QUESTIONS } from "@/lib/const";
 import Form from "@/components/chat/form";
 import Message from "@/components/chat/message";
 import MessageLoading from "@/components/chat/message-loading";
+import { DashboardHeader } from "@/components/dashboard/header";
 
 export default function Home() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -58,6 +59,7 @@ export default function Home() {
 
   return (
     <>
+      <DashboardHeader heading="Chat Bot" text="Chat with our AI assistant." />
       <main className="w-auto place-content-center items-center justify-center">
         <div className="w-full">
           {messages.map((message: MessageProps) => {
