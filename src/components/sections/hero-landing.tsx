@@ -88,6 +88,17 @@ export default async function HeroLanding() {
               <span className="font-semibold">{nFormatter(stars)}</span>
             </p>
           </Link>
+          <Link
+            href="/cursor"
+            prefetch={true}
+            className={cn(
+              buttonVariants({ variant: "secondary", size: "lg", rounded: "full" }),
+              "gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:from-purple-600 hover:to-indigo-600"
+            )}
+          >
+            <span>{t('goCursorRules')}</span>
+            <Icons.arrowRight className="size-4" />
+          </Link>
         </div>
       </div>
     </section>

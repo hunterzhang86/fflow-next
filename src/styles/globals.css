@@ -90,3 +90,12 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+.scrollarea-hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollarea-hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

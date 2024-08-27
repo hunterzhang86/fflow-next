@@ -9,7 +9,8 @@
     "description": "Build your next project using Next.js 14, Prisma, Neon, Auth.js v5, Resend, React Email, Shadcn/ui, Stripe.",
     "goPricing": "Go Pricing",
     "starOn": "Star on",
-    "github": "GitHub"
+    "github": "GitHub",
+    "goCursorRules": "Go Cursor Rules"
   },
   "layout": {
     "english": "English",

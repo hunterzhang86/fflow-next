@@ -114,9 +114,9 @@ export default function APIKeysPage() {
           icon={<DeleteOutlined />}
           onClick={() => handleDeleteKey(record.id)}
           danger
-        >
-          Delete
-        </Button>
+          type="text"
+          className="flex items-center justify-center transition-colors duration-200 hover:bg-red-100 hover:text-red-500"
+        />
       ),
     },
   ];

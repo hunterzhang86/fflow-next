@@ -9,7 +9,8 @@
     "description": "使用 Next.js 14、Prisma、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个项目。",
     "goPricing": "查看定价",
     "starOn": "在",
-    "github": "GitHub 上加星"
+    "github": "GitHub 上加星",
+    "goCursorRules": "去查看 Cursor 提示词"
   },
   "layout": {
     "english": "英文",
