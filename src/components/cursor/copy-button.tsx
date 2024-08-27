@@ -22,10 +22,10 @@ export function CopyButton({ content }: { content: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 transform items-center gap-2 rounded-full bg-black p-2 text-xs text-white group-hover:flex dark:bg-white dark:text-black"
+      className="absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full bg-black p-2 text-xs text-white group-hover:flex dark:bg-white dark:text-black"
       type="button"
     >
-      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+      {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
       <span>{copied ? "Copied" : "Copy rule"}</span>
     </button>
   );

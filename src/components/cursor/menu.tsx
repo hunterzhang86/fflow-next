@@ -21,7 +21,7 @@ export function Menu() {
 
   return (
     <ScrollArea
-      className="h-full flex-grow pr-3"
+      className="h-full grow pr-3"
       style={{ scrollbarWidth: "none" }}
     >
       <div className="space-y-1">

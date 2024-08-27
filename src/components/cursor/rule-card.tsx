@@ -24,7 +24,7 @@ export function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
     <Card className="flex aspect-square max-h-[calc(100vh-8rem)] flex-col bg-background p-4">
       <CardContent
         className={cn(
-          "group relative mb-2 flex-grow overflow-hidden bg-card p-4 font-mono text-sm opacity-50 transition-opacity hover:opacity-100",
+          "group relative mb-2 grow overflow-hidden bg-card p-4 font-mono text-sm opacity-50 transition-opacity hover:opacity-100",
           isPage && "opacity-100",
         )}
       >
@@ -39,7 +39,7 @@ export function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
       <CardHeader className="mt-auto space-y-1 p-0">
         <div className="flex items-center justify-between">
           <CardTitle className="text-sm">{rule.author.name}</CardTitle>
-          <Avatar className="h-6 w-6">
+          <Avatar className="size-6">
             <a href={rule.author.url} target="_blank" rel="noopener noreferrer">
               <AvatarImage src={rule.author.avatar} alt={rule.author.name} />
             </a>
