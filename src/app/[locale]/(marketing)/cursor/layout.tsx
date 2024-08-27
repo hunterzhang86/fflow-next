@@ -1,6 +1,3 @@
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
-import { PlusIcon } from "lucide-react";
 import { ThemeProvider } from "next-themes";
 import { Menu } from "@/components/cursor/menu";
 
