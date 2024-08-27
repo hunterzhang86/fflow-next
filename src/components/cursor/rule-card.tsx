@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { CopyButton } from "./copy-button";
+import React from "react";
 
 export type Rule = {
   libs?: string[];
@@ -31,7 +32,16 @@ export function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
         <CopyButton content={rule.content} />
         <Link href={`/cursor/${rule.slug}`} className="h-full">
           <ScrollArea className="h-full">
-            <code className="text-sm">{rule.content}</code>
+            <pre className="whitespace-pre-wrap break-words">
+              <code className="text-sm">
+                {rule.content.split('\n').map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    {index < rule.content.split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </code>
+            </pre>
           </ScrollArea>
         </Link>
       </CardContent>
