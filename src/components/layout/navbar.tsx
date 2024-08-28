@@ -78,57 +78,38 @@ export function NavBar({ scroll = false }: NavBarProps) {
           ) : null}
         </div>
 
-        <div className="flex items-center space-x-3">
-          {/* right header for docs */}
-          {documentation ? (
-            <div className="hidden flex-1 items-center space-x-4 sm:justify-end lg:flex">
-              <div className="hidden lg:flex lg:grow-0">
-                <DocsSearch />
-              </div>
-              <div className="flex lg:hidden">
-                <Icons.search className="size-6 text-muted-foreground" />
-              </div>
-              <div className="flex space-x-4">
-                <Link
-                  href={siteConfig.links.github}
-                  target="_blank"
-                  rel="noreferrer"
+        <div className="flex items-center space-x-2 md:space-x-3">
+          <div className="flex items-center space-x-2">
+            <LocaleSwitcher />
+            {session ? (
+              <Link
+                href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
+              >
+                <Button
+                  className="gap-2 px-2 md:px-5"
+                  variant="default"
+                  size="sm"
+                  rounded="full"
                 >
-                  <Icons.gitHub className="size-7" />
-                  <span className="sr-only">GitHub</span>
-                </Link>
-              </div>
-            </div>
-          ) : null}
-          <LocaleSwitcher />
-          {session ? (
-            <Link
-              href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
-              className="hidden md:block"
-            >
+                  <span className="hidden md:inline">Dashboard</span>
+                  <Icons.dashboard className="size-4 md:hidden" />
+                </Button>
+              </Link>
+            ) : status === "unauthenticated" ? (
               <Button
-                className="gap-2 px-5"
+                className="gap-2 px-2 md:px-5"
                 variant="default"
                 size="sm"
                 rounded="full"
+                onClick={() => setShowSignInModal(true)}
               >
-                <span>Dashboard</span>
+                <span className="hidden md:inline">Sign In</span>
+                <Icons.arrowRight className="size-4 md:hidden" />
               </Button>
-            </Link>
-          ) : status === "unauthenticated" ? (
-            <Button
-              className="hidden gap-2 px-5 md:flex"
-              variant="default"
-              size="sm"
-              rounded="full"
-              onClick={() => setShowSignInModal(true)}
-            >
-              <span>Sign In</span>
-              <Icons.arrowRight className="size-4" />
-            </Button>
-          ) : (
-            <Skeleton className="hidden h-9 w-28 rounded-full lg:flex" />
-          )}
+            ) : (
+              <Skeleton className="size-9 rounded-full md:w-28" />
+            )}
+          </div>
         </div>
       </MaxWidthWrapper>
     </header>

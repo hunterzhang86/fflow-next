@@ -1,13 +1,13 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { env } from "@/env.mjs";
-import { siteConfig } from "@/config/site";
-import { cn, nFormatter } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+
 import { Icons } from "@/components/shared/icons";
-import { useTranslations } from 'next-intl';
+import { buttonVariants } from "@/components/ui/button";
+import { env } from "@/env.mjs";
+import { cn } from "@/lib/utils";
 
 export default async function HeroLanding() {
-  const t = useTranslations('HeroLanding');
+  const t = useTranslations("HeroLanding");
   const { stargazers_count: stars } = await fetch(
     "https://api.github.com/repos/mickasmt/next-saas-stripe-starter",
     {
@@ -36,14 +36,14 @@ export default async function HeroLanding() {
           target="_blank"
         >
           <span className="mr-3">🎉</span>
-          <span className="hidden md:flex">{t('introducing')}&nbsp;</span> Next Auth
-          Roles Template on <Icons.twitter className="ml-2 size-3.5" />
+          <span className="hidden md:flex">{t("introducing")}&nbsp;</span> Next
+          Auth Roles Template on <Icons.twitter className="ml-2 size-3.5" />
         </Link>
 
         <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[66px]">
-          {t('kickoff')}{" "}
+          {t("kickoff")}{" "}
           <span className="text-gradient_indigo-purple font-extrabold">
-            {t('saasStarter')}
+            {t("saasStarter")}
           </span>
         </h1>
 
@@ -51,7 +51,7 @@ export default async function HeroLanding() {
           className="max-w-2xl text-balance leading-normal text-muted-foreground sm:text-xl sm:leading-8"
           style={{ animationDelay: "0.35s", animationFillMode: "forwards" }}
         >
-          {t('description')}
+          {t("description")}
         </p>
 
         <div
@@ -66,37 +66,22 @@ export default async function HeroLanding() {
               "gap-2",
             )}
           >
-            <span>{t('goPricing')}</span>
+            <span>{t("goPricing")}</span>
             <Icons.arrowRight className="size-4" />
-          </Link>
-          <Link
-            href={siteConfig.links.github}
-            target="_blank"
-            rel="noreferrer"
-            className={cn(
-              buttonVariants({
-                variant: "outline",
-                size: "lg",
-                rounded: "full",
-              }),
-              "px-5",
-            )}
-          >
-            <Icons.gitHub className="mr-2 size-4" />
-            <p>
-              <span className="hidden sm:inline-block">{t('starOn')}</span> {t('github')}{" "}
-              <span className="font-semibold">{nFormatter(stars)}</span>
-            </p>
           </Link>
           <Link
             href="/cursor"
             prefetch={true}
             className={cn(
-              buttonVariants({ variant: "secondary", size: "lg", rounded: "full" }),
-              "gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:from-purple-600 hover:to-indigo-600"
+              buttonVariants({
+                variant: "secondary",
+                size: "lg",
+                rounded: "full",
+              }),
+              "gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:from-purple-600 hover:to-indigo-600",
             )}
           >
-            <span>{t('goCursorRules')}</span>
+            <span>{t("goCursorRules")}</span>
             <Icons.arrowRight className="size-4" />
           </Link>
         </div>
