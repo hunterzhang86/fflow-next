@@ -40,9 +40,10 @@ export function NavBar({ scroll = false }: NavBarProps) {
 
   return (
     <header
-      className={`sticky top-0 z-40 flex w-full justify-center bg-background/60 backdrop-blur-xl transition-all ${
-        scroll ? (scrolled ? "border-b" : "bg-transparent") : "border-b"
-      }`}
+      className={cn(
+        "sticky top-0 z-40 flex w-full justify-center bg-background/60 backdrop-blur-xl transition-all",
+        scroll ? (scrolled ? "border-b" : "bg-transparent") : "border-b",
+      )}
     >
       <MaxWidthWrapper
         className="flex h-14 items-center justify-between py-4"
@@ -79,37 +80,54 @@ export function NavBar({ scroll = false }: NavBarProps) {
         </div>
 
         <div className="flex items-center space-x-2 md:space-x-3">
-          <div className="flex items-center space-x-2">
-            <LocaleSwitcher />
-            {session ? (
-              <Link
-                href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
-              >
-                <Button
-                  className="gap-2 px-2 md:px-5"
-                  variant="default"
-                  size="sm"
-                  rounded="full"
-                >
-                  <span className="hidden md:inline">Dashboard</span>
-                  <Icons.dashboard className="size-4 md:hidden" />
-                </Button>
-              </Link>
-            ) : status === "unauthenticated" ? (
+          <LocaleSwitcher />
+
+          {/* 移动端按钮 */}
+          {session ? (
+            <Link
+              href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
+              className="md:hidden"
+            >
               <Button
-                className="gap-2 px-2 md:px-5"
-                variant="default"
+                className="bg-transparent text-foreground hover:bg-transparent"
                 size="sm"
-                rounded="full"
-                onClick={() => setShowSignInModal(true)}
+              />
+            </Link>
+          ) : status === "unauthenticated" ? (
+            <Button
+              className="bg-transparent text-foreground hover:bg-transparent md:hidden"
+              size="sm"
+              onClick={() => setShowSignInModal(true)}
+            />
+          ) : (
+            <Skeleton className="size-9 rounded-full md:hidden" />
+          )}
+
+          {/* 桌面端按钮 */}
+          {session ? (
+            <Link
+              href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
+              className="hidden md:block"
+            >
+              <Button
+                className="gap-2 bg-primary px-5 text-primary-foreground hover:bg-primary/90"
+                size="sm"
               >
-                <span className="hidden md:inline">Sign In</span>
-                <Icons.arrowRight className="size-4 md:hidden" />
+                <span>Dashboard</span>
               </Button>
-            ) : (
-              <Skeleton className="size-9 rounded-full md:w-28" />
-            )}
-          </div>
+            </Link>
+          ) : status === "unauthenticated" ? (
+            <Button
+              className="hidden gap-2 bg-primary px-5 text-primary-foreground hover:bg-primary/90 md:flex"
+              size="sm"
+              onClick={() => setShowSignInModal(true)}
+            >
+              <span>Sign In</span>
+              <Icons.arrowRight className="size-4" />
+            </Button>
+          ) : (
+            <Skeleton className="hidden h-9 w-28 rounded-full md:flex" />
+          )}
         </div>
       </MaxWidthWrapper>
     </header>
