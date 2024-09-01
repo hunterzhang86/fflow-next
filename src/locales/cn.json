@@ -4,12 +4,12 @@
   },
   "HeroLanding": {
     "introducing": "介绍",
-    "kickoff": "以爆炸性的方式开始",
-    "saasStarter": "SaaS 启动器",
-    "description": "使用 Next.js 14、Prisma、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个项目。",
+    "kickoff": "帮助您快速启航",
+    "saasStarter": "FFlow Next",
+    "description": "使用 Next.js 14、Drizzle ORM、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个项目。",
     "goPricing": "查看定价",
-    "starOn": "在",
-    "github": "GitHub 上加星",
+    "starOn": "Star on",
+    "github": "GitHub",
     "goCursorRules": "Go Cursor Rules"
   },
   "layout": {

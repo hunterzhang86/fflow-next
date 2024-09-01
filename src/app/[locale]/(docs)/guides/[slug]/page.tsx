@@ -35,7 +35,7 @@ export async function generateMetadata({
   const { title, description } = guide;
 
   return constructMetadata({
-    title: `${title} – SaaS Starter`,
+    title: `${title} – FFlow Next`,
     description: description,
   });
 }

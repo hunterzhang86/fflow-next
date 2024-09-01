@@ -5,8 +5,8 @@
   "HeroLanding": {
     "introducing": "Introducing",
     "kickoff": "Kick off with a bang with",
-    "saasStarter": "SaaS Starter",
-    "description": "Build your next project using Next.js 14, Prisma, Neon, Auth.js v5, Resend, React Email, Shadcn/ui, Stripe.",
+    "saasStarter": "FFlow Next",
+    "description": "Build your next project using Next.js 14, Drizzle ORM, Neon, Auth.js v5, Resend, React Email, Shadcn/ui, Stripe.",
     "goPricing": "Go Pricing",
     "starOn": "Star on",
     "github": "GitHub",

@@ -49,11 +49,11 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              mickasmt
+              NoOne
             </Link>
             . Hosted on{" "}
             <Link
-              href="https://vercel.com"
+              href="https://www.cloudflare.com"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"

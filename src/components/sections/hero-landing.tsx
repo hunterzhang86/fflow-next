@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export default async function HeroLanding() {
   const t = useTranslations("HeroLanding");
   const { stargazers_count: stars } = await fetch(
-    "https://api.github.com/repos/mickasmt/next-saas-stripe-starter",
+    "https://api.github.com/repos/hunterzhang86/fflow-next",
     {
       ...(env.GITHUB_OAUTH_TOKEN && {
         headers: {
@@ -28,7 +28,7 @@ export default async function HeroLanding() {
     <section className="space-y-6 py-12 sm:py-20 lg:py-20">
       <div className="container flex max-w-5xl flex-col items-center gap-5 text-center">
         <Link
-          href="https://twitter.com/miickasmt/status/1810465801649938857"
+          href="https://twitter.com/hunterzhang86"
           className={cn(
             buttonVariants({ variant: "outline", size: "sm", rounded: "full" }),
             "px-4",
