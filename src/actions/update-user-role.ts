@@ -23,7 +23,7 @@ export async function updateUserRole(userId: string, data: FormData) {
     const { role } = userRoleSchema.parse(data);
 
     // Update the user role.
-    await db.update(users).set({}).where(eq(users.id, userId));
+    await db.update(users).set({ role: role }).where(eq(users.id, userId));
 
     revalidatePath("/dashboard/settings");
     return { status: "success" };

@@ -16,8 +16,10 @@ import {
 import { ColumnsType } from "antd/es/table";
 import dayjs from "dayjs";
 import { useTheme } from "next-themes";
+import { toast } from "sonner";
 
 import { APIKey, createAPIKey, deleteAPIKey, getAPIKeys } from "@/lib/apikeys";
+import { Button as CreateButton } from "@/components/ui/button";
 import { DashboardHeader } from "@/components/dashboard/header";
 
 export default function APIKeysPage() {
@@ -47,7 +49,7 @@ export default function APIKeysPage() {
         total: response.data.totalCount,
       }));
     } catch (err) {
-      message.error("Failed to fetch API keys");
+      toast.error("Failed to fetch API keys");
     } finally {
       setLoading(false);
     }
@@ -57,9 +59,9 @@ export default function APIKeysPage() {
     try {
       const newKey = await createAPIKey();
       setApiKeys((prevKeys) => [newKey, ...prevKeys]);
-      message.success("API key created successfully");
+      toast.success("API key created successfully");
     } catch (err) {
-      message.error("Failed to create API key");
+      toast.error("Failed to create API key");
     }
   }
 
@@ -67,15 +69,15 @@ export default function APIKeysPage() {
     try {
       await deleteAPIKey(id);
       setApiKeys((prevKeys) => prevKeys.filter((key) => key.id !== id));
-      message.success("API key deleted successfully");
+      toast.success("API key deleted successfully");
     } catch (err) {
-      message.error("Failed to delete API key");
+      toast.error("Failed to delete API key");
     }
   }
 
   function handleCopyKey(key: string) {
     navigator.clipboard.writeText(key);
-    message.success("Full API key copied to clipboard");
+    toast.success("Full API key copied to clipboard");
   }
 
   function maskApiKey(key: string) {
@@ -115,7 +117,6 @@ export default function APIKeysPage() {
           onClick={() => handleDeleteKey(record.id)}
           danger
           type="text"
-          className="flex items-center justify-center transition-colors duration-200 hover:bg-red-100 hover:text-red-500"
         />
       ),
     },
@@ -149,13 +150,9 @@ export default function APIKeysPage() {
         title={() => (
           <Row justify="end">
             <Col>
-              <Button
-                type="primary"
-                onClick={handleCreateKey}
-                disabled={loading}
-              >
+              <CreateButton onClick={handleCreateKey} disabled={loading}>
                 Create New API Key
-              </Button>
+              </CreateButton>
             </Col>
           </Row>
         )}
