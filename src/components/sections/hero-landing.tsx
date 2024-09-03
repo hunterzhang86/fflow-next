@@ -6,7 +6,11 @@ import { buttonVariants } from "@/components/ui/button";
 import { env } from "@/env.mjs";
 import { cn } from "@/lib/utils";
 
-export default async function HeroLanding() {
+interface HeroLandingProps {
+  locale: string;
+}
+
+export default async function HeroLanding({ locale }: HeroLandingProps) {
   const t = useTranslations("HeroLanding");
   const { stargazers_count: stars } = await fetch(
     "https://api.github.com/repos/hunterzhang86/fflow-next",
@@ -59,7 +63,7 @@ export default async function HeroLanding() {
           style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
         >
           <Link
-            href="/pricing"
+            href={`/${locale}/pricing`}
             prefetch={true}
             className={cn(
               buttonVariants({ size: "lg", rounded: "full" }),
@@ -70,7 +74,7 @@ export default async function HeroLanding() {
             <Icons.arrowRight className="size-4" />
           </Link>
           <Link
-            href="/cursor"
+            href={`/${locale}/cursor`}
             prefetch={true}
             className={cn(
               buttonVariants({

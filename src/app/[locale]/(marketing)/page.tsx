@@ -15,7 +15,7 @@ export default function IndexPage({params: {locale}}) {
 
   return (
     <>
-      <HeroLanding/>
+      <HeroLanding locale={locale}/>
       <PreviewLanding />
       <Powered />
       <BentoGrid />
