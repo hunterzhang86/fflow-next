@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-import { sidebarLinks } from "@/config/dashboard";
+import { getSidebarLinks } from "@/config/dashboard";
 import { getCurrentUser } from "@/lib/session";
 import { SearchCommand } from "@/components/dashboard/search-command";
 import {
@@ -27,6 +27,7 @@ export default async function Dashboard({
 
   if (!user) redirect("/login");
 
+  const sidebarLinks = getSidebarLinks(locale);
   const filteredLinks = sidebarLinks.map((section) => ({
     ...section,
     items: section.items.filter(
