@@ -1,18 +1,18 @@
 import { MarketingConfig } from "@/types"
 
-export const marketingConfig: MarketingConfig = {
+export const getMarketingConfig = (locale: string): MarketingConfig => ({
   mainNav: [
     {
       title: "Pricing",
-      href: "/pricing",
+      href: `/${locale}/pricing`,
     },
     {
       title: "Blog",
-      href: "/blog",
+      href: `/${locale}/blog`,
     },
     {
       title: "Documentation",
-      href: "/docs",
+      href: `/${locale}/docs`,
     },
   ],
-}
+});

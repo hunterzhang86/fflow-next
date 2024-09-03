@@ -4,15 +4,15 @@ import { useContext } from "react";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useLocale } from "next-intl";
 
 import { docsConfig } from "@/config/docs";
-import { marketingConfig } from "@/config/marketing";
+import { getMarketingConfig } from "@/config/marketing";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { useScroll } from "@/hooks/use-scroll";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { DocsSearch } from "@/components/docs/search";
 import LocaleSwitcher from "@/components/locale/locale-switcher";
 import { ModalContext } from "@/components/modals/providers";
 import { Icons } from "@/components/shared/icons";
@@ -24,6 +24,8 @@ interface NavBarProps {
 }
 
 export function NavBar({ scroll = false }: NavBarProps) {
+  const locale = useLocale();
+
   const scrolled = useScroll(50);
   const { data: session, status } = useSession();
   const { setShowSignInModal } = useContext(ModalContext);
@@ -34,6 +36,8 @@ export function NavBar({ scroll = false }: NavBarProps) {
   const configMap = {
     docs: docsConfig.mainNav,
   };
+
+  const marketingConfig = getMarketingConfig(locale);
 
   const links =
     (selectedLayout && configMap[selectedLayout]) || marketingConfig.mainNav;

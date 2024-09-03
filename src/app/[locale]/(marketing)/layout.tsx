@@ -13,8 +13,8 @@ export default function MarketingLayout({ children, params: {locale} }: Marketin
 
   return (
     <div className="flex min-h-screen flex-col">
-      <NavMobile />
-      <NavBar scroll={true} />
+      <NavMobile params={{ locale }} />
+      <NavBar scroll={true} params={{ locale }} />
       <main className="flex-1">{children}</main>
       <SiteFooter />
     </div>
