@@ -5,7 +5,7 @@ import { DashboardHeader } from "@/components/dashboard/header";
 import { EmptyPlaceholder } from "@/components/shared/empty-placeholder";
 
 export const metadata = constructMetadata({
-  title: "Dashboard – FFlow Next",
+  title: "Dashboard - FFlow Next",
   description: "Create and manage content.",
 });
 

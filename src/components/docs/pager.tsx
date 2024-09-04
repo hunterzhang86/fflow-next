@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "@/components/link/link";
 import { Doc } from "contentlayer/generated"
 
 import { docsConfig } from "@/config/docs"

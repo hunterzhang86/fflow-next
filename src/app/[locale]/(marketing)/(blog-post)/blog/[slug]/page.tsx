@@ -6,7 +6,7 @@ import { Mdx } from "@/components/content/mdx-components";
 import "@/styles/mdx.css";
 
 import { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/link/link";
 
 import { BLOG_CATEGORIES } from "@/config/blog";
 import { getTableOfContents } from "@/lib/toc";

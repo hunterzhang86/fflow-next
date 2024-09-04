@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
+import Link from "@/components/link/link";
 
 import { footerLinks, siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";

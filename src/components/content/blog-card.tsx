@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link/link";
 import { Post } from "contentlayer/generated";
 
 import { cn, formatDate, placeholderBlurhash } from "@/lib/utils";

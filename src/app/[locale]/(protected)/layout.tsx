@@ -11,6 +11,7 @@ import { ModeToggle } from "@/components/layout/mode-toggle";
 import { UserAccountNav } from "@/components/layout/user-account-nav";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import {unstable_setRequestLocale} from 'next-intl/server';
+import LocaleSwitcher from "@/components/locale/locale-switcher";
 
 interface ProtectedLayoutProps {
   children: React.ReactNode;
@@ -49,6 +50,7 @@ export default async function Dashboard({
             </div>
 
             <ModeToggle />
+            <LocaleSwitcher />
             <UserAccountNav />
           </MaxWidthWrapper>
         </header>

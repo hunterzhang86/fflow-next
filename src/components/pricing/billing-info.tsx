@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link/link";
 import * as React from "react";
 
 import { CustomerPortalButton } from "@/components/forms/customer-portal-button";

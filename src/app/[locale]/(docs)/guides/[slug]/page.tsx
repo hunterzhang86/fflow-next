@@ -1,5 +1,5 @@
 import { allGuides } from "contentlayer/generated";
-import Link from "next/link";
+import Link from "@/components/link/link";
 import { notFound } from "next/navigation";
 
 import { Mdx } from "@/components/content/mdx-components";

@@ -4,15 +4,15 @@ export const getMarketingConfig = (locale: string): MarketingConfig => ({
   mainNav: [
     {
       title: "Pricing",
-      href: `/${locale}/pricing`,
+      href: `/pricing`,
     },
     {
       title: "Blog",
-      href: `/${locale}/blog`,
+      href: `/blog`,
     },
     {
       title: "Documentation",
-      href: `/${locale}/docs`,
+      href: `/docs`,
     },
   ],
 });

@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import Link from "@/components/link/link";
 
 import { Icons } from "@/components/shared/icons";
 import { buttonVariants } from "@/components/ui/button";
@@ -32,6 +32,7 @@ export default async function HeroLanding({ locale }: HeroLandingProps) {
     <section className="space-y-6 py-12 sm:py-20 lg:py-20">
       <div className="container flex max-w-5xl flex-col items-center gap-5 text-center">
         <Link
+          locale={false}
           href="https://twitter.com/hunterzhang86"
           className={cn(
             buttonVariants({ variant: "outline", size: "sm", rounded: "full" }),
@@ -63,7 +64,7 @@ export default async function HeroLanding({ locale }: HeroLandingProps) {
           style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
         >
           <Link
-            href={`/${locale}/pricing`}
+            href={`/pricing`}
             prefetch={true}
             className={cn(
               buttonVariants({ size: "lg", rounded: "full" }),
@@ -74,7 +75,7 @@ export default async function HeroLanding({ locale }: HeroLandingProps) {
             <Icons.arrowRight className="size-4" />
           </Link>
           <Link
-            href={`/${locale}/cursor`}
+            href={`/cursor`}
             prefetch={true}
             className={cn(
               buttonVariants({
