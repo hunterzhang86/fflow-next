@@ -1,6 +1,7 @@
 // 定义 APIKey 类型
 export interface APIKey {
   id: string;
+  name: string;
   key: string;
   createdAt: string;
   updatedAt: string;
@@ -16,18 +17,20 @@ export async function getAPIKeys(page: number, limit: number) {
 }
 
 // 创建API密钥
-export async function createAPIKey() : Promise<APIKey>  {
+export async function createAPIKey(name: string) : Promise<APIKey>  {
     const resp = await fetch("/api/apikeys", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
+        body: JSON.stringify({ name }),
     });
 
     const respJson = await resp.json();
     const data = respJson.data;
     return {
         id: data.id,
+        name: data.name,
         key: data.key,
         createdAt: data.createdAt,
         updatedAt: data.updatedAt,

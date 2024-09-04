@@ -1,29 +1,40 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CopyOutlined, DeleteOutlined } from "@ant-design/icons";
-import {
-  Button,
-  Col,
-  ConfigProvider,
-  message,
-  Row,
-  Space,
-  Table,
-  theme,
-  Tooltip,
-} from "antd";
-import { ColumnsType } from "antd/es/table";
 import dayjs from "dayjs";
-import { useTheme } from "next-themes";
+import { CopyIcon, TrashIcon } from "lucide-react";
 import { toast } from "sonner";
+import { Skeleton } from "@/components/ui/skeleton";
 
 import { APIKey, createAPIKey, deleteAPIKey, getAPIKeys } from "@/lib/apikeys";
-import { Button as CreateButton } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { DashboardHeader } from "@/components/dashboard/header";
+import { Pagination } from "@/components/ui/pagination";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { EmptyPlaceholder } from "@/components/shared/empty-placeholder";
 
 export default function APIKeysPage() {
-  const { theme: currentTheme } = useTheme();
   const [apiKeys, setApiKeys] = useState<APIKey[]>([]);
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState({
@@ -31,6 +42,8 @@ export default function APIKeysPage() {
     pageSize: 10,
     total: 0,
   });
+  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
+  const [newKeyName, setNewKeyName] = useState("My API Key");
 
   useEffect(() => {
     fetchAPIKeys();
@@ -56,10 +69,17 @@ export default function APIKeysPage() {
   }
 
   async function handleCreateKey() {
+    const trimmedKeyName = newKeyName.trim();
+    if (!trimmedKeyName) {
+      toast.error("API Key name cannot be empty");
+      return;
+    }
     try {
-      const newKey = await createAPIKey();
+      const newKey = await createAPIKey(trimmedKeyName);
       setApiKeys((prevKeys) => [newKey, ...prevKeys]);
       toast.success("API key created successfully");
+      setIsCreateDialogOpen(false);
+      setNewKeyName("My API Key"); // 重置为默认值
     } catch (err) {
       toast.error("Failed to create API key");
     }
@@ -81,82 +101,120 @@ export default function APIKeysPage() {
   }
 
   function maskApiKey(key: string) {
-    return `${key.slice(0, 10)}${"*".repeat(15)}`;
+    const visiblePart = 6; // 可见部分的长度
+    const hiddenPart = 16; // 隐藏部分的长度
+    return `${key.slice(0, visiblePart)}${"•".repeat(hiddenPart)}`;
   }
 
-  const columns: ColumnsType<APIKey> = [
-    {
-      title: "API Key",
-      dataIndex: "key",
-      key: "key",
-      render: (key: string) => (
-        <Space>
-          {maskApiKey(key)}
-          <Tooltip title="Copy full API key">
-            <Button
-              icon={<CopyOutlined />}
-              onClick={() => handleCopyKey(key)}
-              size="small"
-            />
-          </Tooltip>
-        </Space>
-      ),
-    },
-    {
-      title: "Created At",
-      dataIndex: "createdAt",
-      key: "createdAt",
-      render: (date: string) => dayjs(date).format("YYYY-MM-DD HH:mm:ss"),
-    },
-    {
-      title: "Actions",
-      key: "actions",
-      render: (_, record) => (
-        <Button
-          icon={<DeleteOutlined />}
-          onClick={() => handleDeleteKey(record.id)}
-          danger
-          type="text"
-        />
-      ),
-    },
-  ];
-
   return (
-    <ConfigProvider
-      theme={{
-        algorithm:
-          currentTheme === "dark"
-            ? theme.darkAlgorithm
-            : theme.defaultAlgorithm,
-      }}
-    >
+    <>
       <DashboardHeader heading="API Keys" text="Manage your API keys here." />
-      <Table
-        columns={columns}
-        dataSource={apiKeys}
-        rowKey="id"
-        loading={loading}
-        pagination={{
-          ...pagination,
-          onChange: (page, pageSize) => {
-            setPagination((prev) => ({
-              ...prev,
-              current: page,
-              pageSize,
-            }));
-          },
-        }}
-        title={() => (
-          <Row justify="end">
-            <Col>
-              <CreateButton onClick={handleCreateKey} disabled={loading}>
-                Create New API Key
-              </CreateButton>
-            </Col>
-          </Row>
-        )}
-      />
-    </ConfigProvider>
+      {apiKeys.length > 0 && (
+        <div className="mb-4 flex justify-end">
+          <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+            <DialogTrigger asChild>
+              <Button>Create API Key</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle className="text-left">Create API Key</DialogTitle>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <label htmlFor="name" className="col-span-4 text-left">
+                    Name
+                  </label>
+                  <Input
+                    id="name"
+                    value={newKeyName}
+                    placeholder="API Key Name"
+                    onChange={(e) => setNewKeyName(e.target.value || "My API Key")}
+                    className="col-span-4"
+                  />
+                </div>
+              </div>
+              <div className="flex justify-end">
+                <Button onClick={handleCreateKey} disabled={loading}>
+                  Create
+                </Button>
+              </div>
+            </DialogContent>
+          </Dialog>
+        </div>
+      )}
+      {loading ? (
+        <div className="space-y-3">
+          <Skeleton className="h-10 w-full" />
+          <Skeleton className="h-20 w-full" />
+          <Skeleton className="h-20 w-full" />
+          <Skeleton className="h-20 w-full" />
+        </div>
+      ) : apiKeys.length === 0 ? (
+        <EmptyPlaceholder>
+          <EmptyPlaceholder.Icon name="apiKeys" />
+          <EmptyPlaceholder.Title>No API Keys</EmptyPlaceholder.Title>
+          <EmptyPlaceholder.Description>
+            You haven&apos;t created any API keys yet. Start by creating a new API key.
+          </EmptyPlaceholder.Description>
+          <Button onClick={() => setIsCreateDialogOpen(true)}>Create API Key</Button>
+        </EmptyPlaceholder>
+      ) : (
+        <>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Name</TableHead>
+                <TableHead>API Key</TableHead>
+                <TableHead>Created</TableHead>
+                <TableHead>Actions</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {apiKeys.map((apiKey) => (
+                <TableRow key={apiKey.id}>
+                  <TableCell>
+                    {apiKey.name}
+                  </TableCell>
+                  <TableCell className="font-mono">
+                    {maskApiKey(apiKey.key)}
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => handleCopyKey(apiKey.key)}
+                          >
+                            <CopyIcon className="size-4" />
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>Copy full API key</TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </TableCell>
+                  <TableCell>
+                    {dayjs(apiKey.createdAt).format("YYYY-MM-DD HH:mm:ss")}
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => handleDeleteKey(apiKey.id)}
+                      className="text-red-500 hover:bg-red-100 hover:text-red-700"
+                    >
+                      <TrashIcon className="size-4" />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+          <Pagination
+            pagination={pagination}
+            setPagination={setPagination}
+          />
+        </>
+      )}
+    </>
   );
 }

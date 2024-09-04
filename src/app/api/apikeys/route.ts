@@ -3,7 +3,7 @@ import { db } from "@/db/db";
 import { apiKeys } from "@/db/schema";
 import { getCurrentUser } from "@/lib/session";
 import { ApiResponse } from "@/lib/utils";
-import { eq, and, sql } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
@@ -41,14 +41,16 @@ export const GET = auth(async (req: NextRequest) => {
     }
 });
 
-export const POST = auth(async () => {
+export const POST = auth(async (req: NextRequest) => {
     const user = await getCurrentUser();
     if (!user) {
         return new Response("Not authenticated", { status: 401 });
     }
 
     try {
+        const body = await req.json();
         const newApiKey = await db.insert(apiKeys).values({
+            name: body.name,
             userId: user.id as string,
             key: generateApiKey(),
             createdAt: new Date(),

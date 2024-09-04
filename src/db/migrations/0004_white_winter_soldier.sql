@@ -1,0 +1,1 @@
+ALTER TABLE "api_keys" ADD COLUMN "name" text NOT NULL;
