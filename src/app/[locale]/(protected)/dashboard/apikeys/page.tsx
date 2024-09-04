@@ -4,11 +4,19 @@ import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import { CopyIcon, TrashIcon } from "lucide-react";
 import { toast } from "sonner";
-import { Skeleton } from "@/components/ui/skeleton";
 
 import { APIKey, createAPIKey, deleteAPIKey, getAPIKeys } from "@/lib/apikeys";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { Pagination } from "@/components/ui/pagination";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
   TableBody,
@@ -24,14 +32,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { DashboardHeader } from "@/components/dashboard/header";
-import { Pagination } from "@/components/ui/pagination";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { EmptyPlaceholder } from "@/components/shared/empty-placeholder";
 
 export default function APIKeysPage() {
@@ -101,47 +101,40 @@ export default function APIKeysPage() {
   }
 
   function maskApiKey(key: string) {
-    const visiblePart = 6; // 可见部分的长度
-    const hiddenPart = 16; // 隐藏部分的长度
+    const visiblePart = 10; // 可见部分的长度
+    const hiddenPart = 20; // 隐藏部分的长度
     return `${key.slice(0, visiblePart)}${"•".repeat(hiddenPart)}`;
   }
 
   return (
     <>
       <DashboardHeader heading="API Keys" text="Manage your API keys here." />
-      {apiKeys.length > 0 && (
-        <div className="mb-4 flex justify-end">
-          <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
-            <DialogTrigger asChild>
-              <Button>Create API Key</Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
-              <DialogHeader>
-                <DialogTitle className="text-left">Create API Key</DialogTitle>
-              </DialogHeader>
-              <div className="grid gap-4 py-4">
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <label htmlFor="name" className="col-span-4 text-left">
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    value={newKeyName}
-                    placeholder="API Key Name"
-                    onChange={(e) => setNewKeyName(e.target.value || "My API Key")}
-                    className="col-span-4"
-                  />
-                </div>
-              </div>
-              <div className="flex justify-end">
-                <Button onClick={handleCreateKey} disabled={loading}>
-                  Create
-                </Button>
-              </div>
-            </DialogContent>
-          </Dialog>
-        </div>
-      )}
+      <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="text-left">Create API Key</DialogTitle>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <label htmlFor="name" className="col-span-4 text-left">
+                Name
+              </label>
+              <Input
+                id="name"
+                value={newKeyName}
+                placeholder="API Key Name"
+                onChange={(e) => setNewKeyName(e.target.value || "My API Key")}
+                className="col-span-4"
+              />
+            </div>
+          </div>
+          <div className="flex justify-end">
+            <Button onClick={handleCreateKey} disabled={loading}>
+              Create
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
       {loading ? (
         <div className="space-y-3">
           <Skeleton className="h-10 w-full" />
@@ -154,12 +147,20 @@ export default function APIKeysPage() {
           <EmptyPlaceholder.Icon name="apiKeys" />
           <EmptyPlaceholder.Title>No API Keys</EmptyPlaceholder.Title>
           <EmptyPlaceholder.Description>
-            You haven&apos;t created any API keys yet. Start by creating a new API key.
+            You haven&apos;t created any API keys yet. Start by creating a new
+            API key.
           </EmptyPlaceholder.Description>
-          <Button onClick={() => setIsCreateDialogOpen(true)}>Create API Key</Button>
+          <Button onClick={() => setIsCreateDialogOpen(true)}>
+            Create API Key
+          </Button>
         </EmptyPlaceholder>
       ) : (
         <>
+          <div className="mb-4 flex justify-end">
+            <Button onClick={() => setIsCreateDialogOpen(true)}>
+              Create API Key
+            </Button>
+          </div>
           <Table>
             <TableHeader>
               <TableRow>
@@ -172,9 +173,7 @@ export default function APIKeysPage() {
             <TableBody>
               {apiKeys.map((apiKey) => (
                 <TableRow key={apiKey.id}>
-                  <TableCell>
-                    {apiKey.name}
-                  </TableCell>
+                  <TableCell>{apiKey.name}</TableCell>
                   <TableCell className="font-mono">
                     {maskApiKey(apiKey.key)}
                     <TooltipProvider>
@@ -209,10 +208,7 @@ export default function APIKeysPage() {
               ))}
             </TableBody>
           </Table>
-          <Pagination
-            pagination={pagination}
-            setPagination={setPagination}
-          />
+          <Pagination pagination={pagination} setPagination={setPagination} />
         </>
       )}
     </>
