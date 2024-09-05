@@ -75,8 +75,9 @@ export default async function HeroLanding({ locale }: HeroLandingProps) {
             <Icons.arrowRight className="size-4" />
           </Link>
           <Link
-            href={`/cursor`}
+            href={`https://www.ifb.me`}
             prefetch={true}
+            target="_blank"
             className={cn(
               buttonVariants({
                 variant: "secondary",
@@ -86,7 +87,7 @@ export default async function HeroLanding({ locale }: HeroLandingProps) {
               "gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:from-purple-600 hover:to-indigo-600",
             )}
           >
-            <span>{t("goCursorRules")}</span>
+            <span>{t("goIFB")}</span>
             <Icons.arrowRight className="size-4" />
           </Link>
         </div>
