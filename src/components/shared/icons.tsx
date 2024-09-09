@@ -33,6 +33,7 @@ import {
   X,
   Bot,
   Key,
+  Zap,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -52,6 +53,7 @@ export const Icons = {
   dashboard: LayoutPanelLeft,
   ellipsis: MoreVertical,
   apiKeys: Key,
+  quota: Zap,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
