@@ -6,6 +6,7 @@ import { eq } from 'drizzle-orm';
 import { ApiResponse } from "@/lib/utils";
 import { getCurrentUser } from "@/lib/session";
 
+export const runtime = 'edge';
 
 export const GET = auth(async (req: NextRequest) => {
     const user = await getCurrentUser();
