@@ -4,8 +4,8 @@ export default function QuotaLoading() {
   return (
     <>
       <DashboardHeader
-        heading="API Usage Quota"
-        text="Monitor your API usage and remaining quota for different resources."
+        heading="Resource Usage Quota"
+        text="Monitor your resource usage and remaining quota for different resources."
       />
     </>
   );

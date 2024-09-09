@@ -20,7 +20,7 @@ export const getSidebarLinks = (locale: string): SidebarNavItem[] => [
       { href: `/dashboard/charts`, icon: "lineChart", title: "Charts" },
       { href: `/dashboard/chat`, icon: "bot", title: "Chat Bot" },
       { href: `/dashboard/apikeys`, icon: "apiKeys", title: "API Keys" },
-      { href: `/dashboard/quota`, icon: "quota", title: "API Quota" },
+      { href: `/dashboard/quota`, icon: "quota", title: "Quota" },
       {
         href: `/admin/orders`,
         icon: "package",

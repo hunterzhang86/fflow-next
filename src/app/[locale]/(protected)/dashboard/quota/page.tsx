@@ -56,8 +56,8 @@ export default function QuotaPage() {
     return (
       <>
         <DashboardHeader
-          heading="API Usage Quota"
-          text="Monitor your API usage and remaining quota for different resources."
+          heading="Resource Usage Quota"
+          text="Monitor your resource usage and remaining quota for different resources."
         />
         <EmptyPlaceholder>
           <EmptyPlaceholder.Icon name="quota" />
@@ -75,12 +75,12 @@ export default function QuotaPage() {
   return (
     <>
       <DashboardHeader
-        heading="API Usage Quota"
-        text="Monitor your API usage and remaining quota for different resources."
+        heading="Resource Usage Quota"
+        text="Monitor your resource usage and remaining quota for different resources."
       />
       {Object.entries(quotaData).map(([resourceType, quota]) => (
         <div key={resourceType} className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold">{resourceType}</h2>
+          <h3 className="mb-4 text-xl font-semibold">{resourceType}</h3>
           <div className="grid gap-4 md:grid-cols-3">
             <Card>
               <CardHeader>
