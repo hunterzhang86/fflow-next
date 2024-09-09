@@ -19,19 +19,17 @@ export const GET = auth(async (req: NextRequest) => {
             type: quotas.type,
             totalQuota: quotas.totalQuota,
             usedQuota: quotas.usedQuota,
-            remainingQuota: quotas.remainingQuota,
         })
             .from(quotas)
             .where(eq(quotas.createdBy, user.id as string))
             .execute();
 
-        const quotaData: Record<string, { totalQuota: number; usedQuota: number; remainingQuota: number }> = {};
+        const quotaData: Record<string, { totalQuota: number; usedQuota: number }> = {};
 
         for (const quota of userQuotas) {
             quotaData[quota.type] = {
                 totalQuota: quota.totalQuota,
                 usedQuota: quota.usedQuota,
-                remainingQuota: quota.remainingQuota,
             };
         }
 

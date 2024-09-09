@@ -114,5 +114,4 @@ export const quotas = pgTable('quotas', {
   type: text('type').notNull(),
   totalQuota: integer('total_quota').notNull(),
   usedQuota: integer('used_quota').notNull(),
-  remainingQuota: integer('remaining_quota').notNull(),
 });

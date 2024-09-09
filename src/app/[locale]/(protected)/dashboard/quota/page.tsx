@@ -14,7 +14,6 @@ interface QuotaData {
   [resourceType: string]: {
     totalQuota: number;
     usedQuota: number;
-    remainingQuota: number;
   };
 }
 
@@ -103,7 +102,9 @@ export default function QuotaPage() {
                 <CardTitle>Remaining Quota</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold">{quota.remainingQuota}</p>
+                <p className="text-2xl font-bold">
+                  {quota.totalQuota - quota.usedQuota}
+                </p>
               </CardContent>
             </Card>
           </div>

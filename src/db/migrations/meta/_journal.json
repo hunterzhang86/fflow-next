@@ -43,6 +43,13 @@
       "when": 1725871545112,
       "tag": "0005_neat_thena",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1725883296455,
+      "tag": "0006_wise_sprite",
+      "breakpoints": true
     }
   ]
 }

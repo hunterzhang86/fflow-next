@@ -1,0 +1,1 @@
+ALTER TABLE "quotas" DROP COLUMN IF EXISTS "remaining_quota";
