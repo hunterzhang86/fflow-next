@@ -71,6 +71,11 @@ export type SubscriptionPlan = {
         monthly: string | null;
         yearly: string | null;
     };
+    quotas: {
+        type: QuotaResourceType;
+        totalQuota: number;
+        usedQuota: number;
+    }[];
 };
 
 export type UserSubscriptionPlan = SubscriptionPlan &
@@ -127,4 +132,30 @@ export type TestimonialType = {
 export enum UserRole {
     ADMIN = 'ADMIN',
     USER = 'USER'
+};
+
+export enum QuotaResourceType {
+    API_CALLS = 'api_calls',
+    STORAGE = 'storage',
+    EXPORTS = 'exports',
+    TEAM_MEMBERS = 'team_members',
+}
+
+export const QuotaResourceTypeLabels: Record<QuotaResourceType, { en: string; cn: string }> = {
+    [QuotaResourceType.API_CALLS]: {
+        en: 'API Calls',
+        cn: 'API 调用次数',
+    },
+    [QuotaResourceType.STORAGE]: {
+        en: 'Storage',
+        cn: '存储空间',
+    },
+    [QuotaResourceType.EXPORTS]: {
+        en: 'Exports',
+        cn: '导出次数',
+    },
+    [QuotaResourceType.TEAM_MEMBERS]: {
+        en: 'Team Members',
+        cn: '团队成员数',
+    },
 };

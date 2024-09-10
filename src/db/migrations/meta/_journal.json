@@ -50,6 +50,13 @@
       "when": 1725883296455,
       "tag": "0006_wise_sprite",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1725964906361,
+      "tag": "0007_lying_lorna_dane",
+      "breakpoints": true
     }
   ]
 }

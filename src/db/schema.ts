@@ -104,6 +104,18 @@ export const apiKeys = pgTable('api_keys', {
   updatedAt: timestamp('updated_at', { precision: 3 }).defaultNow().notNull(),
 });
 
+export const projects = pgTable('projects', {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  name: text('name').notNull(),
+  key: text('key').notNull().unique(),
+  description: text('description'),
+  createdBy: text('created_by').notNull(),
+  createdAt: timestamp('created_at', { precision: 3 }).defaultNow().notNull(),
+  updatedAt: timestamp('updated_at', { precision: 3 }).defaultNow().notNull(),
+});
+
 export const quotas = pgTable('quotas', {
   id: text("id")
     .primaryKey()

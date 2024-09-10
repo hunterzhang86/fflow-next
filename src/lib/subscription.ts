@@ -2,13 +2,13 @@ import { pricingData } from "@/config/subscriptions";
 import { stripe } from "@/lib/stripe";
 import { UserSubscriptionPlan } from "@/types";
 import { db } from "@/db/db";
-import { users } from "@/db/schema";
+import { users, quotas } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
 export async function getUserSubscriptionPlan(
   userId: string
 ): Promise<UserSubscriptionPlan> {
-  if(!userId) throw new Error("Missing parameters");
+  if (!userId) throw new Error("Missing parameters");
 
   const usersArray = await db.select({
     stripeSubscriptionId: users.stripeSubscriptionId,
@@ -28,7 +28,7 @@ export async function getUserSubscriptionPlan(
   // Check if user is on a paid plan.
   const isPaid =
     user.stripePriceId &&
-    user.stripeCurrentPeriodEnd?.getTime() as number + 86_400_000! > Date.now() ? true : false;
+      user.stripeCurrentPeriodEnd?.getTime() as number + 86_400_000! > Date.now() ? true : false;
 
   // Find the pricing data corresponding to the user's plan
   const userPlan =
@@ -41,8 +41,8 @@ export async function getUserSubscriptionPlan(
     ? userPlan?.stripeIds.monthly === user.stripePriceId
       ? "month"
       : userPlan?.stripeIds.yearly === user.stripePriceId
-      ? "year"
-      : null
+        ? "year"
+        : null
     : null;
 
   let isCanceled = false;
@@ -61,4 +61,33 @@ export async function getUserSubscriptionPlan(
     interval,
     isCanceled
   } as UserSubscriptionPlan;
+}
+
+export async function updateUserQuota(userId: string, stripePriceId: string) {
+  const plan = pricingData.find(plan =>
+    plan.stripeIds.monthly === stripePriceId || plan.stripeIds.yearly === stripePriceId
+  );
+
+  if (!plan) {
+    console.error(`No plan found for stripe price id: ${stripePriceId}`);
+    return;
+  }
+
+  const quotaUpdates = Object.entries(plan.quotas).map(([type, amount]) =>
+    db.insert(quotas).values({
+      createdAt: new Date(),
+      type,
+      totalQuota: amount.totalQuota as number,
+      usedQuota: 0,
+      createdBy: userId as string,
+    }).onConflictDoUpdate({
+      target: [quotas.createdBy, quotas.type],
+      set: {
+        totalQuota: amount.totalQuota as number,
+        updatedAt: new Date(),
+      },
+    })
+  );
+
+  await Promise.all(quotaUpdates);
 }

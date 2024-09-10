@@ -1,4 +1,4 @@
-import { PlansRow, SubscriptionPlan } from "@/types/index";
+import { PlansRow, QuotaResourceType, SubscriptionPlan } from "@/types/index";
 import { env } from "@/env.mjs";
 
 export const pricingData: SubscriptionPlan[] = [
@@ -24,6 +24,12 @@ export const pricingData: SubscriptionPlan[] = [
       monthly: null,
       yearly: null,
     },
+    quotas: [
+      { type: QuotaResourceType.API_CALLS, totalQuota: 5000, usedQuota: 0 },
+      { type: QuotaResourceType.STORAGE, totalQuota: 50, usedQuota: 0 },
+      { type: QuotaResourceType.EXPORTS, totalQuota: 50, usedQuota: 0 },
+      { type: QuotaResourceType.TEAM_MEMBERS, totalQuota: 5, usedQuota: 0 },
+    ],
   },
   {
     title: "Pro",
@@ -47,6 +53,12 @@ export const pricingData: SubscriptionPlan[] = [
       monthly: env.NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PLAN_ID,
       yearly: env.NEXT_PUBLIC_STRIPE_PRO_YEARLY_PLAN_ID,
     },
+    quotas: [
+      { type: QuotaResourceType.API_CALLS, totalQuota: 10000, usedQuota: 0 },
+      { type: QuotaResourceType.STORAGE, totalQuota: 100, usedQuota: 0 },
+      { type: QuotaResourceType.EXPORTS, totalQuota: 100, usedQuota: 0 },
+      { type: QuotaResourceType.TEAM_MEMBERS, totalQuota: 50, usedQuota: 0 },
+    ],
   },
   {
     title: "Business",
@@ -67,6 +79,12 @@ export const pricingData: SubscriptionPlan[] = [
       monthly: env.NEXT_PUBLIC_STRIPE_BUSINESS_MONTHLY_PLAN_ID,
       yearly: env.NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID,
     },
+    quotas: [
+      { type: QuotaResourceType.API_CALLS, totalQuota: 100000, usedQuota: 0 },
+      { type: QuotaResourceType.STORAGE, totalQuota: 1000, usedQuota: 0 },
+      { type: QuotaResourceType.EXPORTS, totalQuota: 1000, usedQuota: 0 },
+      { type: QuotaResourceType.TEAM_MEMBERS, totalQuota: 500, usedQuota: 0 },
+    ],
   },
 ];
 
