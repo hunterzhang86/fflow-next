@@ -22,5 +22,11 @@
   },
   "PricingPage": {
     "dashboard": "控制面板"
+  },
+  "quotaResourceTypes": {
+    "api_calls": "API 调用次数",
+    "storage": "存储空间",
+    "exports": "导出次数",
+    "team_members": "团队成员数"
   }
 }

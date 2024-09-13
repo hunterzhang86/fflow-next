@@ -13,7 +13,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 
 export const runtime = 'edge';
 
-const locales = ['en', 'cn'];
+const locales = ['en', 'zh'];
 
 interface RootLayoutProps {
   children: React.ReactNode;

@@ -4,7 +4,7 @@ export { auth as authMiddleware } from "@/auth";
 
 const intlMiddleware = createMiddleware({
     // A list of all locales that are supported
-    locales: ['en', 'cn'],
+    locales: ['en', 'zh'],
 
     // Used when no locale matches
     defaultLocale: 'en'
@@ -26,7 +26,7 @@ export default async function middlewareHandler(req: NextRequest) {
     }
 
     // 如果路径不包含语言前缀，则重定向到默认语言路径
-    const isLocalePath = /^\/(en|cn)(\/|$)/.test(pathname);
+    const isLocalePath = /^\/(en|zh)(\/|$)/.test(pathname);
     if (!isLocalePath) {
         return NextResponse.redirect(new URL(`/en${pathname}`, req.url));
     }

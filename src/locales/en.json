@@ -22,5 +22,11 @@
   },
   "PricingPage": {
     "dashboard": "Dashboard"
+  },
+  "quotaResourceTypes": {
+    "api_calls": "API Calls",
+    "storage": "Storage",
+    "exports": "Exports",
+    "team_members": "Team Members"
   }
 }
