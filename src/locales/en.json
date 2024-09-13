@@ -23,10 +23,23 @@
   "PricingPage": {
     "dashboard": "Dashboard"
   },
-  "quotaResourceTypes": {
-    "api_calls": "API Calls",
-    "storage": "Storage",
-    "exports": "Exports",
-    "team_members": "Team Members"
+  "QuotaPage": {
+    "resourceTypes": {
+      "api_calls": "API Calls",
+      "storage": "Storage",
+      "exports": "Exports",
+      "team_members": "Team Members"
+    },
+    "resourceUsageQuota": "Resource Usage Quota",
+    "monitorResourceUsage": "Monitor your resource usage and remaining quota for different resources.",
+    "totalQuota": "Total Quota",
+    "usedQuota": "Used Quota",
+    "remainingQuota": "Remaining Quota",
+    "usageProgress": "Usage Progress",
+    "percentUsed": "Used {percent}%",
+    "fetchError": "Failed to fetch quota data",
+    "noQuotaData": "No quota data available",
+    "noQuotaDataDescription": "Please check back later.",
+    "refreshQuotaData": "Refresh Quota Data"
   }
 }

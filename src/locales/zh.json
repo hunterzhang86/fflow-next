@@ -23,10 +23,23 @@
   "PricingPage": {
     "dashboard": "控制面板"
   },
-  "quotaResourceTypes": {
-    "api_calls": "API 调用次数",
-    "storage": "存储空间",
-    "exports": "导出次数",
-    "team_members": "团队成员数"
+  "QuotaPage": {
+    "resourceTypes": {
+      "api_calls": "API 调用次数",
+      "storage": "存储空间",
+      "exports": "导出次数",
+      "team_members": "团队成员数"
+    },
+    "resourceUsageQuota": "资源使用配额",
+    "monitorResourceUsage": "监控您的资源使用情况和剩余配额。",
+    "totalQuota": "总量",
+    "usedQuota": "已使用",
+    "remainingQuota": "剩余",
+    "usageProgress": "使用进度",
+    "percentUsed": "已使用 {percent}%",
+    "fetchError": "获取配额数据失败",
+    "noQuotaData": "没有配额数据",
+    "noQuotaDataDescription": "请稍后再试。",
+    "refreshQuotaData": "刷新配额数据"
   }
 }
