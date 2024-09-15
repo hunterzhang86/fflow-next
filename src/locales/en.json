@@ -41,5 +41,28 @@
     "noQuotaData": "No quota data available",
     "noQuotaDataDescription": "Please check back later.",
     "refreshQuotaData": "Refresh Quota Data"
+  },
+  "APIKeysPage": {
+    "createAPIKey": "Create API Key",
+    "deleteAPIKey": "Delete API Key",
+    "deleteAPIKeyConfirm": "Are you sure you want to delete this API key?",
+    "deleteAPIKeySuccess": "API key deleted successfully",
+    "deleteAPIKeyError": "Failed to delete API key",
+    "deleteAPIKeyCancel": "Cancel",
+    "defaultKeyName": "New Key",
+    "heading": "API Keys",
+    "subheading": "Manage your API keys here.",
+    "noAPIKeys": "No API keys found",
+    "noAPIKeysDescription": "You can create a new API key by clicking the button below.",
+    "keyCopiedSuccess": "API key copied to clipboard",
+    "keyDeletedSuccess": "API key deleted successfully",
+    "keyDeletionError": "Failed to delete API key",
+    "apiKeyNamePlaceholder": "Enter API key name",
+    "name": "Name",
+    "create": "Create",
+    "apiKey": "API Key",
+    "created": "Created",
+    "actions": "Actions",
+    "copyFullAPIKey": "Copy full API key"
   }
 }

@@ -41,5 +41,28 @@
     "noQuotaData": "没有配额数据",
     "noQuotaDataDescription": "请稍后再试。",
     "refreshQuotaData": "刷新配额数据"
+  },
+  "APIKeysPage": {
+    "createAPIKey": "创建 API 密钥",
+    "deleteAPIKey": "删除 API 密钥",
+    "deleteAPIKeyConfirm": "确定要删除这个 API 密钥吗？",
+    "deleteAPIKeySuccess": "API 密钥删除成功",
+    "deleteAPIKeyError": "API 密钥删除失败",
+    "deleteAPIKeyCancel": "取消",
+    "defaultKeyName": "新密钥",
+    "heading": "API 密钥",
+    "subheading": "在这里管理您的 API 密钥。",
+    "noAPIKeys": "没有 API 密钥",
+    "noAPIKeysDescription": "您可以通过点击下面的按钮创建一个新的 API 密钥。",
+    "keyCopiedSuccess": "API 密钥已复制到剪贴板。",
+    "keyDeletedSuccess": "API 密钥已删除。",
+    "keyDeletionError": "API 密钥删除失败。",
+    "apiKeyNamePlaceholder": "输入 API 密钥名称",
+    "name": "名称",
+    "create": "创建",
+    "apiKey": "API 密钥",
+    "created": "创建时间",
+    "actions": "操作",
+    "copyFullAPIKey": "复制完整 API 密钥"
   }
 }
