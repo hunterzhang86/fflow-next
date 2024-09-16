@@ -122,12 +122,19 @@ export type FeatureLdg = {
     icon: keyof typeof Icons;
 };
 
-export type TestimonialType = {
+export type Feature = {
+    icon: string;
+    titleKey: string;
+    descriptionKey: string;
+};
+
+export interface TestimonialType {
+    id: string;
     name: string;
     job: string;
     image: string;
     review: string;
-};
+}
 
 export enum UserRole {
     ADMIN = 'ADMIN',

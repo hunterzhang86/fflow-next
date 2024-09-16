@@ -1,3 +1,6 @@
+import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
+
 import { infos } from "@/config/landing";
 import BentoGrid from "@/components/sections/bentogrid";
 import Features from "@/components/sections/features";
@@ -6,23 +9,21 @@ import InfoLanding from "@/components/sections/info-landing";
 import Powered from "@/components/sections/powered";
 import PreviewLanding from "@/components/sections/preview-landing";
 import Testimonials from "@/components/sections/testimonials";
-import {unstable_setRequestLocale} from 'next-intl/server';
-import { useTranslations } from "next-intl";
 
-export default function IndexPage({params: {locale}}) {
+export default function IndexPage({ params: { locale } }) {
   unstable_setRequestLocale(locale);
-  const t = useTranslations('HomePage');
+  const t = useTranslations("HomePage");
 
   return (
     <>
-      <HeroLanding locale={locale}/>
+      <HeroLanding locale={locale} />
       <PreviewLanding />
-      <Powered />
-      <BentoGrid />
-      <InfoLanding data={infos[0]} reverse={true} />
+      <Powered locale={locale} />
+      <BentoGrid locale={locale} />
+      <InfoLanding locale={locale} data={infos[0]} reverse={true} />
       {/* <InfoLanding data={infos[1]} /> */}
       <Features />
-      <Testimonials />
+      <Testimonials locale={locale} />
     </>
   );
 }

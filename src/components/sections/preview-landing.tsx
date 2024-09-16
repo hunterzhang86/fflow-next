@@ -1,8 +1,10 @@
 import Image from "next/image";
 
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import { useTranslations } from "next-intl";
 
 export default function PreviewLanding() {
+  const t = useTranslations('PreviewLanding');
   return (
     <div className="pb-6 sm:pb-16">
       <MaxWidthWrapper>
@@ -11,7 +13,7 @@ export default function PreviewLanding() {
             <Image
               className="size-full object-cover object-center dark:opacity-85 dark:invert"
               src="/_static/blog/blog-post-3.jpg"
-              alt="preview landing"
+              alt={t('imageAlt')}
               width={2000}
               height={1000}
               priority={true}

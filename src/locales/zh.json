@@ -146,5 +146,53 @@
     "title": "升级到专业版",
     "description": "解锁所有功能并获得我们支持团队的无限访问权限。",
     "upgradeButton": "升级"
+  },
+  "Powered": {
+    "poweredby": "技术支持"
+  },
+  "Testimonials": {
+    "label": "客户评价",
+    "title": "我们的客户在分享什么。",
+    "subtitle": "发现来自全球满意客户的热烈反馈。",
+    "reviews": {
+      "1": "FFlow Next 彻底改变了我们的开发流程。它非常快速和高效！",
+      "2": "Next.js 14 和其他前沿技术的集成使 FFlow Next 成为了游戏规则的改变者。",
+      "3": "采用 FFlow Next 后，我们团队的生产力飞速提升。强烈推荐！",
+      "4": "我对 FFlow Next 的代码质量和清晰文档印象深刻。向团队致敬！",
+      "5": "FFlow Next 为我提供了必要的工具，以高效地管理用户数据。非常感谢！",
+      "6": "FFlow Next 在我作为营销经理的角色中发挥了无价的作用。通过 Stripe 的无缝集成，我能够启动具有内置支付功能的定向营销活动，使我们能够更有效地货币化我们的产品和服务。",
+      "7": "感谢 FFlow Next, 我能够在创纪录的时间内创建现代和吸引人的用户界面。入门套件为构建时尚和直观的界面提供了坚实的基础, 使我能够更专注于工作的创造性方面。"
+    }
+  },
+  "PreviewLanding": {
+    "imageAlt": "预览着陆页"
+  },
+  "BentoGrid": {
+    "customizable": "可定制",
+    "secureByDefault": "默认安全",
+    "secureByDefaultDescription": "提供可靠的保护和真实的价值。大量的努力带来了巨大的回报和智慧的洞察。",
+    "fasterThanLight": "比光速更快",
+    "fasterThanLightDescription": "提供真实的速度体验。大量的努力带来了巨大的回报和创新的发明。",
+    "fasterThanLightAltDescription": "提供真实的速度体验。智慧的发明带来了巨大的价值。",
+    "keepLovedOnesSafe": "保护您所爱的人",
+    "keepLovedOnesSafeDescription": "价值。大量的努力带来了巨大的回报和智慧的洞察。"
+  },
+  "Features": {
+    "label": "功能",
+    "title": "探索所有功能。",
+    "subtitle": "这些功能旨在提高您的工作效率和用户体验。",
+    "visitSite": "访问网站",
+    "nextjs": {
+      "title": "Next.js 14",
+      "description": "利用 Next.js 14 的强大功能构建快速、可扩展的应用程序。"
+    },
+    "typescript": {
+      "title": "TypeScript",
+      "description": "使用 TypeScript 编写更安全、更可维护的代码。"
+    },
+    "react": {
+      "title": "React",
+      "description": "使用 React 创建动态、响应式的用户界面。"
+    }
   }
 }

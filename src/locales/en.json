@@ -146,5 +146,53 @@
     "title": "Upgrade to Pro",
     "description": "Unlock all features and get unlimited access to our support team.",
     "upgradeButton": "Upgrade"
+  },
+  "Powered": {
+    "poweredby": "Powered by"
+  },
+  "Testimonials": {
+    "label": "Testimonials",
+    "title": "What our clients are sharing.",
+    "subtitle": "Discover the glowing feedback from our delighted customers worldwide.",
+    "reviews": {
+      "1": "FFlow Next has revolutionized our development process. It's incredibly fast and efficient!",
+      "2": "The integration of Next.js 14 and other cutting-edge technologies makes FFlow Next a game-changer.",
+      "3": "Our team's productivity skyrocketed after adopting FFlow Next. Highly recommended!",
+      "4": "I'm impressed by the quality of code and clear documentation of fflow-next. Kudos to the team!",
+      "5": "fflow-next provided me with the tools I needed to efficiently manage user data. Thank you so much!",
+      "6": "fflow-next has been an invaluable asset in my role as a marketing manager. With its seamless integration with Stripe, I've been able to launch targeted marketing campaigns with built-in payment functionality, allowing us to monetize our products and services more effectively.",
+      "7": "Thanks to fflow-next, I've been able to create modern and attractive user interfaces in record time. The starter kit provides a solid foundation for building sleek and intuitive designs, allowing me to focus more on the creative aspects of my work."
+    }
+  },
+  "PreviewLanding": {
+    "imageAlt": "Preview landing"
+  },
+  "BentoGrid": {
+    "customizable": "Customizable",
+    "secureByDefault": "Secure by default",
+    "secureByDefaultDescription": "Provident fugit and vero voluptate. magnam magni doloribus dolores voluptates a sapiente nisi.",
+    "fasterThanLight": "Faster than light",
+    "fasterThanLightDescription": "Provident fugit vero voluptate. magnam magni doloribus dolores voluptates inventore nisi.",
+    "fasterThanLightAltDescription": "Provident fugit vero voluptate. Voluptates a sapiente inventore nisi.",
+    "keepLovedOnesSafe": "Keep your loved ones safe",
+    "keepLovedOnesSafeDescription": "Voluptate. magnam magni doloribus dolores voluptates a sapiente."
+  },
+  "Features": {
+    "label": "Features",
+    "title": "Discover all features.",
+    "subtitle": "These features are designed to enhance your productivity and user experience.",
+    "visitSite": "Visit Site",
+    "nextjs": {
+      "title": "Next.js 14",
+      "description": "Build fast, scalable applications with the power of Next.js 14."
+    },
+    "typescript": {
+      "title": "TypeScript",
+      "description": "Write safer, more maintainable code with TypeScript."
+    },
+    "react": {
+      "title": "React",
+      "description": "Create dynamic, responsive user interfaces with React."
+    }
   }
 }

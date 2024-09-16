@@ -1,5 +1,6 @@
-import Link from "@/components/link/link";
+import { useTranslations } from "next-intl";
 
+import Link from "@/components/link/link";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 
 const logos = [
@@ -217,12 +218,18 @@ const logos = [
   },
 ];
 
-export default function Powered() {
+interface PoweredProps {
+  locale: string;
+}
+
+export default function Powered({ locale }: PoweredProps) {
+  const t = useTranslations("Powered");
+
   return (
     <section className="py-14 text-muted-foreground">
       <MaxWidthWrapper>
         <h2 className="text-center text-sm font-semibold uppercase">
-          Powered by
+          {t("poweredby")}
         </h2>
 
         <div className="mt-10 grid grid-cols-2 place-items-center gap-8 md:grid-cols-4">

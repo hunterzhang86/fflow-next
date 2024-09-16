@@ -2,16 +2,17 @@ import Image from "next/image";
 
 import { testimonials } from "@/config/landing";
 import { HeaderSection } from "@/components/shared/header-section";
+import { useTranslations } from "next-intl";
 
-export default function Testimonials() {
+export default function Testimonials({locale}) {
+  const t = useTranslations('Testimonials');
   return (
     <section>
       <div className="container flex max-w-6xl flex-col gap-10 py-32 sm:gap-y-16">
         <HeaderSection
-          label="Testimonials"
-          title="What our clients are sharing."
-          subtitle="Discover the glowing feedback from our delighted customers
-            worldwide."
+          label={t('label')}
+          title={t('title')}
+          subtitle={t('subtitle')}
         />
 
         <div className="column-1 gap-5 space-y-5 md:columns-2 lg:columns-3 ">
@@ -39,7 +40,7 @@ export default function Testimonials() {
                         </p>
                       </div>
                     </div>
-                    <q className="text-muted-foreground">{item.review}</q>
+                    <q className="text-muted-foreground">{t(`reviews.${item.id}`)}</q>
                   </div>
                 </div>
               </div>

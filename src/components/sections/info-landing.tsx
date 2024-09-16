@@ -9,6 +9,7 @@ import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 
 interface InfoLandingProps {
+  locale: string;
   data: InfoLdg;
   reverse?: boolean;
 }
