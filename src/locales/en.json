@@ -82,6 +82,13 @@
       "homepage": "Homepage",
       "documentation": "Documentation",
       "support": "Support"
+    },
+    "main": {
+      "heading": "Dashboard",
+      "currentRole": "Current Role: {role} — Change your role in settings.",
+      "noContentTitle": "No content created",
+      "noContentDescription": "You don't have any content yet. Start creating content.",
+      "addContent": "Add Content"
     }
   },
   "AdminPage": {

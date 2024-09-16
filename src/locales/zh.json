@@ -82,6 +82,13 @@
       "homepage": "主页",
       "documentation": "文档",
       "support": "支持"
+    },
+    "main": {
+      "heading": "仪表盘",
+      "currentRole": "当前角色：{role} — 在设置中更改您的角色。",
+      "noContentTitle": "尚未创建内容",
+      "noContentDescription": "您还没有任何内容。开始创建内容吧。",
+      "addContent": "添加内容"
     }
   },
   "AdminPage": {
