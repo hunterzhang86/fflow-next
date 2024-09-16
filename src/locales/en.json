@@ -64,5 +64,24 @@
     "created": "Created",
     "actions": "Actions",
     "copyFullAPIKey": "Copy full API key"
+  },
+  "Dashboard": {
+    "sidebar": {
+      "menu": "MENU",
+      "adminPanel": "Admin Panel",
+      "dashboard": "Dashboard",
+      "billing": "Billing",
+      "charts": "Charts",
+      "chatBot": "Chat Bot",
+      "apiKeys": "API Keys",
+      "quota": "Quota",
+      "orders": "Orders",
+      "userPosts": "User Posts",
+      "options": "OPTIONS",
+      "settings": "Settings",
+      "homepage": "Homepage",
+      "documentation": "Documentation",
+      "support": "Support"
+    }
   }
 }

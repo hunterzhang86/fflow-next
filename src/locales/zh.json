@@ -48,7 +48,7 @@
     "deleteAPIKeyConfirm": "确定要删除这个 API 密钥吗？",
     "deleteAPIKeySuccess": "API 密钥删除成功",
     "deleteAPIKeyError": "API 密钥删除失败",
-    "deleteAPIKeyCancel": "取消",
+    "deleteAPIKeyCancel": "取���",
     "defaultKeyName": "新密钥",
     "heading": "API 密钥",
     "subheading": "在这里管理您的 API 密钥。",
@@ -64,5 +64,24 @@
     "created": "创建时间",
     "actions": "操作",
     "copyFullAPIKey": "复制完整 API 密钥"
+  },
+  "Dashboard": {
+    "sidebar": {
+      "menu": "菜单",
+      "adminPanel": "管理员面板",
+      "dashboard": "仪表盘",
+      "billing": "账单",
+      "charts": "图表",
+      "chatBot": "聊天机器人",
+      "apiKeys": "API 密钥",
+      "quota": "配额",
+      "orders": "订单",
+      "userPosts": "用户帖子",
+      "options": "选项",
+      "settings": "设置",
+      "homepage": "主页",
+      "documentation": "文档",
+      "support": "支持"
+    }
   }
 }

@@ -1,7 +1,5 @@
 import { redirect } from "next/navigation";
 
-import { getSidebarLinks } from "@/config/dashboard";
-import { getCurrentUser } from "@/lib/session";
 import { SearchCommand } from "@/components/dashboard/search-command";
 import {
   DashboardSidebar,
@@ -9,9 +7,12 @@ import {
 } from "@/components/layout/dashboard-sidebar";
 import { ModeToggle } from "@/components/layout/mode-toggle";
 import { UserAccountNav } from "@/components/layout/user-account-nav";
-import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
-import {unstable_setRequestLocale} from 'next-intl/server';
 import LocaleSwitcher from "@/components/locale/locale-switcher";
+import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import { getSidebarLinks } from "@/config/dashboard";
+import { getCurrentUser } from "@/lib/session";
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 interface ProtectedLayoutProps {
   children: React.ReactNode;
@@ -28,7 +29,8 @@ export default async function Dashboard({
 
   if (!user) redirect("/login");
 
-  const sidebarLinks = getSidebarLinks(locale);
+  const t = await getTranslations('Dashboard.sidebar');
+  const sidebarLinks = getSidebarLinks(t);
   const filteredLinks = sidebarLinks.map((section) => ({
     ...section,
     items: section.items.filter(
