@@ -98,19 +98,37 @@
       "activeUsersDesc": "+5.7% from last month"
     },
     "transactionsList": {
-        "title": "Transactions",
-        "description": "Recent transactions from your store.",
-        "viewAll": "View All",
-        "customer": "Customer",
-        "type": "Type",
-        "status": "Status",
-        "date": "Date",
-        "amount": "Amount",
-        "sale": "Sale",
-        "refund": "Refund",
-        "subscription": "Subscription",
-        "approved": "Approved",
-        "declined": "Declined"
-      }    
+      "title": "Transactions",
+      "description": "Recent transactions from your store.",
+      "viewAll": "View All",
+      "customer": "Customer",
+      "type": "Type",
+      "status": "Status",
+      "date": "Date",
+      "amount": "Amount",
+      "sale": "Sale",
+      "refund": "Refund",
+      "subscription": "Subscription",
+      "approved": "Approved",
+      "declined": "Declined"
+    },
+    "ordersPage": {
+      "heading": "Orders",
+      "subheading": "Check and manage your latest orders.",
+      "emptyTitle": "No orders listed",
+      "emptyDescription": "You don't have any orders yet. Start ordering a product.",
+      "buyProducts": "Buy Products"
     }
+  },
+  "Chat": {
+    "chatBot": "Chat Bot",
+    "chatWithAI": "Chat with our AI assistant.",
+    "initialQuestions1": "How can I get started with FFlow Next?",
+    "initialQuestions2": "What features does FFlow Next offer?",
+    "initialQuestions3": "Can I customize the UI components in FFlow Next?",
+    "initialQuestions4": "How does FFlow Next handle authentication?",
+    "welcomeMessage": "**Welcome to FFlow Next ChatBot**",
+    "inputPlaceholder": "Type your message...",
+    "sendButton": "Send"
+  }
 }

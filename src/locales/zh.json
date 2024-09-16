@@ -48,7 +48,7 @@
     "deleteAPIKeyConfirm": "确定要删除这个 API 密钥吗？",
     "deleteAPIKeySuccess": "API 密钥删除成功",
     "deleteAPIKeyError": "API 密钥删除失败",
-    "deleteAPIKeyCancel": "取���",
+    "deleteAPIKeyCancel": "取",
     "defaultKeyName": "新密钥",
     "heading": "API 密钥",
     "subheading": "在这里管理您的 API 密钥。",
@@ -99,7 +99,7 @@
     },
     "transactionsList": {
       "title": "交易",
-      "description": "您商店的最近交易。",
+      "description": "��商店的最近交易。",
       "viewAll": "查看全部",
       "customer": "客户",
       "type": "类型",
@@ -111,6 +111,24 @@
       "subscription": "订阅",
       "approved": "已批准",
       "declined": "已拒绝"
+    },
+    "ordersPage": {
+      "heading": "订单",
+      "subheading": "查看并管理您的最新订单。",
+      "emptyTitle": "暂无订单",
+      "emptyDescription": "您还没有任何订单。开始订购产品吧。",
+      "buyProducts": "购买产品"
     }
+  },
+  "Chat": {
+    "chatBot": "聊天机器人",
+    "chatWithAI": "与我们的 AI 助手聊天。",
+    "initialQuestions1": "如何开始使用 FFlow Next？",
+    "initialQuestions2": "FFlow Next 提供哪些功能？",
+    "initialQuestions3": "我可以自定义 FFlow Next 的 UI 组件吗？",
+    "initialQuestions4": "FFlow Next 如何处理身份验证？",
+    "welcomeMessage": "**欢迎使用 FFlow Next 聊天机器人**",
+    "inputPlaceholder": "输入您的消息...",
+    "sendButton": "发送"
   }
 }

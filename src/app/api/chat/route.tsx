@@ -175,7 +175,7 @@ export const POST = auth(async (req: NextAuthRequest) => {
           if (process.env.NODE_ENV === "development") {
             controller.enqueue(
               textEncoder.encode(
-                "Hello, I'm DegreeGuru, your academic companion. How can I help you today?",
+                "Hello, I'm FFlow Next Chat Bot. How can I help you today?",
               ),
             );
             controller.close();
