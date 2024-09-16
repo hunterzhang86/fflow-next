@@ -83,5 +83,34 @@
       "documentation": "Documentation",
       "support": "Support"
     }
-  }
+  },
+  "AdminPage": {
+    "heading": "Admin Panel",
+    "subheading": "Access only for users with ADMIN role.",
+    "infoCards": {
+      "subscriptions": "Subscriptions",
+      "subscriptionsDesc": "+180.1% from last month",
+      "revenue": "Revenue",
+      "revenueDesc": "+25.8% from last month",
+      "transactions": "Transactions",
+      "transactionsDesc": "+14.2% from last month",
+      "activeUsers": "Active Users",
+      "activeUsersDesc": "+5.7% from last month"
+    },
+    "transactionsList": {
+        "title": "Transactions",
+        "description": "Recent transactions from your store.",
+        "viewAll": "View All",
+        "customer": "Customer",
+        "type": "Type",
+        "status": "Status",
+        "date": "Date",
+        "amount": "Amount",
+        "sale": "Sale",
+        "refund": "Refund",
+        "subscription": "Subscription",
+        "approved": "Approved",
+        "declined": "Declined"
+      }    
+    }
 }

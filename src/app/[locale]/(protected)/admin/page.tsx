@@ -1,36 +1,29 @@
 import { redirect } from "next/navigation";
+import { getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 
 import { getCurrentUser } from "@/lib/session";
 import { constructMetadata } from "@/lib/utils";
-import { DashboardHeader } from "@/components/dashboard/header";
-import InfoCard from "@/components/dashboard/info-card";
-import TransactionsList from "@/components/dashboard/transactions-list";
+import AdminPageClient from './page-client';
 
 export const metadata = constructMetadata({
-  title: "Admin – FFlow Next",
+  title: "Admin – FFlow Next",
   description: "Admin page for only admin management.",
 });
 
-export default async function AdminPage() {
+export default async function AdminPage({
+  params: { locale }
+}: {
+  params: { locale: string }
+}) {
   const user = await getCurrentUser();
   if (!user || user.role as string !== "ADMIN") redirect("/login");
 
+  const messages = await getMessages({ locale });
+
   return (
-    <>
-      <DashboardHeader
-        heading="Admin Panel"
-        text="Access only for users with ADMIN role."
-      />
-      <div className="flex flex-col gap-5">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          <InfoCard />
-          <InfoCard />
-          <InfoCard />
-          <InfoCard />
-        </div>
-        <TransactionsList />
-        <TransactionsList />
-      </div>
-    </>
+    <NextIntlClientProvider messages={messages}>
+      <AdminPageClient />
+    </NextIntlClientProvider>
   );
 }

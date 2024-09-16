@@ -83,5 +83,34 @@
       "documentation": "文档",
       "support": "支持"
     }
+  },
+  "AdminPage": {
+    "heading": "管理面板",
+    "subheading": "仅限具有管理员角色的用户访问。",
+    "infoCards": {
+      "subscriptions": "订阅",
+      "subscriptionsDesc": "较上月增长 180.1%",
+      "revenue": "收入",
+      "revenueDesc": "较上月增长 25.8%",
+      "transactions": "交易",
+      "transactionsDesc": "较上月增长 14.2%",
+      "activeUsers": "活跃用户",
+      "activeUsersDesc": "较上月增长 5.7%"
+    },
+    "transactionsList": {
+      "title": "交易",
+      "description": "您商店的最近交易。",
+      "viewAll": "查看全部",
+      "customer": "客户",
+      "type": "类型",
+      "status": "状态",
+      "date": "日期",
+      "amount": "金额",
+      "sale": "销售",
+      "refund": "退款",
+      "subscription": "订阅",
+      "approved": "已批准",
+      "declined": "已拒绝"
+    }
   }
 }
