@@ -1,8 +1,9 @@
+import { redirect } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { redirect } from 'next/navigation';
 
 import { getCurrentUser } from "@/lib/session";
+import { UpgradeCard } from "@/components/dashboard/upgrade-card";
 
 import DashboardPageClient from "./page-client";
 

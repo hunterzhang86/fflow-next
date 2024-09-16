@@ -1,14 +1,14 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
 import Link from "@/components/link/link";
-import { usePathname } from "next/navigation";
-import { NavItem, SidebarNavItem } from "@/types";
+import { SidebarNavItem } from "@/types";
 import { Menu, PanelLeftClose, PanelRightClose } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Fragment, useEffect, useState } from "react";
 
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { useMediaQuery } from "@/hooks/use-media-query";
+import ProjectSwitcher from "@/components/dashboard/project-switcher";
+import { UpgradeCard } from "@/components/dashboard/upgrade-card";
+import { Icons } from "@/components/shared/icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -19,9 +19,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import ProjectSwitcher from "@/components/dashboard/project-switcher";
-import { UpgradeCard } from "@/components/dashboard/upgrade-card";
-import { Icons } from "@/components/shared/icons";
+import { siteConfig } from "@/config/site";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { cn } from "@/lib/utils";
 
 interface DashboardSidebarProps {
   links: SidebarNavItem[];

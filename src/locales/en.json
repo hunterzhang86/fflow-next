@@ -137,5 +137,14 @@
     "welcomeMessage": "**Welcome to FFlow Next ChatBot**",
     "inputPlaceholder": "Type your message...",
     "sendButton": "Send"
+  },
+  "Charts": {
+    "heading": "Charts",
+    "subheading": "List of charts by shadcn-ui."
+  },
+  "UpgradeCard": {
+    "title": "Upgrade to Pro",
+    "description": "Unlock all features and get unlimited access to our support team.",
+    "upgradeButton": "Upgrade"
   }
 }
