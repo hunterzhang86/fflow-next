@@ -92,7 +92,7 @@
     }
   },
   "AdminPage": {
-    "heading": "管理面板",
+    "heading": "管理员面板",
     "subheading": "仅限具有管理员角色的用户访问。",
     "infoCards": {
       "subscriptions": "订阅",
@@ -155,7 +155,7 @@
     "title": "我们的客户在分享什么。",
     "subtitle": "发现来自全球满意客户的热烈反馈。",
     "reviews": {
-      "1": "FFlow Next 彻底改变了���们的开发流程。它非常快速和高效！",
+      "1": "FFlow Next 彻底改变了们的开发流程。它非常快速和高效！",
       "2": "Next.js 14 和其他前沿技术的集成使 FFlow Next 成为了游戏规则的改变者。",
       "3": "采用 FFlow Next 后，我们团队的生产力飞速提升。强烈推荐！",
       "4": "我对 FFlow Next 的代码质量和清晰文档印象深刻。向团队致敬！",
@@ -179,8 +179,8 @@
   },
   "Features": {
     "label": "功能",
-    "title": "探索所有功能。",
-    "subtitle": "这些功能旨在提高您的工作效率和用户体验。",
+    "title": "探索所有功能",
+    "subtitle": "这些功能旨在提高您的工作效率和用户体验",
     "visitSite": "访问网站",
     "feature1": {
       "title": "功能 1",
@@ -256,5 +256,17 @@
         }
       }
     }
+  },
+  "Marketing": {
+    "nav": {
+      "pricing": "定价",
+      "blog": "博客",
+      "documentation": "文档"
+    },
+    "siteName": "FFlow Next",
+    "dashboard": "仪表盘",
+    "login": "登录",
+    "signUp": "注册",
+    "admin": "管理员"
   }
 }

@@ -256,5 +256,17 @@
         }
       }
     }
+  },
+  "Marketing": {
+    "nav": {
+      "pricing": "Pricing",
+      "blog": "Blog",
+      "documentation": "Documentation"
+    },
+    "siteName": "FFlow Next",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "signUp": "Sign Up",
+    "admin": "Admin"
   }
 }

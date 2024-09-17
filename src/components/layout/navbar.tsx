@@ -1,29 +1,29 @@
 "use client";
 
-import { useContext } from "react";
 import Link from "@/components/link/link";
-import { useSelectedLayoutSegment } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useLocale } from "next-intl";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { useContext } from "react";
 
-import { docsConfig } from "@/config/docs";
-import { getMarketingConfig } from "@/config/marketing";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { useScroll } from "@/hooks/use-scroll";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import LocaleSwitcher from "@/components/locale/locale-switcher";
 import { ModalContext } from "@/components/modals/providers";
 import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { docsConfig } from "@/config/docs";
+import { siteConfig } from "@/config/site";
+import { useScroll } from "@/hooks/use-scroll";
+import { cn } from "@/lib/utils";
+import { MarketingConfig } from "@/types";
 
 interface NavBarProps {
   scroll?: boolean;
-  large?: boolean;
+  marketingConfig: MarketingConfig;
 }
 
-export function NavBar({ scroll = false }: NavBarProps) {
+export function NavBar({ scroll = false, marketingConfig }: NavBarProps) {
   const locale = useLocale();
 
   const scrolled = useScroll(50);
@@ -36,8 +36,6 @@ export function NavBar({ scroll = false }: NavBarProps) {
   const configMap = {
     docs: docsConfig.mainNav,
   };
-
-  const marketingConfig = getMarketingConfig(locale);
 
   const links =
     (selectedLayout && configMap[selectedLayout]) || marketingConfig.mainNav;

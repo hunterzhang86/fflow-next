@@ -1,41 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "@/components/link/link";
-import { useSelectedLayoutSegment } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { useEffect, useState } from "react";
 
-import { docsConfig } from "@/config/docs";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 import { DocsSidebarNav } from "@/components/docs/sidebar-nav";
 import { Icons } from "@/components/shared/icons";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
 import { ModeToggle } from "./mode-toggle";
 
-interface NavMobileProps {
-  marketingConfig: any;
-  translations: {
-    adminPanel: string;
-    dashboard: string;
-    login: string;
-    signUp: string;
-  };
+interface NavMobileClientProps {
+  links: any[];
+  documentation: boolean;
 }
 
-export function NavMobile({ marketingConfig, translations }: NavMobileProps) {
+export function NavMobileClient({ links, documentation }: NavMobileClientProps) {
   const { data: session } = useSession();
   const [open, setOpen] = useState(false);
   const selectedLayout = useSelectedLayoutSegment();
-  const documentation = selectedLayout === "docs";
-
-  const configMap = {
-    docs: docsConfig.mainNav,
-  };
-
-  const links =
-    (selectedLayout && configMap[selectedLayout]) || marketingConfig.mainNav;
+  const t = useTranslations('Navigation');
 
   // prevent body scroll when modal is open
   useEffect(() => {
@@ -78,7 +66,7 @@ export function NavMobile({ marketingConfig, translations }: NavMobileProps) {
                   onClick={() => setOpen(false)}
                   className="flex w-full font-medium capitalize"
                 >
-                  {title}
+                  {t(title)}
                 </Link>
               </li>
             ))}
@@ -92,7 +80,7 @@ export function NavMobile({ marketingConfig, translations }: NavMobileProps) {
                     onClick={() => setOpen(false)}
                     className="flex w-full font-medium capitalize"
                   >
-                    {translations.adminPanel}
+                    {t('admin')}
                   </Link>
                 </li>
               ) : null}
@@ -103,7 +91,7 @@ export function NavMobile({ marketingConfig, translations }: NavMobileProps) {
                   onClick={() => setOpen(false)}
                   className="flex w-full font-medium capitalize"
                 >
-                  {translations.dashboard}
+                  {t('dashboard')}
                 </Link>
               </li>
             </>
@@ -115,7 +103,7 @@ export function NavMobile({ marketingConfig, translations }: NavMobileProps) {
                   onClick={() => setOpen(false)}
                   className="flex w-full font-medium capitalize"
                 >
-                  {translations.login}
+                  {t('login')}
                 </Link>
               </li>
 
@@ -125,7 +113,7 @@ export function NavMobile({ marketingConfig, translations }: NavMobileProps) {
                   onClick={() => setOpen(false)}
                   className="flex w-full font-medium capitalize"
                 >
-                  {translations.signUp}
+                  {t('signUp')}
                 </Link>
               </li>
             </>
