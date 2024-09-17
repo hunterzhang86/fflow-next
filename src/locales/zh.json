@@ -182,17 +182,41 @@
     "title": "探索所有功能。",
     "subtitle": "这些功能旨在提高您的工作效率和用户体验。",
     "visitSite": "访问网站",
-    "nextjs": {
-      "title": "Next.js 14",
-      "description": "利用 Next.js 14 的强大功能构建快速、可扩展的应用程序。"
+    "feature1": {
+      "title": "功能 1",
+      "description": "满足当前需求，节省时间并提供价值。明智而睿智的选择。",
+      "link": "/",
+      "icon": "nextjs"
     },
-    "typescript": {
-      "title": "TypeScript",
-      "description": "使用 TypeScript 编写更安全、更可维护的代码。"
+    "feature2": {
+      "title": "功能 2",
+      "description": "满足当前需求，节省时间并提供价值。明智而睿智的选择。",
+      "link": "/",
+      "icon": "google"
     },
-    "react": {
-      "title": "React",
-      "description": "使用 React 创建动态、响应式的用户界面。"
+    "feature3": {
+      "title": "功能 3",
+      "description": "满足当前需求，节省时间并提供价值。明智而睿智的选择。",
+      "link": "/",
+      "icon": "gitHub"
+    },
+    "feature4": {
+      "title": "功能 4",
+      "description": "满足当前需求，节省时间并提供价值。明智而睿智的选择。",
+      "link": "/",
+      "icon": "laptop"
+    },
+    "feature5": {
+      "title": "功能 5",
+      "description": "满足当前需求，节省时间并提供价值。明智而睿智的选择。",
+      "link": "/",
+      "icon": "user"
+    },
+    "feature6": {
+      "title": "功能 6",
+      "description": "满足当前需求，节省时间并提供价值。明智而睿智的选择。",
+      "link": "/",
+      "icon": "copy"
     }
   },
   "InfoLanding": {

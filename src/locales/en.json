@@ -182,17 +182,41 @@
     "title": "Discover all features.",
     "subtitle": "These features are designed to enhance your productivity and user experience.",
     "visitSite": "Visit Site",
-    "nextjs": {
-      "title": "Next.js 14",
-      "description": "Build fast, scalable applications with the power of Next.js 14."
+    "feature1": {
+      "title": "Feature 1",
+      "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
+      "link": "/",
+      "icon": "nextjs"
     },
-    "typescript": {
-      "title": "TypeScript",
-      "description": "Write safer, more maintainable code with TypeScript."
+    "feature2": {
+      "title": "Feature 2",
+      "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
+      "link": "/",
+      "icon": "google"
     },
-    "react": {
-      "title": "React",
-      "description": "Create dynamic, responsive user interfaces with React."
+    "feature3": {
+      "title": "Feature 3",
+      "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
+      "link": "/",
+      "icon": "gitHub"
+    },
+    "feature4": {
+      "title": "Feature 4",
+      "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
+      "link": "/",
+      "icon": "laptop"
+    },
+    "feature5": {
+      "title": "Feature 5",
+      "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
+      "link": "/",
+      "icon": "user"
+    },
+    "feature6": {
+      "title": "Feature 6",
+      "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
+      "link": "/",
+      "icon": "copy"
     }
   },
   "InfoLanding": {

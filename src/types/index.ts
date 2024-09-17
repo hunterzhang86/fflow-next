@@ -115,12 +115,7 @@ export type InfoLdg = {
     list: InfoList[];
 };
 
-export type FeatureLdg = {
-    title: string;
-    description: string;
-    link: string;
-    icon: keyof typeof Icons;
-};
+export type FeatureLdg = string;
 
 export type Feature = {
     icon: string;
