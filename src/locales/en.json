@@ -194,5 +194,43 @@
       "title": "React",
       "description": "Create dynamic, responsive user interfaces with React."
     }
+  },
+  "InfoLanding": {
+    "Empower your projects": {
+      "title": "Empower your projects",
+      "description": "Unlock the full potential of your projects with our open-source SaaS platform. Collaborate seamlessly, innovate effortlessly, and scale limitlessly.",
+      "list": {
+        "Collaborative": {
+          "title": "Collaborative",
+          "description": "Work together with your team members in real-time."
+        },
+        "Innovative": {
+          "title": "Innovative",
+          "description": "Stay ahead of the curve with access constant updates."
+        },
+        "Scalable": {
+          "title": "Scalable",
+          "description": "Our platform offers the scalability needed to adapt to your needs."
+        }
+      }
+    },
+    "Seamless Integration": {
+      "title": "Seamless Integration",
+      "description": "Integrate our open-source SaaS seamlessly into your existing workflows. Effortlessly connect with your favorite tools and services for a streamlined experience.",
+      "list": {
+        "Flexible": {
+          "title": "Flexible",
+          "description": "Customize your integrations to fit your unique requirements."
+        },
+        "Efficient": {
+          "title": "Efficient",
+          "description": "Streamline your processes and reducing manual effort."
+        },
+        "Reliable": {
+          "title": "Reliable",
+          "description": "Rely on our robust infrastructure and comprehensive documentation."
+        }
+      }
+    }
   }
 }

@@ -1,86 +1,21 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { infos } from "@/config/landing";
 import { InfoLdg } from "@/types";
+import { useTranslations } from "next-intl";
+import InfoLandingClient from "./info-landing-client";
 
-import { cn } from "@/lib/utils";
-import { Icons } from "@/components/shared/icons";
-import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+export default function InfoLanding({ locale }: { locale: string }) {
+  const t = useTranslations("InfoLanding");
 
-interface InfoLandingProps {
-  locale: string;
-  data: InfoLdg;
-  reverse?: boolean;
-}
+  const translatedInfos: InfoLdg[] = infos.map((info) => ({
+    ...info,
+    title: t(`${info.title}.title`),
+    description: t(`${info.title}.description`),
+    list: info.list.map((item) => ({
+      ...item,
+      title: t(`${info.title}.list.${item.title}.title`),
+      description: t(`${info.title}.list.${item.title}.description`),
+    })),
+  }));
 
-export default function InfoLanding({
-  data,
-  reverse = false,
-}: InfoLandingProps) {
-  const [userCount, setUserCount] = useState<number>(0);
-
-  useEffect(() => {
-    async function fetchUserCount() {
-      try {
-        const rsp = await fetch("/api/user/count");
-        const rspJson = await rsp.json();
-        console.log(data);
-        setUserCount(rsp ? parseInt(rspJson.data) : 0);
-      } catch (error) {
-        console.error("Failed to fetch user count:", error);
-      }
-    }
-
-    fetchUserCount();
-  });
-
-  return (
-    <div className="py-10 sm:py-20">
-      <MaxWidthWrapper className="grid gap-10 px-2.5 lg:grid-cols-2 lg:items-center lg:px-7">
-        <div className={cn(reverse ? "lg:order-2" : "lg:order-1")}>
-          <h2 className="font-heading text-2xl text-foreground md:text-4xl lg:text-[40px]">
-            {data.title}
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground">
-            {data.description}
-          </p>
-          <dl className="mt-6 space-y-4 leading-7">
-            {data.list.map((item, index) => {
-              const Icon = Icons[item.icon || "arrowRight"];
-              return (
-                <div className="relative pl-8" key={index}>
-                  <dt className="font-semibold">
-                    <Icon className="absolute left-0 top-1 size-5 stroke-purple-700" />
-                    <span>{item.title}</span>
-                  </dt>
-                  <dd className="text-sm text-muted-foreground">
-                    {item.description}
-                    ----- {userCount} -----
-                  </dd>
-                </div>
-              );
-            })}
-          </dl>
-        </div>
-        <div
-          className={cn(
-            "overflow-hidden rounded-xl border lg:-m-4",
-            reverse ? "order-1" : "order-2",
-          )}
-        >
-          <div className="aspect-video">
-            <Image
-              className="size-full object-cover object-center"
-              src={data.image}
-              alt={data.title}
-              width={1000}
-              height={500}
-              priority={true}
-            />
-          </div>
-        </div>
-      </MaxWidthWrapper>
-    </div>
-  );
+  return <InfoLandingClient data={translatedInfos} />;
 }

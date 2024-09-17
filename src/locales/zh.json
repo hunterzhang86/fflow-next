@@ -155,7 +155,7 @@
     "title": "我们的客户在分享什么。",
     "subtitle": "发现来自全球满意客户的热烈反馈。",
     "reviews": {
-      "1": "FFlow Next 彻底改变了我们的开发流程。它非常快速和高效！",
+      "1": "FFlow Next 彻底改变了���们的开发流程。它非常快速和高效！",
       "2": "Next.js 14 和其他前沿技术的集成使 FFlow Next 成为了游戏规则的改变者。",
       "3": "采用 FFlow Next 后，我们团队的生产力飞速提升。强烈推荐！",
       "4": "我对 FFlow Next 的代码质量和清晰文档印象深刻。向团队致敬！",
@@ -193,6 +193,44 @@
     "react": {
       "title": "React",
       "description": "使用 React 创建动态、响应式的用户界面。"
+    }
+  },
+  "InfoLanding": {
+    "Empower your projects": {
+      "title": "为您的项目赋能",
+      "description": "通过我们的开源 SaaS 平台释放项目的全部潜力。无缝协作，轻松创新，无限扩展。",
+      "list": {
+        "Collaborative": {
+          "title": "协作",
+          "description": "与团队成员实时协作。"
+        },
+        "Innovative": {
+          "title": "创新",
+          "description": "通过持续更新保持领先地位。"
+        },
+        "Scalable": {
+          "title": "可扩展",
+          "description": "我们的平台提供适应您需求的可扩展性。"
+        }
+      }
+    },
+    "Seamless Integration": {
+      "title": "无缝集成",
+      "description": "将我们的开源 SaaS 无缝集成到您现有的工作流程中。轻松连接您喜爱的工具和服务，获得流畅的体验。",
+      "list": {
+        "Flexible": {
+          "title": "灵活",
+          "description": "根据您的独特需求定制集成。"
+        },
+        "Efficient": {
+          "title": "高效",
+          "description": "简化流程，减少手动工作。"
+        },
+        "Reliable": {
+          "title": "可靠",
+          "description": "依赖我们强大的基础设施和全面的文档。"
+        }
+      }
     }
   }
 }

@@ -10,20 +10,19 @@ import Powered from "@/components/sections/powered";
 import PreviewLanding from "@/components/sections/preview-landing";
 import Testimonials from "@/components/sections/testimonials";
 
-export default function IndexPage({ params: { locale } }) {
+export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("HomePage");
 
   return (
-    <>
+    <main>
       <HeroLanding locale={locale} />
       <PreviewLanding />
       <Powered locale={locale} />
       <BentoGrid locale={locale} />
-      <InfoLanding locale={locale} data={infos[0]} reverse={true} />
-      {/* <InfoLanding data={infos[1]} /> */}
+      <InfoLanding locale={locale} />
       <Features />
       <Testimonials locale={locale} />
-    </>
+    </main>
   );
 }
