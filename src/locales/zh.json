@@ -121,7 +121,7 @@
     },
     "ordersPage": {
       "heading": "订",
-      "subheading": "看��管理您的最新订单。",
+      "subheading": "看管理您的最新订单。",
       "emptyTitle": "暂无订单",
       "emptyDescription": "您还没有任何订单。开始订购产品吧。",
       "buyProducts": "购买产品"
@@ -202,7 +202,7 @@
     },
     "feature4": {
       "title": "功能 4",
-      "description": "满足当前��求，节省时间并提供价值。明智而睿智的选择。",
+      "description": "满足当前求，节省时间并提供价值。明智而睿智的选择。",
       "link": "/",
       "icon": "laptop"
     },
@@ -370,5 +370,15 @@
       "Documentation": "文档",
       "Support": "支持"
     }
+  },
+  "ProjectSwitcher": {
+    "newProject": "创建项目",
+    "noProjects": "您还没有任何项目。创建一个新项目以开始使用。",
+    "name": "名称",
+    "description": "描述",
+    "enterProjectName": "输入项目名称",
+    "enterProjectDescription": "输入项目描述",
+    "create": "创建",
+    "createProjectError": "创建项目失败"
   }
 }

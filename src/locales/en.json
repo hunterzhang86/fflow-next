@@ -370,5 +370,15 @@
       "Documentation": "Documentation",
       "Support": "Support"
     }
+  },
+  "ProjectSwitcher": {
+    "newProject": "New Project",
+    "noProjects": "You don't have any projects yet. Create a new one to get started.",
+    "name": "Name",
+    "description": "Description",
+    "enterProjectName": "Enter project name",
+    "enterProjectDescription": "Enter project description",
+    "create": "Create",
+    "createProjectError": "Failed to create project"
   }
 }

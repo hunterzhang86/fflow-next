@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Check, ChevronsUpDown, Plus } from "lucide-react";
 import { useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import pinyin from "pinyin";
 import { toast } from "sonner";
 
@@ -44,6 +45,8 @@ export default function ProjectSwitcher({
 }: {
   large?: boolean;
 }) {
+  const t = useTranslations("ProjectSwitcher");
+
   const { data: session, status } = useSession();
   const [openPopover, setOpenPopover] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -112,7 +115,7 @@ export default function ProjectSwitcher({
                     large ? "w-full" : "max-w-[80px]",
                   )}
                 >
-                  {selected?.name || "New Project"}
+                  {selected?.name || t("newProject")}
                 </span>
               </div>
             </div>
@@ -159,11 +162,13 @@ function ProjectList({
   setShowModal: (show: boolean) => void;
   setSelected: (project: ProjectType) => void;
 }) {
+  const t = useTranslations("ProjectSwitcher");
+
   return (
     <div className="flex flex-col gap-1">
       {projects.length === 0 ? (
         <div className="mb-2 text-center text-sm text-muted-foreground">
-          You don&apos;t have any projects yet. Create a new one to get started.
+          {t("noProjects")}
         </div>
       ) : (
         projects.map((project) => (
@@ -206,7 +211,7 @@ function ProjectList({
         }}
       >
         <Plus size={18} className="shrink-0" />
-        <span className="flex-1 truncate text-center">New Project</span>
+        <span className="flex-1 truncate text-center">{t("newProject")}</span>
       </Button>
     </div>
   );
@@ -221,6 +226,7 @@ function CreateProjectModal({
   setShowModal: (show: boolean) => void;
   onProjectCreated: (project: ProjectType) => void;
 }) {
+  const t = useTranslations("ProjectSwitcher");
   const [projectName, setProjectName] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
 
@@ -263,10 +269,10 @@ function CreateProjectModal({
       if (respJson.message) {
         toast.error(respJson.message);
       } else {
-        toast.error("Failed to create project");
+        toast.error(t("createProjectError"));
       }
     } catch (error) {
-      toast.error("Failed to create project:", error);
+      toast.error(t("createProjectError"), error);
     }
   };
 
@@ -274,17 +280,17 @@ function CreateProjectModal({
     <Dialog open={showModal} onOpenChange={setShowModal}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="text-left">New Project</DialogTitle>
+          <DialogTitle className="text-left">{t("newProject")}</DialogTitle>
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid items-center gap-4">
             <label htmlFor="projectName" className="col-span-4 text-left">
-              Name
+              {t("name")}
             </label>
             <Input
               id="projectName"
               value={projectName}
-              placeholder="Enter project name"
+              placeholder={t("enterProjectName")}
               onChange={(e) => setProjectName(e.target.value)}
               className="col-span-4"
             />
@@ -294,12 +300,12 @@ function CreateProjectModal({
               htmlFor="projectDescription"
               className="col-span-4 text-left"
             >
-              Description
+              {t("description")}
             </label>
             <Textarea
               id="projectDescription"
               value={projectDescription}
-              placeholder="Enter project description"
+              placeholder={t("enterProjectDescription")}
               onChange={(e) => setProjectDescription(e.target.value)}
               className="col-span-4"
               rows={3}
@@ -307,7 +313,7 @@ function CreateProjectModal({
           </div>
         </div>
         <div className="flex justify-end">
-          <Button onClick={handleCreateProject}>Create</Button>
+          <Button onClick={handleCreateProject}>{t("create")}</Button>
         </div>
       </DialogContent>
     </Dialog>
