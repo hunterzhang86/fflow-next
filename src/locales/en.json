@@ -340,5 +340,35 @@
     "builtBy": "Built by",
     "hostedOn": "Hosted on",
     "illustrationsBy": "Illustrations by"
+  },
+  "DocsSearch": {
+    "searchPlaceholder": "Search documentation...",
+    "notImplementedTitle": "Not implemented",
+    "notImplementedDescription": "We're still working on the search."
+  },
+  "SearchCommand": {
+    "search": "Search",
+    "documentation": "documentation",
+    "inputPlaceholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "sections": {
+      "MENU": "MENU",
+      "OPTIONS": "OPTIONS"
+    },
+    "items": {
+      "Admin Panel": "Admin Panel",
+      "Dashboard": "Dashboard",
+      "Billing": "Billing",
+      "Charts": "Charts",
+      "Chat Bot": "Chat Bot",
+      "API Keys": "API Keys",
+      "Quota": "Quota",
+      "Orders": "Orders",
+      "User Posts": "User Posts",
+      "Settings": "Settings",
+      "Homepage": "Homepage",
+      "Documentation": "Documentation",
+      "Support": "Support"
+    }
   }
 }

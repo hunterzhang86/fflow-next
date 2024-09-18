@@ -121,7 +121,7 @@
     },
     "ordersPage": {
       "heading": "订",
-      "subheading": "看并管理您的最新订单。",
+      "subheading": "看��管理您的最新订单。",
       "emptyTitle": "暂无订单",
       "emptyDescription": "您还没有任何订单。开始订购产品吧。",
       "buyProducts": "购买产品"
@@ -160,7 +160,7 @@
       "3": "采用 FFlow Next 后，我们团队的生产力飞速提升。强烈推荐！",
       "4": "我对 FFlow Next 的代码质量和清晰文档印象深刻。向团队致敬！",
       "5": "FFlow Next 为我提供了必要的工具，以高效地管理用户数据。非常感谢！",
-      "6": "FFlow Next 在我作为营销经理的角色中发挥了无价的作用。通过 Stripe 的无缝集成，我能够启动具有内置支付功能的定向营��动，使我们能够更有效地货币化我们的产品和服务。",
+      "6": "FFlow Next 在我作为营销经理的角色中发挥了无价的作用。通过 Stripe 的无缝集成，我能够启动具有内置支付功能的定向营动，使我们能够更有效地货币化我们的产品和服务。",
       "7": "感谢 FFlow Next, 我能够在创纪录的时间内创建现代和吸引人的用户界面。入门套件为构建时尚和直观的界面提供了坚实的基础, 使我能够更专注于工作的创造性方面。"
     }
   },
@@ -183,14 +183,14 @@
     "subtitle": "这些功能旨在提高您的工作效率和用户体验",
     "visitSite": "访问网站",
     "feature1": {
-      "title": "���能 1",
-      "description": "满足当前需求，节省时间并提供价值。明智而睿智的选择。",
+      "title": "能 1",
+      "description": "满足当需求，节省时间并提供价值。明智而睿智的选择。",
       "link": "/",
       "icon": "nextjs"
     },
     "feature2": {
       "title": "功能 2",
-      "description": "满足当前需求，节省时间并提供价值。明智而睿智的选择。",
+      "description": "满足当前需求，节省时间并供价值。明智而睿智的选择。",
       "link": "/",
       "icon": "google"
     },
@@ -202,7 +202,7 @@
     },
     "feature4": {
       "title": "功能 4",
-      "description": "满足当前需求，节省时间并提供价值。明智而睿智的选择。",
+      "description": "满足当前��求，节省时间并提供价值。明智而睿智的选择。",
       "link": "/",
       "icon": "laptop"
     },
@@ -221,7 +221,7 @@
   },
   "InfoLanding": {
     "Empower your projects": {
-      "title": "为的��目赋能",
+      "title": "为的目赋能",
       "description": "通过我们的开源 SaaS 平台释放项目的全部潜力。无缝协作，轻松创新，无限扩展。",
       "list": {
         "Collaborative": {
@@ -340,5 +340,35 @@
     "builtBy": "开发者",
     "hostedOn": "托管于",
     "illustrationsBy": "插图来自"
+  },
+  "DocsSearch": {
+    "searchPlaceholder": "搜索文档...",
+    "notImplementedTitle": "功能未实现",
+    "notImplementedDescription": "我们仍在开发搜索功能。"
+  },
+  "SearchCommand": {
+    "search": "搜索",
+    "documentation": "文档",
+    "inputPlaceholder": "输入命令或搜索...",
+    "noResults": "未找到结果。",
+    "sections": {
+      "MENU": "菜单",
+      "OPTIONS": "选项"
+    },
+    "items": {
+      "Admin Panel": "管理员面板",
+      "Dashboard": "控制面板",
+      "Billing": "账单",
+      "Charts": "图表",
+      "Chat Bot": "聊天机器人",
+      "API Keys": "API 密钥",
+      "Quota": "配额",
+      "Orders": "订单",
+      "User Posts": "用户帖子",
+      "Settings": "设置",
+      "Homepage": "主页",
+      "Documentation": "文档",
+      "Support": "支持"
+    }
   }
 }
