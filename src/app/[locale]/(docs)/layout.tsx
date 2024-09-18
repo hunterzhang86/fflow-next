@@ -27,7 +27,7 @@ export default function DocsLayout({ children, params: {locale} }: DocsLayoutPro
   return (
     <div className="flex flex-col">
       <NavMobile marketingConfig={marketingConfig} translations={translations} />
-      <NavBar marketingConfig={marketingConfig} />
+      <NavBar marketingConfig={marketingConfig} translations={translations} />
       <MaxWidthWrapper className="min-h-screen" large>
         {children}
       </MaxWidthWrapper>

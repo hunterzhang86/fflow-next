@@ -30,7 +30,7 @@ export default function MarketingLayout({
   return (
     <div className="flex min-h-screen flex-col">
       <NavMobile marketingConfig={marketingConfig} translations={translations} />
-      <NavBar scroll={true} marketingConfig={marketingConfig} />
+      <NavBar scroll={true} marketingConfig={marketingConfig} translations={translations} />
       <main className="flex-1">{children}</main>
       <SiteFooter />
     </div>

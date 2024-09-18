@@ -69,7 +69,7 @@
     "sidebar": {
       "menu": "菜单",
       "adminPanel": "管理员面板",
-      "dashboard": "仪表盘",
+      "dashboard": "控制面板",
       "billing": "账单",
       "charts": "图表",
       "chatBot": "聊天机器人",
@@ -84,7 +84,7 @@
       "support": "支持"
     },
     "main": {
-      "heading": "仪表盘",
+      "heading": "控制面板",
       "currentRole": "当前角色：{role} — 在设置中更改您的角色。",
       "noContentTitle": "尚未创建内容",
       "noContentDescription": "您还没有任何内容。开始创建内容吧。",
@@ -264,7 +264,7 @@
       "documentation": "文档"
     },
     "siteName": "FFlow Next",
-    "dashboard": "仪表盘",
+    "dashboard": "控制面板",
     "login": "登录",
     "signUp": "注册",
     "admin": "管理员"
@@ -303,7 +303,7 @@
   },
   "UserAccountNav": {
     "admin": "管理员",
-    "dashboard": "仪表盘",
+    "dashboard": "控制面板",
     "settings": "设置",
     "logOut": "退出登录"
   },

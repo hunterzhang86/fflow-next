@@ -1,29 +1,39 @@
 "use client";
 
-import Link from "@/components/link/link";
+import { useContext } from "react";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { MarketingConfig } from "@/types";
 import { useSession } from "next-auth/react";
 import { useLocale } from "next-intl";
-import { useSelectedLayoutSegment } from "next/navigation";
-import { useContext } from "react";
 
+import { docsConfig } from "@/config/docs";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { useScroll } from "@/hooks/use-scroll";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import Link from "@/components/link/link";
 import LocaleSwitcher from "@/components/locale/locale-switcher";
 import { ModalContext } from "@/components/modals/providers";
 import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
-import { docsConfig } from "@/config/docs";
-import { siteConfig } from "@/config/site";
-import { useScroll } from "@/hooks/use-scroll";
-import { cn } from "@/lib/utils";
-import { MarketingConfig } from "@/types";
 
 interface NavBarProps {
   scroll?: boolean;
   marketingConfig: MarketingConfig;
+  translations: {
+    adminPanel: string;
+    dashboard: string;
+    login: string;
+    signUp: string;
+  };
 }
 
-export function NavBar({ scroll = false, marketingConfig }: NavBarProps) {
+export function NavBar({
+  scroll = false,
+  marketingConfig,
+  translations,
+}: NavBarProps) {
   const locale = useLocale();
 
   const scrolled = useScroll(50);
@@ -115,7 +125,7 @@ export function NavBar({ scroll = false, marketingConfig }: NavBarProps) {
                 className="gap-2 bg-primary px-5 text-primary-foreground hover:bg-primary/90"
                 size="sm"
               >
-                <span>Dashboard</span>
+                <span> {translations.dashboard} </span>
               </Button>
             </Link>
           ) : status === "unauthenticated" ? (
@@ -124,7 +134,7 @@ export function NavBar({ scroll = false, marketingConfig }: NavBarProps) {
               size="sm"
               onClick={() => setShowSignInModal(true)}
             >
-              <span>Sign In</span>
+              <span> {translations.login} </span>
               <Icons.arrowRight className="size-4" />
             </Button>
           ) : (
