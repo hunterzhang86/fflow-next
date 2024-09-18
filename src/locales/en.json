@@ -300,5 +300,11 @@
     "activeSubscription": "Active Subscription",
     "deleteWarning": "Permanently delete your {siteName} account. This action cannot be undone, please proceed with caution.",
     "deleteButton": "Delete Account"
+  },
+  "UserAccountNav": {
+    "admin": "Admin",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "logOut": "Log out"
   }
 }

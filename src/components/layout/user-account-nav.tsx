@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "@/components/link/link";
 import { LayoutDashboard, Lock, LogOut, Settings } from "lucide-react";
 import { signOut, useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import { Drawer } from "vaul";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
@@ -14,9 +14,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "@/components/link/link";
 import { UserAvatar } from "@/components/shared/user-avatar";
 
 export function UserAccountNav() {
+  const t = useTranslations("UserAccountNav");
   const { data: session } = useSession();
   const user = session?.user;
 
@@ -71,7 +73,7 @@ export function UserAccountNav() {
                     className="flex w-full items-center gap-3 px-2.5 py-2"
                   >
                     <Lock className="size-4" />
-                    <p className="text-sm">Admin</p>
+                    <p className="text-sm">{t("admin")}</p>
                   </Link>
                 </li>
               ) : null}
@@ -83,7 +85,7 @@ export function UserAccountNav() {
                   className="flex w-full items-center gap-3 px-2.5 py-2"
                 >
                   <LayoutDashboard className="size-4" />
-                  <p className="text-sm">Dashboard</p>
+                  <p className="text-sm">{t("dashboard")}</p>
                 </Link>
               </li>
 
@@ -94,7 +96,7 @@ export function UserAccountNav() {
                   className="flex w-full items-center gap-3 px-2.5 py-2"
                 >
                   <Settings className="size-4" />
-                  <p className="text-sm">Settings</p>
+                  <p className="text-sm">{t("settings")}</p>
                 </Link>
               </li>
 
@@ -109,7 +111,7 @@ export function UserAccountNav() {
               >
                 <div className="flex w-full items-center gap-3 px-2.5 py-2">
                   <LogOut className="size-4" />
-                  <p className="text-sm">Log out </p>
+                  <p className="text-sm">{t("logOut")}</p>
                 </div>
               </li>
             </ul>
@@ -145,7 +147,7 @@ export function UserAccountNav() {
           <DropdownMenuItem asChild>
             <Link href="/admin" className="flex items-center space-x-2.5">
               <Lock className="size-4" />
-              <p className="text-sm">Admin</p>
+              <p className="text-sm">{t("admin")}</p>
             </Link>
           </DropdownMenuItem>
         ) : null}
@@ -153,7 +155,7 @@ export function UserAccountNav() {
         <DropdownMenuItem asChild>
           <Link href="/dashboard" className="flex items-center space-x-2.5">
             <LayoutDashboard className="size-4" />
-            <p className="text-sm">Dashboard</p>
+            <p className="text-sm">{t("dashboard")}</p>
           </Link>
         </DropdownMenuItem>
 
@@ -163,7 +165,7 @@ export function UserAccountNav() {
             className="flex items-center space-x-2.5"
           >
             <Settings className="size-4" />
-            <p className="text-sm">Settings</p>
+            <p className="text-sm">{t("settings")}</p>
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
@@ -178,7 +180,7 @@ export function UserAccountNav() {
         >
           <div className="flex items-center space-x-2.5">
             <LogOut className="size-4" />
-            <p className="text-sm">Log out </p>
+            <p className="text-sm">{t("logOut")}</p>
           </div>
         </DropdownMenuItem>
       </DropdownMenuContent>
