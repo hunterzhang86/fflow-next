@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "@/components/link/link";
+import { useTranslations } from "next-intl";
 
 import { footerLinks, siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -9,13 +10,15 @@ import { NewsletterForm } from "../forms/newsletter-form";
 import { Icons } from "../shared/icons";
 
 export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
+  const t = useTranslations("Footer");
+
   return (
     <footer className={cn("border-t", className)}>
       <div className="container grid max-w-6xl grid-cols-2 gap-6 py-14 md:grid-cols-5">
         {footerLinks.map((section) => (
           <div key={section.title}>
             <span className="text-sm font-medium text-foreground">
-              {section.title}
+              {t(`sections.${section.title}.title`)}
             </span>
             <ul className="mt-4 list-inside space-y-3">
               {section.items?.map((link) => (
@@ -24,7 +27,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
-                    {link.title}
+                    {t(`sections.${section.title}.items.${link.title}`)}
                   </Link>
                 </li>
               ))}
@@ -38,11 +41,8 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
 
       <div className="border-t py-4">
         <div className="container flex max-w-6xl items-center justify-between">
-          {/* <span className="text-muted-foreground text-sm">
-            Copyright &copy; 2024. All rights reserved.
-          </span> */}
           <p className="text-left text-sm text-muted-foreground">
-            Built by{" "}
+            {t("builtBy")}{" "}
             <Link
               href={siteConfig.links.twitter}
               target="_blank"
@@ -51,7 +51,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             >
               NoOne
             </Link>
-            . Hosted on{" "}
+            . {t("hostedOn")}{" "}
             <Link
               href="https://www.cloudflare.com"
               target="_blank"
@@ -60,7 +60,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             >
               Cloudflare
             </Link>
-            . Illustrations by{" "}
+            . {t("illustrationsBy")}{" "}
             <Link
               href="https://popsy.co"
               target="_blank"

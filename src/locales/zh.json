@@ -306,5 +306,39 @@
     "dashboard": "仪表盘",
     "settings": "设置",
     "logOut": "退出登录"
+  },
+  "Footer": {
+    "sections": {
+      "Company": {
+        "title": "公司",
+        "items": {
+          "About": "关于我们",
+          "Enterprise": "企业版",
+          "Terms": "服务条款",
+          "Privacy": "隐私政策"
+        }
+      },
+      "Product": {
+        "title": "产品",
+        "items": {
+          "Security": "安全性",
+          "Customization": "定制化",
+          "Customers": "客户",
+          "Changelog": "更新日志"
+        }
+      },
+      "Docs": {
+        "title": "文档",
+        "items": {
+          "Introduction": "介绍",
+          "Installation": "安装",
+          "Components": "组件",
+          "Code Blocks": "代码块"
+        }
+      }
+    },
+    "builtBy": "开发者",
+    "hostedOn": "托管于",
+    "illustrationsBy": "插图来自"
   }
 }

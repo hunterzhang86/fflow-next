@@ -306,5 +306,39 @@
     "dashboard": "Dashboard",
     "settings": "Settings",
     "logOut": "Log out"
+  },
+  "Footer": {
+    "sections": {
+      "Company": {
+        "title": "Company",
+        "items": {
+          "About": "About",
+          "Enterprise": "Enterprise",
+          "Terms": "Terms",
+          "Privacy": "Privacy"
+        }
+      },
+      "Product": {
+        "title": "Product",
+        "items": {
+          "Security": "Security",
+          "Customization": "Customization",
+          "Customers": "Customers",
+          "Changelog": "Changelog"
+        }
+      },
+      "Docs": {
+        "title": "Docs",
+        "items": {
+          "Introduction": "Introduction",
+          "Installation": "Installation",
+          "Components": "Components",
+          "Code Blocks": "Code Blocks"
+        }
+      }
+    },
+    "builtBy": "Built by",
+    "hostedOn": "Hosted on",
+    "illustrationsBy": "Illustrations by"
   }
 }
