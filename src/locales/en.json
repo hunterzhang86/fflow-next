@@ -268,5 +268,37 @@
     "login": "Login",
     "signUp": "Sign Up",
     "admin": "Admin"
+  },
+  "Settings": {
+    "heading": "Settings",
+    "subheading": "Manage account and website settings."
+  },
+  "UserNameForm": {
+    "errorTitle": "Something went wrong",
+    "errorDescription": "Your name could not be updated. Please try again later.",
+    "successDescription": "Your name has been updated.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "nameDescription": "This is your public display name. It can be your real name or a pseudonym.",
+    "saveChanges": "Save changes"
+  },
+  "UserRoleForm": {
+    "title": "Your Role",
+    "description": "Select the role you want to test the app with.",
+    "roleLabel": "Role",
+    "selectPlaceholder": "Select a role",
+    "saveChanges": "Save Changes",
+    "errorTitle": "Something went wrong",
+    "errorDescription": "Your role was not updated. Please try again.",
+    "successDescription": "Your role has been updated.",
+    "removeInProduction": "Remove this field in real production"
+  },
+  "DeleteAccountSection": {
+    "title": "Delete Account",
+    "description": "This is a danger zone - Be careful !",
+    "areYouSure": "Are you sure ?",
+    "activeSubscription": "Active Subscription",
+    "deleteWarning": "Permanently delete your {siteName} account. This action cannot be undone, please proceed with caution.",
+    "deleteButton": "Delete Account"
   }
 }

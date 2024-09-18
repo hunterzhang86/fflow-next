@@ -121,7 +121,7 @@
     },
     "ordersPage": {
       "heading": "订",
-      "subheading": "查看并管理您的最新订单。",
+      "subheading": "看并管理您的最新订单。",
       "emptyTitle": "暂无订单",
       "emptyDescription": "您还没有任何订单。开始订购产品吧。",
       "buyProducts": "购买产品"
@@ -160,7 +160,7 @@
       "3": "采用 FFlow Next 后，我们团队的生产力飞速提升。强烈推荐！",
       "4": "我对 FFlow Next 的代码质量和清晰文档印象深刻。向团队致敬！",
       "5": "FFlow Next 为我提供了必要的工具，以高效地管理用户数据。非常感谢！",
-      "6": "FFlow Next 在我作为营销经理的角色中发挥了无价的作用。通过 Stripe 的无缝集成，我能够启动具有内置支付功能的定向营销活动，使我们能够更有效地货币化我们的产品和服务。",
+      "6": "FFlow Next 在我作为营销经理的角色中发挥了无价的作用。通过 Stripe 的无缝集成，我能够启动具有内置支付功能的定向营活动，使我们能够更有效地货币化我们的产品和服务。",
       "7": "感谢 FFlow Next, 我能够在创纪录的时间内创建现代和吸引人的用户界面。入门套件为构建时尚和直观的界面提供了坚实的基础, 使我能够更专注于工作的创造性方面。"
     }
   },
@@ -221,7 +221,7 @@
   },
   "InfoLanding": {
     "Empower your projects": {
-      "title": "为您的项目赋能",
+      "title": "为的项目赋能",
       "description": "通过我们的开源 SaaS 平台释放项目的全部潜力。无缝协作，轻松创新，无限扩展。",
       "list": {
         "Collaborative": {
@@ -268,5 +268,37 @@
     "login": "登录",
     "signUp": "注册",
     "admin": "管理员"
+  },
+  "Settings": {
+    "heading": "设置",
+    "subheading": "管理账户和网站设置。"
+  },
+  "UserNameForm": {
+    "errorTitle": "出错了",
+    "errorDescription": "您的姓名无法更新。请稍后再试。",
+    "successDescription": "您的姓名已更新。",
+    "nameLabel": "姓名",
+    "namePlaceholder": "输入您的姓名",
+    "nameDescription": "这是您的公开显示姓名。它可以是您的真实姓名或昵称。",
+    "saveChanges": "保存更改"
+  },
+  "UserRoleForm": {
+    "title": "您的角色",
+    "description": "选择您想要用于测试应用的角色。",
+    "roleLabel": "角色",
+    "selectPlaceholder": "选择一个角色",
+    "saveChanges": "保存更改",
+    "errorTitle": "出错了",
+    "errorDescription": "您的角色未能更新。请重试。",
+    "successDescription": "您的角色已更新。",
+    "removeInProduction": "在实际生产环境中移除此字段"
+  },
+  "DeleteAccountSection": {
+    "title": "删除账户",
+    "description": "这是危险操作 - 请小心操作！",
+    "areYouSure": "您确定吗？",
+    "activeSubscription": "活跃订阅",
+    "deleteWarning": "永久删除您的 {siteName} 账户。此操作无法撤销，请谨慎操作。",
+    "deleteButton": "删除账户"
   }
 }

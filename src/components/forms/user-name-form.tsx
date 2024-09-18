@@ -7,6 +7,7 @@ import { User } from "@/types";
 import { useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { useTranslations } from 'next-intl'; // 导入 useTranslations 钩子
 
 import { userNameSchema } from "@/lib/validations/user";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,7 @@ interface UserNameFormProps {
 }
 
 export function UserNameForm({ user }: UserNameFormProps) {
+  const t = useTranslations('UserNameForm'); // 获取翻译函数
   const { update } = useSession();
   const [updated, setUpdated] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -45,13 +47,13 @@ export function UserNameForm({ user }: UserNameFormProps) {
       const { status } = await updateUserNameWithId(data);
 
       if (status !== "success") {
-        toast.error("Something went wrong.", {
-          description: "Your name was not updated. Please try again.",
+        toast.error(t('errorTitle'), {
+          description: t('errorDescription'),
         });
       } else {
         await update();
         setUpdated(false);
-        toast.success("Your name has been updated.");
+        toast.success(t('successDescription'));
       }
     });
   });
@@ -59,12 +61,12 @@ export function UserNameForm({ user }: UserNameFormProps) {
   return (
     <form onSubmit={onSubmit}>
       <SectionColumns
-        title="Your Name"
-        description="Please enter a display name you are comfortable with."
+        title={t('nameLabel')}
+        description={t('nameDescription')}
       >
         <div className="flex w-full items-center gap-2">
           <Label className="sr-only" htmlFor="name">
-            Name
+            {t('nameLabel')}
           </Label>
           <Input
             id="name"
@@ -72,6 +74,7 @@ export function UserNameForm({ user }: UserNameFormProps) {
             size={32}
             {...register("name")}
             onChange={(e) => checkUpdate(e.target.value)}
+            placeholder={t('namePlaceholder')}
           />
           <Button
             type="submit"
@@ -83,8 +86,7 @@ export function UserNameForm({ user }: UserNameFormProps) {
               <Icons.spinner className="size-4 animate-spin" />
             ) : (
               <p>
-                Save
-                <span className="hidden sm:inline-flex">&nbsp;Changes</span>
+                {t('saveChanges')}
               </p>
             )}
           </Button>
@@ -95,7 +97,7 @@ export function UserNameForm({ user }: UserNameFormProps) {
               {errors.name.message}
             </p>
           )}
-          <p className="text-[13px] text-muted-foreground">Max 32 characters</p>
+          <p className="text-[13px] text-muted-foreground">{t('nameDescription')}</p>
         </div>
       </SectionColumns>
     </form>

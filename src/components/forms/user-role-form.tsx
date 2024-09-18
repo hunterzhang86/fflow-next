@@ -8,6 +8,7 @@ import { useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
+import { useTranslations } from 'next-intl'; // 导入 useTranslations 钩子
 
 import { userRoleSchema } from "@/lib/validations/user";
 import { Button } from "@/components/ui/button";
@@ -34,6 +35,7 @@ interface UserNameFormProps {
 }
 
 export function UserRoleForm({ user }: UserNameFormProps) {
+  const t = useTranslations('UserRoleForm'); // 获取翻译函数
   const { update } = useSession();
   const [updated, setUpdated] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -54,13 +56,13 @@ export function UserRoleForm({ user }: UserNameFormProps) {
       const { status } = await updateUserRoleWithId(data);
 
       if (status !== "success") {
-        toast.error("Something went wrong.", {
-          description: "Your role was not updated. Please try again.",
+        toast.error(t('errorTitle'), {
+          description: t('errorDescription'),
         });
       } else {
         await update();
         setUpdated(false);
-        toast.success("Your role has been updated.");
+        toast.success(t('successDescription'));
       }
     });
   };
@@ -69,8 +71,8 @@ export function UserRoleForm({ user }: UserNameFormProps) {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <SectionColumns
-          title="Your Role"
-          description="Select the role what you want for test the app."
+          title={t('title')}
+          description={t('description')}
         >
           <div className="flex w-full items-center gap-2">
             <FormField
@@ -78,9 +80,8 @@ export function UserRoleForm({ user }: UserNameFormProps) {
               name="role"
               render={({ field }) => (
                 <FormItem className="w-full space-y-0">
-                  <FormLabel className="sr-only">Role</FormLabel>
+                  <FormLabel className="sr-only">{t('roleLabel')}</FormLabel>
                   <Select
-                    // TODO:(FIX) Option value not update. Use useState for the moment
                     onValueChange={(value: UserRole) => {
                       setUpdated(user.role !== value);
                       setRole(value);
@@ -91,7 +92,7 @@ export function UserRoleForm({ user }: UserNameFormProps) {
                   >
                     <FormControl>
                       <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select a role" />
+                        <SelectValue placeholder={t('selectPlaceholder')} />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -116,15 +117,14 @@ export function UserRoleForm({ user }: UserNameFormProps) {
                 <Icons.spinner className="size-4 animate-spin" />
               ) : (
                 <p>
-                  Save
-                  <span className="hidden sm:inline-flex">&nbsp;Changes</span>
+                  {t('saveChanges')}
                 </p>
               )}
             </Button>
           </div>
           <div className="flex flex-col justify-between p-1">
             <p className="text-[13px] text-muted-foreground">
-              Remove this field on real production
+              {t('removeInProduction')}
             </p>
           </div>
         </SectionColumns>
