@@ -5,7 +5,7 @@ image: /_static/blog/blog-post-3.jpg
 date: "2023-01-02"
 authors:
   - shadcn
-  - mickasmt
+  - noone
 categories:
   - education
   - news

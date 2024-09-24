@@ -14,10 +14,10 @@ export const getBlogCategories = (t: ReturnType<typeof useTranslations>) => [
 ];
 
 export const getBlogAuthors = (t: ReturnType<typeof useTranslations>) => ({
-  mickasmt: {
-    name: t('BlogPage.authors.mickasmt.name'),
-    image: "/_static/avatars/mickasmt.png",
-    twitter: "miickasmt",
+  noone: {
+    name: t('BlogPage.authors.noone.name'),
+    image: "/_static/avatars/noone.png",
+    twitter: "hunterzhang86",
   },
   shadcn: {
     name: t('BlogPage.authors.shadcn.name'),
@@ -44,10 +44,10 @@ export const BLOG_CATEGORIES: {
 ];
 
 export const BLOG_AUTHORS = {
-  mickasmt: {
-    name: "mickasmt",
-    image: "/_static/avatars/mickasmt.png",
-    twitter: "miickasmt",
+  noone: {
+    name: "noone",
+    image: "/_static/avatars/noone.png",
+    twitter: "hunterzhang86",
   },
   shadcn: {
     name: "shadcn",

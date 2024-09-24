@@ -150,9 +150,9 @@ export default makeSource({
 
 ```md
 ---
-title: mickasmt
-avatar: /_static/avatars/mickasmt.jpg
-twitter: mickasmt
+title: noone
+avatar: /_static/avatars/noone.jpg
+twitter: hunterzhang86
 ---
 ```
 
@@ -165,7 +165,7 @@ description: 如何在 Vercel 上部署你的 Next.js 应用。
 image: /_static/blog/blog-post-3.jpg
 date: "2023-01-02"
 authors:
-  - mickasmt
+  - noone
 ---
 ```
 

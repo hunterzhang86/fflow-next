@@ -160,6 +160,15 @@ const logos = [
     ),
   },
   {
+    title: "Drizzle",
+    href: "https://orm.drizzle.team/",
+    icon: (
+      <div className="flex items-center gap-x-1.5">
+        <span className="text-2xl font-bold tracking-tight">Drizzle</span>
+      </div>
+    ),
+  },
+  {
     title: "shadcn/ui",
     href: "https://ui.shadcn.com/",
     icon: (

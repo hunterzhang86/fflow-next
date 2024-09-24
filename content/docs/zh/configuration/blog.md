@@ -13,10 +13,10 @@ description: 博客如何处理分类和作者。
 
 ```ts title="config/blog.ts" {7-11}
 export const BLOG_AUTHORS = {
-  mickasmt: {
-    name: "mickasmt",
-    image: "/_static/avatars/mickasmt.png",
-    twitter: "miickasmt",
+  noone: {
+    name: "noone",
+    image: "/_static/avatars/noone.png",
+    twitter: "hunterzhang86",
   },
   newauthor: {
     name: "shadcn",
@@ -38,7 +38,7 @@ image: /_static/blog/blog-post-3.jpg
 date: "2023-01-02"
 authors:
   - newauthor
-  - mickasmt
+  - noone
 categories:
   - news
 related:
@@ -84,7 +84,7 @@ image: /_static/blog/blog-post-3.jpg
 date: "2023-01-02"
 authors:
   - newauthor
-  - mickasmt
+  - noone
 categories:
   - news
 related:
@@ -109,7 +109,7 @@ image: /_static/blog/blog-post-3.jpg
 date: "2023-01-02"
 authors:
   - newauthor
-  - mickasmt
+  - noone
 categories:
   - news
 related:

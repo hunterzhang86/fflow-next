@@ -6,7 +6,7 @@
     "introducing": "介绍",
     "kickoff": "帮助您快速启航",
     "saasStarter": "FFlow Next",
-    "description": "使用 Next.js 14、Drizzle ORM、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个项目。",
+    "description": "使用 Next.js 14、Drizzle ORM、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个 SaaS 项目。",
     "goPricing": "查看定价",
     "starOn": "Star on",
     "github": "GitHub",
@@ -30,8 +30,8 @@
       "description": "关于 SaaS 管理的教育内容。"
     },
     "authors": {
-      "mickasmt": {
-        "name": "mickasmt"
+      "noone": {
+        "name": "noone"
       },
       "shadcn": {
         "name": "shadcn"
@@ -346,7 +346,7 @@
   },
   "InfoLanding": {
     "Empower your projects": {
-      "title": "为的目赋能",
+      "title": "为项目赋能",
       "description": "通过我们的开源 SaaS 平台释放项目的全部潜力。无缝协作，轻松创新，无限扩展。",
       "list": {
         "Collaborative": {

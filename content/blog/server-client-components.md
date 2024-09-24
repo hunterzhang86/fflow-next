@@ -4,7 +4,7 @@ description: React Server Components allow developers to build applications that
 image: /_static/blog/blog-post-4.jpg
 date: "2023-01-08"
 authors:
-  - mickasmt
+  - noone
 categories:
   - news
 related:

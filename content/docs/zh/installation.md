@@ -10,12 +10,12 @@ description: 如何安装项目。
 首先使用 `create-next-app` 创建一个新的 Next.js 项目：
 
 ```bash
-npx create-next-app my-saas-project --example "https://github.com/mickasmt/next-saas-stripe-starter"
+npx create-next-app my-saas-project --example "https://github.com/hunterzhang86/fflow-next"
 ```
 
 或者使用 Vercel 部署：
 
-[![使用 Vercel 部署](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmickasmt%2Fnext-saas-stripe-starter)
+[![使用 Vercel 部署](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhunterzhang86%2Ffflow-next)
 
 <Callout type="warning" twClass="mt-4">
   这是创建你的仓库的好方法，但部署会失败，因为你需要在项目中本地添加环境变量。请按照文档进行操作。

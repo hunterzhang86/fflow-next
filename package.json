@@ -1,10 +1,10 @@
 {
-  "name": "saas-starter",
+  "name": "fflow-next",
   "version": "0.3.1",
   "private": true,
   "author": {
-    "name": "mickasmt",
-    "url": "https://twitter.com/mickasmt"
+    "name": "noone",
+    "url": "https://twitter.com/hunterzhang86"
   },
   "scripts": {
     "dev": "next dev",

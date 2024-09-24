@@ -150,9 +150,9 @@ Here's the list of all frontmatters available for each parts:
 
 ```md
 ---
-title: mickasmt
-avatar: /_static/avatars/mickasmt.jpg
-twitter: mickasmt
+title: noone
+avatar: /_static/avatars/noone.jpg
+twitter: hunterzhang86
 ---
 ```
 
@@ -165,7 +165,7 @@ description: How to deploy your Next.js apps on Vercel.
 image: /_static/blog/blog-post-3.jpg
 date: "2023-01-02"
 authors:
-  - mickasmt
+  - noone
 ---
 ```
 

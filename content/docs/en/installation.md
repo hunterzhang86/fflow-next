@@ -10,12 +10,12 @@ description: How to install the project.
 Start by creating a new Next.js project using `create-next-app`:
 
 ```bash
-npx create-next-app my-saas-project --example "https://github.com/mickasmt/next-saas-stripe-starter"
+npx create-next-app my-saas-project --example "https://github.com/hunterzhang86/fflow-next"
 ```
 
 Or deploy with Vercel :
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmickasmt%2Fnext-saas-stripe-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhunterzhang86%2Ffflow-next)
 
 <Callout type="warning" twClass="mt-4">
   A good way to create your repository, but the deployment will fail because you

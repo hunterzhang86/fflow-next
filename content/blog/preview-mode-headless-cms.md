@@ -5,7 +5,7 @@ date: "2023-04-09"
 image: /_static/blog/blog-post-1.jpg
 authors:
   - shadcn
-  - mickasmt
+  - noone
 categories:
   - education
 related:
