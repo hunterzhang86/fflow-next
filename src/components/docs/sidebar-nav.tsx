@@ -1,11 +1,10 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { DocsConfig, NavItem } from "@/types";
+import { usePathname } from "next/navigation";
 
-import { docsConfig } from "@/config/docs";
-import { cn } from "@/lib/utils";
 import Link from "@/components/link/link";
+import { cn } from "@/lib/utils";
 
 export interface DocsSidebarNavProps {
   setOpen?: (boolean) => void;

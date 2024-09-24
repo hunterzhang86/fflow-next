@@ -1,12 +1,10 @@
-import { redirect } from "next/navigation";
-import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider, useTranslations } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
-import { getCurrentUser } from "@/lib/session";
-import { constructMetadata } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { DashboardHeader } from "@/components/dashboard/header";
 import { EmptyPlaceholder } from "@/components/shared/empty-placeholder";
+import { Button } from "@/components/ui/button";
+import { constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
   title: "Orders – FFlow Next",

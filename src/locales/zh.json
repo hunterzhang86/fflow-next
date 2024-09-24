@@ -382,6 +382,9 @@
     "createProjectError": "创建项目失败"
   },
   "Docs": {
+    "pageHeader": {
+      "Docs": "文档"
+    },
     "mainNav": {
       "documentation": "文档",
       "guides": "指南"

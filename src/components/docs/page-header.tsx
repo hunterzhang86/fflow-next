@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 
 import { Icons } from "../shared/icons";
+import { useTranslations } from "next-intl";
 
 interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   heading: string;
@@ -13,10 +14,12 @@ export function DocsPageHeader({
   className,
   ...props
 }: DocsPageHeaderProps) {
+  const t = useTranslations('Docs');
+
   return (
     <>
       <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-        <div className="truncate">Docs</div>
+        <div className="truncate">{t('pageHeader.Docs')}</div>
         <Icons.chevronRight className="size-4" />
         <div className="font-medium text-purple-600/95 dark:text-purple-400">
           {heading}

@@ -382,6 +382,9 @@
     "createProjectError": "Failed to create project"
   },
   "Docs": {
+    "pageHeader": {
+      "Docs": "Docs"
+    },
     "mainNav": {
       "documentation": "Documentation",
       "guides": "Guides"
