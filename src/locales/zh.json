@@ -380,5 +380,26 @@
     "enterProjectDescription": "输入项目描述",
     "create": "创建",
     "createProjectError": "创建项目失败"
+  },
+  "Docs": {
+    "mainNav": {
+      "documentation": "文档",
+      "guides": "指南"
+    },
+    "sidebarNav": {
+      "gettingStarted": "入门",
+      "introduction": "介绍",
+      "installation": "安装指南",
+      "configuration": "配置",
+      "authentification": "认证",
+      "blog": "博客",
+      "components": "组件",
+      "configFiles": "配置文件",
+      "database": "数据库",
+      "email": "电子邮件",
+      "layouts": "布局",
+      "markdownFiles": "Markdown 文件",
+      "subscriptions": "订阅"
+    }
   }
 }

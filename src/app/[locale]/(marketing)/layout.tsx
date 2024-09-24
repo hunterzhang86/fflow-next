@@ -5,6 +5,7 @@ import { NavBar } from "@/components/layout/navbar";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { getMarketingConfig } from "@/config/marketing";
 import { useTranslations } from "next-intl";
+import { getDocsConfig } from "@/config/docs";
 
 interface MarketingLayoutProps {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ export default function MarketingLayout({
 
   const t = useTranslations();
   const marketingConfig = getMarketingConfig(t);
+  const docsConfig = getDocsConfig(t);
 
   const translations = {
     adminPanel: t('Dashboard.sidebar.adminPanel'),
@@ -29,8 +31,8 @@ export default function MarketingLayout({
 
   return (
     <div className="flex min-h-screen flex-col">
-      <NavMobile marketingConfig={marketingConfig} translations={translations} />
-      <NavBar scroll={true} marketingConfig={marketingConfig} translations={translations} />
+      <NavMobile marketingConfig={marketingConfig} docsConfig={docsConfig} translations={translations} />
+      <NavBar scroll={true} marketingConfig={marketingConfig} docsConfig={docsConfig} translations={translations} />
       <main className="flex-1">{children}</main>
       <SiteFooter />
     </div>

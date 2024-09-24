@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import { useSelectedLayoutSegment } from "next/navigation";
-import { MarketingConfig } from "@/types";
+import { DocsConfig, MarketingConfig } from "@/types";
 import { useSession } from "next-auth/react";
 import { useLocale } from "next-intl";
 
@@ -21,6 +21,7 @@ import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 interface NavBarProps {
   scroll?: boolean;
   marketingConfig: MarketingConfig;
+  docsConfig: DocsConfig;
   translations: {
     adminPanel: string;
     dashboard: string;
@@ -32,6 +33,7 @@ interface NavBarProps {
 export function NavBar({
   scroll = false,
   marketingConfig,
+  docsConfig,
   translations,
 }: NavBarProps) {
   const locale = useLocale();

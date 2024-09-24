@@ -380,5 +380,26 @@
     "enterProjectDescription": "Enter project description",
     "create": "Create",
     "createProjectError": "Failed to create project"
+  },
+  "Docs": {
+    "mainNav": {
+      "documentation": "Documentation",
+      "guides": "Guides"
+    },
+    "sidebarNav": {
+      "gettingStarted": "Getting Started",
+      "introduction": "Introduction",
+      "installation": "Installation",
+      "configuration": "Configuration",
+      "authentification": "Authentification",
+      "blog": "Blog",
+      "components": "Components",
+      "configFiles": "Config files",
+      "database": "Database",
+      "email": "Email",
+      "layouts": "Layouts",
+      "markdownFiles": "Markdown files",
+      "subscriptions": "Subscriptions"
+    }
   }
 }

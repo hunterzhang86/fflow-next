@@ -1,17 +1,21 @@
 import Link from "@/components/link/link";
-import { Doc } from "contentlayer/generated"
+import { Doc } from "contentlayer/generated";
 
-import { docsConfig } from "@/config/docs"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { Icons } from "@/components/shared/icons"
+import { Icons } from "@/components/shared/icons";
+import { buttonVariants } from "@/components/ui/button";
+import { getDocsConfig } from "@/config/docs";
+import { cn } from "@/lib/utils";
+import { DocsConfig } from "@/types";
+import { useTranslations } from "next-intl";
 
 interface DocsPagerProps {
   doc: Doc
 }
 
 export function DocsPager({ doc }: DocsPagerProps) {
-  const pager = getPagerForDoc(doc)
+  const t = useTranslations();
+  const docsConfig = getDocsConfig(t);
+  const pager = getPagerForDoc(doc, docsConfig)
 
   if (!pager) {
     return null
@@ -40,8 +44,7 @@ export function DocsPager({ doc }: DocsPagerProps) {
     </div>
   )
 }
-
-export function getPagerForDoc(doc: Doc) {
+export function getPagerForDoc(doc: Doc, docsConfig: DocsConfig) {
   const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null]
   const activeIndex = flattenedLinks.findIndex(
     (link) => doc.slug === link?.href

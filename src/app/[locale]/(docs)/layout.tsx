@@ -2,6 +2,7 @@ import { NavMobile } from "@/components/layout/mobile-nav";
 import { NavBar } from "@/components/layout/navbar";
 import { SiteFooter } from "@/components/layout/site-footer";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import { getDocsConfig } from "@/config/docs";
 import { getMarketingConfig } from "@/config/marketing";
 import { useTranslations } from "next-intl";
 import {unstable_setRequestLocale} from 'next-intl/server';
@@ -16,6 +17,7 @@ export default function DocsLayout({ children, params: {locale} }: DocsLayoutPro
 
   const t = useTranslations();
   const marketingConfig = getMarketingConfig(t);
+  const docsConfig = getDocsConfig(t);
 
   const translations = {
     adminPanel: t('Dashboard.sidebar.adminPanel'),
@@ -26,8 +28,8 @@ export default function DocsLayout({ children, params: {locale} }: DocsLayoutPro
 
   return (
     <div className="flex flex-col">
-      <NavMobile marketingConfig={marketingConfig} translations={translations} />
-      <NavBar marketingConfig={marketingConfig} translations={translations} />
+      <NavMobile marketingConfig={marketingConfig} docsConfig={docsConfig} translations={translations} />
+      <NavBar marketingConfig={marketingConfig} docsConfig={docsConfig} translations={translations} />
       <MaxWidthWrapper className="min-h-screen" large>
         {children}
       </MaxWidthWrapper>

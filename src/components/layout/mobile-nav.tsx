@@ -1,21 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "@/components/link/link";
-import { useSelectedLayoutSegment } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useSession } from "next-auth/react";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { useEffect, useState } from "react";
 
-import { docsConfig } from "@/config/docs";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 import { DocsSidebarNav } from "@/components/docs/sidebar-nav";
 import { Icons } from "@/components/shared/icons";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
+import { DocsConfig, MarketingConfig } from "@/types";
 import { ModeToggle } from "./mode-toggle";
 
 interface NavMobileProps {
-  marketingConfig: any;
+  marketingConfig: MarketingConfig;
+  docsConfig: DocsConfig;
   translations: {
     adminPanel: string;
     dashboard: string;
@@ -24,7 +25,7 @@ interface NavMobileProps {
   };
 }
 
-export function NavMobile({ marketingConfig, translations }: NavMobileProps) {
+export function NavMobile({ marketingConfig, translations, docsConfig }: NavMobileProps) {
   const { data: session } = useSession();
   const [open, setOpen] = useState(false);
   const selectedLayout = useSelectedLayoutSegment();
