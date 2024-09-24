@@ -9,8 +9,10 @@ import { Drawer } from "vaul";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import { BLOG_CATEGORIES } from "@/config/blog";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
-export function BlogHeaderLayout() {
+export function BlogHeaderLayout({ locale }: { locale: string }) {
+  const t = useTranslations("BlogPage");
   const [open, setOpen] = useState(false);
   const { slug } = useParams() as { slug?: string };
   const data = BLOG_CATEGORIES.find((category) => category.slug === slug);
@@ -24,11 +26,10 @@ export function BlogHeaderLayout() {
       <MaxWidthWrapper className="py-6 md:pb-8 md:pt-10">
         <div className="max-w-screen-sm">
           <h1 className="font-heading text-3xl md:text-4xl">
-            {data?.title || "Blog"}
+            {data?.title || t("title")}
           </h1>
           <p className="mt-3.5 text-base text-muted-foreground md:text-lg">
-            {data?.description ||
-              "Latest news and updates from Next FFlow Next."}
+            {data?.description || t("description")}
           </p>
         </div>
 

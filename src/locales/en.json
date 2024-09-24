@@ -18,7 +18,23 @@
   },
   "BlogPage": {
     "title": "Blog - FFlow Next",
-    "description": "Latest news and updates from Next FFlow Next."
+    "description": "Latest news and updates from FFlow Next.",
+    "news": {
+      "title": "News",
+      "description": "Updates and announcements from Next FFlow Next."
+    },
+    "education": {
+      "title": "Education",
+      "description": "Educational content about SaaS management."
+    },
+    "authors": {
+      "mickasmt": {
+        "name": "mickasmt"
+      },
+      "shadcn": {
+        "name": "shadcn"
+      }
+    }
   },
   "PricingPage": {
     "dashboard": "Dashboard"
