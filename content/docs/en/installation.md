@@ -3,8 +3,6 @@ title: Installation
 description: How to install the project.
 ---
 
-<Steps>
-
 ### Create project
 
 Start by creating a new Next.js project using `create-next-app`:
@@ -17,11 +15,9 @@ Or deploy with Vercel :
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhunterzhang86%2Ffflow-next)
 
-<Callout type="warning" twClass="mt-4">
-  A good way to create your repository, but the deployment will fail because you
-  need to add your environment variables locally in your project. Follow the
-  documentation for that.
-</Callout>
+A good way to create your repository, but the deployment will fail because you
+need to add your environment variables locally in your project. Follow the
+documentation for that.
 
 ### Install dependencies
 
@@ -61,5 +57,3 @@ NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID=
 ### Configuration part
 
 Let's check the configuration part for update all environment variables before use `pnpm run dev`.
-
-</Steps>

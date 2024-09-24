@@ -144,8 +144,6 @@ You can customize this file according to your project's needs by adding new docu
 
 Here's the list of all frontmatters available for each parts:
 
-<Steps>
-
 ### Authors
 
 ```md
@@ -196,5 +194,3 @@ title: Privacy
 description: The Privacy Policy for your app.
 ---
 ```
-
-</Steps>

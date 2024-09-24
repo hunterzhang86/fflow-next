@@ -144,8 +144,6 @@ export default makeSource({
 
 以下是每个部分可用的所有 frontmatters 列表:
 
-<Steps>
-
 ### 作者
 
 ```md
@@ -194,5 +192,3 @@ date: 2022-11-18
 ---
 title
 ```
-
-</Steps>

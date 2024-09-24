@@ -9,8 +9,6 @@ Currently this project use **Neon** on the free plan. Check their [pricing page]
 
 ## Steps
 
-<Steps>
-
 ### Create Neon account
 
 If don't have an account on Neon, just follow their steps [here](https://neon.tech/docs/get-started-with-neon/signing-up) for create one.
@@ -19,10 +17,8 @@ If don't have an account on Neon, just follow their steps [here](https://neon.te
 
 After create a project on Neon, you can copy the database url. Select `Prisma` from the list then the `env` tab.
 
-<Callout type="warning">
-  <b>Don't forget</b> to reveal the information hidden behind the stars using
-  the eye icon. It's not very visible in dark mode.
-</Callout>
+<b>Don't forget</b> to reveal the information hidden behind the stars using
+the eye icon. It's not very visible in dark mode.
 
 Paste in your `.env` file.
 
@@ -37,5 +33,3 @@ You can push the migrations on your database with the cli.
 ```bash
 npx prisma db push
 ```
-
-</Steps>

@@ -9,8 +9,6 @@ description: 如何配置你的 Neon 数据库。
 
 ## 步骤
 
-<Steps>
-
 ### 创建 Neon 账户
 
 如果你还没有 Neon 账户,只需按照[这里](https://neon.tech/docs/get-started-with-neon/signing-up)的步骤创建一个。
@@ -36,5 +34,3 @@ DATABASE_URL = "postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.
 ```bash
 npx prisma db push
 ```
-
-</Steps>

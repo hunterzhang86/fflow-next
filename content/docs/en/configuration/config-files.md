@@ -9,8 +9,6 @@ The `config` folder houses various files ready for customization to suit your ne
 
 Here's the list of config files available:
 
-<Steps>
-
 ### Landing
 
 Within `landing.ts`, discover data configurations for different sections on the homepage.
@@ -56,5 +54,3 @@ Here's the structure for a pricing card:
   },
 },
 ```
-
-</Steps>

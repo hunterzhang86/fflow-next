@@ -3,8 +3,6 @@ title: 安装
 description: 如何安装项目。
 ---
 
-<Steps>
-
 ### 创建项目
 
 首先使用 `create-next-app` 创建一个新的 Next.js 项目：
@@ -17,9 +15,7 @@ npx create-next-app my-saas-project --example "https://github.com/hunterzhang86/
 
 [![使用 Vercel 部署](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhunterzhang86%2Ffflow-next)
 
-<Callout type="warning" twClass="mt-4">
-  这是创建你的仓库的好方法，但部署会失败，因为你需要在项目中本地添加环境变量。请按照文档进行操作。
-</Callout>
+这是创建你的仓库的好方法，但部署会失败，因为你需要在项目中本地添加环境变量。请按照文档进行操作。
 
 ### 安装依赖
 
@@ -59,5 +55,3 @@ NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID=
 ### 配置部分
 
 在使用 `pnpm run dev` 之前，让我们检查配置部分以更新所有环境变量。
-
-</Steps>
