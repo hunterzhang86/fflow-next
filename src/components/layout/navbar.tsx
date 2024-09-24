@@ -1,22 +1,21 @@
 "use client";
 
-import { useContext } from "react";
-import { useSelectedLayoutSegment } from "next/navigation";
 import { DocsConfig, MarketingConfig } from "@/types";
 import { useSession } from "next-auth/react";
 import { useLocale } from "next-intl";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { useContext } from "react";
 
-import { docsConfig } from "@/config/docs";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { useScroll } from "@/hooks/use-scroll";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import Link from "@/components/link/link";
 import LocaleSwitcher from "@/components/locale/locale-switcher";
 import { ModalContext } from "@/components/modals/providers";
 import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { siteConfig } from "@/config/site";
+import { useScroll } from "@/hooks/use-scroll";
+import { cn } from "@/lib/utils";
 
 interface NavBarProps {
   scroll?: boolean;

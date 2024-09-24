@@ -135,7 +135,7 @@ export function NavMobile({ marketingConfig, translations, docsConfig }: NavMobi
 
         {documentation ? (
           <div className="mt-8 block md:hidden">
-            <DocsSidebarNav setOpen={setOpen} />
+            <DocsSidebarNav setOpen={setOpen} docsConfig={docsConfig} />
           </div>
         ) : null}
 

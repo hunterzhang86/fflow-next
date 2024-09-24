@@ -1,17 +1,18 @@
 "use client";
 
-import Link from "@/components/link/link";
 import { usePathname } from "next/navigation";
+import { DocsConfig, NavItem } from "@/types";
 
-import { NavItem } from "@/types";
 import { docsConfig } from "@/config/docs";
 import { cn } from "@/lib/utils";
+import Link from "@/components/link/link";
 
 export interface DocsSidebarNavProps {
   setOpen?: (boolean) => void;
+  docsConfig: DocsConfig;
 }
 
-export function DocsSidebarNav({ setOpen }: DocsSidebarNavProps) {
+export function DocsSidebarNav({ setOpen, docsConfig }: DocsSidebarNavProps) {
   const pathname = usePathname();
   const items = docsConfig.sidebarNav;
 
