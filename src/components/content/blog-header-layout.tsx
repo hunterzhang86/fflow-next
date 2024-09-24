@@ -1,13 +1,13 @@
 "use client";
 
-import { Check, List } from "lucide-react";
 import Link from "@/components/link/link";
+import { Check, List } from "lucide-react";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { Drawer } from "vaul";
 
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
-import { BLOG_CATEGORIES } from "@/config/blog";
+import { getBlogCategories } from "@/config/blog";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
@@ -15,6 +15,7 @@ export function BlogHeaderLayout({ locale }: { locale: string }) {
   const t = useTranslations("BlogPage");
   const [open, setOpen] = useState(false);
   const { slug } = useParams() as { slug?: string };
+  const BLOG_CATEGORIES = getBlogCategories(useTranslations());
   const data = BLOG_CATEGORIES.find((category) => category.slug === slug);
 
   const closeDrawer = () => {
@@ -38,7 +39,7 @@ export function BlogHeaderLayout({ locale }: { locale: string }) {
             role="list"
             className="flex w-full flex-1 gap-x-2 border-b text-[15px] text-muted-foreground"
           >
-            <CategoryLink title="All" href="/blog" active={!slug} />
+            <CategoryLink title={t("all")} href="/blog" active={!slug} />
             {BLOG_CATEGORIES.map((category) => (
               <CategoryLink
                 key={category.slug}
@@ -47,7 +48,7 @@ export function BlogHeaderLayout({ locale }: { locale: string }) {
                 active={category.slug === slug}
               />
             ))}
-            <CategoryLink title="Guides" href="/guides" active={false} />
+            <CategoryLink title={t("guides")} href="/guides" active={false} />
           </ul>
         </nav>
       </MaxWidthWrapper>

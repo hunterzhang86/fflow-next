@@ -19,9 +19,11 @@
   "BlogPage": {
     "title": "博客 - FFlow Next",
     "description": "来自 FFlow Next 的最新新闻和更新。",
+    "all": "所有",
+    "guides": "指南",
     "news": {
       "title": "新闻",
-      "description": "Next FFlow Next 的更新和公告。"
+      "description": "FFlow Next 的更新和公告。"
     },
     "education": {
       "title": "教育",

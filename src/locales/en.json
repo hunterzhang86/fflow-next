@@ -19,9 +19,11 @@
   "BlogPage": {
     "title": "Blog - FFlow Next",
     "description": "Latest news and updates from FFlow Next.",
+    "all": "All",
+    "guides": "Guides",
     "news": {
       "title": "News",
-      "description": "Updates and announcements from Next FFlow Next."
+      "description": "Updates and announcements from FFlow Next."
     },
     "education": {
       "title": "Education",
