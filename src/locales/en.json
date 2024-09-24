@@ -39,7 +39,114 @@
     }
   },
   "PricingPage": {
-    "dashboard": "Dashboard"
+    "seriously": "Seriously?",
+    "youare": "You are an",
+    "backto": "Back to",
+    "dashboard": "Dashboard",
+    "starter": {
+      "title": "Starter",
+      "description": "For Beginners",
+      "benefit1": "Up to 100 monthly posts",
+      "benefit2": "Basic analytics and reporting",
+      "benefit3": "Access to standard templates",
+      "limitation1": "No priority access to new features.",
+      "limitation2": "Limited customer support",
+      "limitation3": "No custom branding",
+      "limitation4": "Limited access to business resources."
+    },
+    "pro": {
+      "title": "Pro",
+      "description": "Unlock Advanced Features",
+      "benefit1": "Up to 500 monthly posts",
+      "benefit2": "Advanced analytics and reporting",
+      "benefit3": "Access to business templates",
+      "benefit4": "Priority customer support",
+      "benefit5": "Exclusive webinars and training.",
+      "limitation1": "No custom branding",
+      "limitation2": "Limited access to business resources."
+    },
+    "business": {
+      "title": "Business",
+      "description": "For Power Users",
+      "benefit1": "Unlimited posts",
+      "benefit2": "Real-time analytics and reporting",
+      "benefit3": "Access to all templates, including custom branding",
+      "benefit4": "24/7 business customer support",
+      "benefit5": "Personalized onboarding and account management."
+    },
+    "features": {
+      "analytics": "Access to Analytics",
+      "branding": "Custom Branding",
+      "support": "Priority Support",
+      "reporting": "Advanced Reporting",
+      "manager": "Dedicated Manager",
+      "apiAccess": "API Access",
+      "webinars": "Monthly Webinars",
+      "integrations": "Custom Integrations",
+      "roles": "Roles and Permissions",
+      "onboarding": "Onboarding Assistance",
+      "custom": "Custom",
+      "unlimited": "Unlimited",
+      "support247": "24/7 Support",
+      "full": "Full",
+      "available": "Available",
+      "advanced": "Advanced",
+      "fullService": "Full Service"
+    },
+    "tooltips": {
+      "analytics": "All plans include basic analytics for tracking performance.",
+      "branding": "Custom branding is available from the Pro plan onwards.",
+      "reporting": "Advanced reporting is available in Business and Enterprise plans.",
+      "manager": "Enterprise plan includes a dedicated account manager.",
+      "webinars": "Pro and higher plans include access to monthly webinars.",
+      "integrations": "Custom integrations are available in Business and Enterprise plans.",
+      "roles": "User roles and permissions management improves with higher plans.",
+      "onboarding": "Higher plans include more comprehensive onboarding assistance."
+    },
+    "year": "will be charged when annual",
+    "month": "when charged monthly",
+    "goToDashboard": "Go to dashboard",
+    "startAtFullSpeed": "Start at full speed !",
+    "pricing": "Pricing",
+    "forContact": "for contact our support team.",
+    "testSubscriptions": "You can test the subscriptions and won&apos;t be charged.",
+    "email": "Email",
+    "plans": "Plans",
+    "compareOurPlans": "Compare Our Plans",
+    "findThePerfectPlan": "Find the perfect plan tailored for your business needs!",
+    "planTable": {
+      "starter": "Starter",
+      "pro": "Pro",
+      "business": "Business",
+      "enterprise": "Enterprise"
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Explore our comprehensive FAQ to find quick answers to common inquiries. If you need further assistance, don't hesitate to contact us for personalized help."
+    },
+    "faqItems": {
+      "item1": {
+        "question": "What is the cost of the free plan?",
+        "answer": "Our free plan is completely free, with no monthly or annual charges. It's a great way to get started and explore our basic features."
+      },
+      "item2": {
+        "question": "How much does the Basic Monthly plan cost?",
+        "answer": "The Basic Monthly plan is priced at $15 per month. It provides access to our core features and is billed on a monthly basis."
+      },
+      "item3": {
+        "question": "What is the price of the Pro Monthly plan?",
+        "answer": "The Pro Monthly plan is available for $25 per month. It offers advanced features and is billed on a monthly basis for added flexibility."
+      },
+      "item4": {
+        "question": "Do you offer any annual subscription plans?",
+        "answer": "Yes, we offer annual subscription plans for even more savings. The Basic Annual plan is $144 per year, and the Pro Annual plan is $300 per year."
+      },
+      "item5": {
+        "question": "Is there a trial period for the paid plans?",
+        "answer": "We offer a 14-day free trial for both the Pro Monthly and Pro Annual plans. It's a great way to experience all the features before committing to a paid subscription."
+      }
+    }
   },
   "QuotaPage": {
     "resourceTypes": {
@@ -429,5 +536,15 @@
     "view": "View",
     "featured": "Featured",
     "noGuides": "No guides published."
+  },
+  "SignIn": {
+    "signIn": "Sign In",
+    "description": "This is strictly for demo purposes - only your email and profile picture will be stored.",
+    "google": "Sign in with Google",
+    "github": "Sign in with GitHub"
+  },
+  "NewsletterForm": {
+    "label": "Subscribe to our newsletter",
+    "button": "Subscribe"
   }
 }

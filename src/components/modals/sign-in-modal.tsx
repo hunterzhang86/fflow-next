@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { signIn } from "next-auth/react";
+import { useTranslations } from "next-intl";
 
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,8 @@ function SignInModal({
   const [googleSignInClicked, setGoogleSignInClicked] = useState(false);
   const [githubSignInClicked, setGitHubSignInClicked] = useState(false);
 
+  const t = useTranslations("SignIn");
+
   return (
     <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
       <div className="w-full">
@@ -29,11 +32,8 @@ function SignInModal({
           <a href={siteConfig.url}>
             <Icons.logo className="size-10" />
           </a>
-          <h3 className="font-urban text-2xl font-bold">Sign In</h3>
-          <p className="text-sm text-gray-500">
-            This is strictly for demo purposes - only your email and profile
-            picture will be stored.
-          </p>
+          <h3 className="font-urban text-2xl font-bold">{t("signIn")}</h3>
+          <p className="text-sm text-gray-500">{t("description")}</p>
         </div>
 
         <div className="flex flex-col space-y-4 bg-secondary/50 px-4 py-8 md:px-16">
@@ -54,7 +54,7 @@ function SignInModal({
             ) : (
               <Icons.google className="mr-2 size-4" />
             )}{" "}
-            Sign In with Google
+            {t("google")}
           </Button>
           <Button
             variant="default"
@@ -73,7 +73,7 @@ function SignInModal({
             ) : (
               <Icons.gitHub className="mr-2 size-4" />
             )}{" "}
-            Sign In with GitHub
+            {t("github")}
           </Button>
         </div>
       </div>

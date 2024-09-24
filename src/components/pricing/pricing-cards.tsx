@@ -1,15 +1,16 @@
 "use client";
 
 import { useContext, useState } from "react";
-import Link from "@/components/link/link";
 import { UserSubscriptionPlan } from "@/types";
+import { useTranslations } from "next-intl";
 
 import { SubscriptionPlan } from "@/types/index";
-import { pricingData } from "@/config/subscriptions";
+import { getPricingData } from "@/config/subscriptions";
 import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { BillingFormButton } from "@/components/forms/billing-form-button";
+import Link from "@/components/link/link";
 import { ModalContext } from "@/components/modals/providers";
 import { HeaderSection } from "@/components/shared/header-section";
 import { Icons } from "@/components/shared/icons";
@@ -21,6 +22,10 @@ interface PricingCardsProps {
 }
 
 export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
+  const t = useTranslations("PricingPage");
+  const tSignIn = useTranslations("SignIn");
+  const pricingData = getPricingData(useTranslations());
+
   const isYearlyDefault =
     !subscriptionPlan?.stripeCustomerId || subscriptionPlan.interval === "year"
       ? true
@@ -70,8 +75,8 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
           {offer.prices.monthly > 0 ? (
             <div className="text-left text-sm text-muted-foreground">
               {isYearly
-                ? `$${offer.prices.yearly} will be charged when annual`
-                : "when charged monthly"}
+                ? `$${offer.prices.yearly} ${t("year")}`
+                : `${t("month")}`}
             </div>
           ) : null}
         </div>
@@ -109,7 +114,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
                   "w-full",
                 )}
               >
-                Go to dashboard
+                {t("goToDashboard")}
               </Link>
             ) : (
               <BillingFormButton
@@ -128,7 +133,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               rounded="full"
               onClick={() => setShowSignInModal(true)}
             >
-              Sign in
+              {tSignIn("signIn")}
             </Button>
           )}
         </div>
@@ -139,7 +144,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
   return (
     <MaxWidthWrapper>
       <section className="flex flex-col items-center text-center">
-        <HeaderSection label="Pricing" title="Start at full speed !" />
+        <HeaderSection label={t("pricing")} title={t("startAtFullSpeed")} />
 
         <div className="mb-4 mt-10 flex items-center gap-5">
           <ToggleGroup
@@ -155,14 +160,14 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               className="rounded-full px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
               aria-label="Toggle yearly billing"
             >
-              Yearly (-20%)
+              {t("year")} (-20%)
             </ToggleGroupItem>
             <ToggleGroupItem
               value="monthly"
               className="rounded-full px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
               aria-label="Toggle monthly billing"
             >
-              Monthly
+              {t("month")}
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
@@ -174,18 +179,16 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
         </div>
 
         <p className="mt-3 text-balance text-center text-base text-muted-foreground">
-          Email{" "}
+          {t("email")}{" "}
           <a
             className="font-medium text-primary hover:underline"
-            href="mailto:support@saas-starter.com"
+            href="mailto:support@fflowlink.com"
           >
-            support@saas-starter.com
+            support@fflowlink.com
           </a>{" "}
-          for to contact our support team.
+          {t("forContact")}
           <br />
-          <strong>
-            You can test the subscriptions and won&apos;t be charged.
-          </strong>
+          <strong>{t("testSubscriptions")}</strong>
         </p>
       </section>
     </MaxWidthWrapper>

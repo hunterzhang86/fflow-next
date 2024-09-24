@@ -10,6 +10,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@/components/analytics";
 import ModalProvider from "@/components/modals/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
 export const runtime = 'edge';
 
@@ -28,6 +29,7 @@ export function generateStaticParams() {
 
 export default function RootLayout({ children, params: {locale}}: RootLayoutProps) {
   unstable_setRequestLocale(locale);
+  const messages = useMessages();
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -48,8 +50,10 @@ export default function RootLayout({ children, params: {locale}}: RootLayoutProp
             enableSystem
             disableTransitionOnChange
           >
-            <ModalProvider>{children}</ModalProvider>
-            <Analytics />
+            <NextIntlClientProvider messages={messages}>
+              <ModalProvider locale={locale}>{children}</ModalProvider>
+            </NextIntlClientProvider>
+              <Analytics />
             <Toaster richColors closeButton />
             <TailwindIndicator />
           </ThemeProvider>

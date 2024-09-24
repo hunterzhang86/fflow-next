@@ -1,14 +1,18 @@
-import { pricingData } from "@/config/subscriptions";
+import { getPricingData } from "@/config/subscriptions";
+import { db } from "@/db/db";
+import { quotas, users } from "@/db/schema";
 import { stripe } from "@/lib/stripe";
 import { UserSubscriptionPlan } from "@/types";
-import { db } from "@/db/db";
-import { users, quotas } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { getTranslations } from "next-intl/server";
 
 export async function getUserSubscriptionPlan(
   userId: string
 ): Promise<UserSubscriptionPlan> {
   if (!userId) throw new Error("Missing parameters");
+
+  const t = await getTranslations();
+  const pricingData = await getPricingData(t);
 
   const usersArray = await db.select({
     stripeSubscriptionId: users.stripeSubscriptionId,
@@ -64,6 +68,9 @@ export async function getUserSubscriptionPlan(
 }
 
 export async function updateUserQuota(userId: string, stripePriceId: string) {
+  const t = await getTranslations();
+  const pricingData = await getPricingData(t);
+
   const plan = pricingData.find(plan =>
     plan.stripeIds.monthly === stripePriceId || plan.stripeIds.yearly === stripePriceId
   );

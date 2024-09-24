@@ -18,6 +18,7 @@ function transformPath(path: string, locale: string): string {
 }
 
 export default async function GuidesPage() {
+  // 异步的要用这种方式获取翻译
   const t = await getTranslations("Guides");
   const locale = await getLocale();
   const guides = allGuides

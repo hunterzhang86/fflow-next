@@ -39,7 +39,114 @@
     }
   },
   "PricingPage": {
-    "dashboard": "控制面板"
+    "seriously": "您确认吗？",
+    "youare": "您已经是",
+    "backto": "点击返回",
+    "dashboard": "控制面板",
+    "starter": {
+      "title": "入门版",
+      "description": "适合初学者",
+      "benefit1": "每月最多 100 篇帖子",
+      "benefit2": "基本分析和报告",
+      "benefit3": "访问标准模板",
+      "limitation1": "没有优先访问新功能的权限。",
+      "limitation2": "有限的客户支持",
+      "limitation3": "没有自定义品牌",
+      "limitation4": "有限的商业资源访问权限。"
+    },
+    "pro": {
+      "title": "专业版",
+      "description": "解锁高级功能",
+      "benefit1": "每月最多 500 篇帖子",
+      "benefit2": "高级分析和报告",
+      "benefit3": "访问商业模板",
+      "benefit4": "优先客户支持",
+      "benefit5": "独家网络研讨会和培训。",
+      "limitation1": "没有自定义品牌",
+      "limitation2": "有限的商业资源访问权限。"
+    },
+    "business": {
+      "title": "商业版",
+      "description": "适合高级用户",
+      "benefit1": "无限制的帖子",
+      "benefit2": "实时分析和报告",
+      "benefit3": "访问所有模板，包括自定义品牌",
+      "benefit4": "24/7 商业客户支持",
+      "benefit5": "个性化的入职和账户管理。"
+    },
+    "features": {
+      "analytics": "访问分析",
+      "branding": "自定义品牌",
+      "support": "优先支持",
+      "reporting": "高级报告",
+      "manager": "专属经理",
+      "apiAccess": "API 访问",
+      "webinars": "每月网络研讨会",
+      "integrations": "自定义集成",
+      "roles": "角色和权限",
+      "onboarding": "入职协助",
+      "custom": "自定义",
+      "unlimited": "无限制",
+      "support247": "24/7 支持",
+      "full": "完整",
+      "available": "可用",
+      "advanced": "高级",
+      "fullService": "全方位服务"
+    },
+    "tooltips": {
+      "analytics": "所有计划都包括用于跟踪性能的基本分析。",
+      "branding": "自定义品牌从专业版计划开始提供。",
+      "reporting": "高级报告在商业版和企业版计划中提供。",
+      "manager": "企业版计划包括专属客户经理。",
+      "webinars": "专业版及更高版本计划包括访问每月网络研讨会。",
+      "integrations": "自定义集成在商业版和企业版计划中提供。",
+      "roles": "用户角色和权限管理在更高版本计划中得到改进。",
+      "onboarding": "更高版本计划包括更全面的入职协助。"
+    },
+    "year": "按年收费",
+    "month": "按月收费",
+    "goToDashboard": "前往控制面板",
+    "startAtFullSpeed": "从一开始就全速运行！",
+    "pricing": "定价",
+    "forContact": "联系我们的支持团队。",
+    "testSubscriptions": "您可以测试订阅，不会被收费。",
+    "email": "通过电子邮件",
+    "plans": "计划",
+    "compareOurPlans": "比较我们的计划",
+    "findThePerfectPlan": "找到适合您业务的完美计划！",
+    "planTable": {
+      "starter": "入门版",
+      "pro": "专业版",
+      "business": "商业版",
+      "enterprise": "企业版"
+    },
+    "faq": {
+      "label": "常见问题",
+      "title": "常见问题",
+      "subtitle": "探索我们的常见问题解答，快速找到常见问题的答案。如果您需要进一步的帮助，请随时联系我们。"
+    },
+    "faqItems": {
+      "item1": {
+        "question": "免费计划的费用是多少？",
+        "answer": "我们的免费计划完全免费，没有每月或年费。这是一个很好的开始方式，可以探索我们的基本功能。"
+      },
+      "item2": {
+        "question": "基本每月计划的费用是多少？",
+        "answer": "基本每月计划的价格为每月 15 美元。它提供对我们核心功能的访问，并按月计费。"
+      },
+      "item3": {
+        "question": "专业每月计划的价格是多少？",
+        "answer": "专业每月计划的价格为每月 25 美元。它提供高级功能，并按月计费，以增加灵活性。"
+      },
+      "item4": {
+        "question": "您提供任何年度订阅计划吗？",
+        "answer": "是的，我们提供年度订阅计划，以获得更多优惠。基本年度计划的价格为每年 144 美元，专业年度计划的价格为每年 300 美元。"
+      },
+      "item5": {
+        "question": "付费计划有试用期吗？",
+        "answer": "我们为专业每月和专业年度计划提供 14 天的免费试用期。这是一个很好的体验所有功能的方式，然后再决定订阅。"
+      }
+    }
   },
   "QuotaPage": {
     "resourceTypes": {
@@ -429,5 +536,15 @@
     "view": "查看",
     "featured": "精选",
     "noGuides": "没有指南。"
+  },
+  "SignIn": {
+    "signIn": "登录",
+    "description": "这仅用于演示目的 - 仅存储您的电子邮件和头像。",
+    "google": "使用 Google 登录",
+    "github": "使用 GitHub 登录"
+  },
+  "NewsletterForm": {
+    "label": "订阅我们的新闻",
+    "button": "订阅"
   }
 }

@@ -1,16 +1,20 @@
 import { PlansRow } from "@/types";
 import { CircleCheck, Info } from "lucide-react";
 
-import { comparePlans, plansColumns } from "@/config/subscriptions";
+import { HeaderSection } from "@/components/shared/header-section";
+import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { HeaderSection } from "@/components/shared/header-section";
-import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import { getComparePlans, plansColumns } from "@/config/subscriptions";
+import { useTranslations } from "next-intl";
 
 export function ComparePlans() {
+  const tPricingPage = useTranslations("PricingPage");
+  const comparePlans = getComparePlans(useTranslations());
+
   const renderCell = (value: string | boolean | null) => {
     if (value === null) return "—";
     if (typeof value === "boolean")
@@ -21,9 +25,9 @@ export function ComparePlans() {
   return (
     <MaxWidthWrapper>
       <HeaderSection
-        label="Plans"
-        title="Compare Our Plans"
-        subtitle="Find the perfect plan tailored for your business needs!"
+        label={tPricingPage("plans")}
+        title={tPricingPage("compareOurPlans")}
+        subtitle={tPricingPage("findThePerfectPlan")}
       />
 
       <div className="my-10 overflow-x-scroll max-lg:mx-[-0.8rem] md:overflow-x-visible">
@@ -36,7 +40,7 @@ export function ComparePlans() {
                   key={col}
                   className="sticky z-10 w-40 bg-accent p-5 font-heading text-xl capitalize tracking-wide md:w-auto lg:top-14 lg:text-2xl"
                 >
-                  {col}
+                  {tPricingPage(`planTable.${col}`)}
                 </th>
               ))}
             </tr>

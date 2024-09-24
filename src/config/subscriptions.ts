@@ -1,20 +1,21 @@
 import { PlansRow, QuotaResourceType, SubscriptionPlan } from "@/types/index";
 import { env } from "@/env.mjs";
+import { useTranslations } from 'next-intl';
 
-export const pricingData: SubscriptionPlan[] = [
+export const getPricingData = (t: ReturnType<typeof useTranslations>): SubscriptionPlan[] => [
   {
-    title: "Starter",
-    description: "For Beginners",
+    title: t('PricingPage.starter.title'),
+    description: t('PricingPage.starter.description'),
     benefits: [
-      "Up to 100 monthly posts",
-      "Basic analytics and reporting",
-      "Access to standard templates",
+      t('PricingPage.starter.benefit1'),
+      t('PricingPage.starter.benefit2'),
+      t('PricingPage.starter.benefit3'),
     ],
     limitations: [
-      "No priority access to new features.",
-      "Limited customer support",
-      "No custom branding",
-      "Limited access to business resources.",
+      t('PricingPage.starter.limitation1'),
+      t('PricingPage.starter.limitation2'),
+      t('PricingPage.starter.limitation3'),
+      t('PricingPage.starter.limitation4'),
     ],
     prices: {
       monthly: 0,
@@ -32,18 +33,18 @@ export const pricingData: SubscriptionPlan[] = [
     ],
   },
   {
-    title: "Pro",
-    description: "Unlock Advanced Features",
+    title: t('PricingPage.pro.title'),
+    description: t('PricingPage.pro.description'),
     benefits: [
-      "Up to 500 monthly posts",
-      "Advanced analytics and reporting",
-      "Access to business templates",
-      "Priority customer support",
-      "Exclusive webinars and training.",
+      t('PricingPage.pro.benefit1'),
+      t('PricingPage.pro.benefit2'),
+      t('PricingPage.pro.benefit3'),
+      t('PricingPage.pro.benefit4'),
+      t('PricingPage.pro.benefit5'),
     ],
     limitations: [
-      "No custom branding",
-      "Limited access to business resources.",
+      t('PricingPage.pro.limitation1'),
+      t('PricingPage.pro.limitation2'),
     ],
     prices: {
       monthly: 15,
@@ -61,14 +62,14 @@ export const pricingData: SubscriptionPlan[] = [
     ],
   },
   {
-    title: "Business",
-    description: "For Power Users",
+    title: t('PricingPage.business.title'),
+    description: t('PricingPage.business.description'),
     benefits: [
-      "Unlimited posts",
-      "Real-time analytics and reporting",
-      "Access to all templates, including custom branding",
-      "24/7 business customer support",
-      "Personalized onboarding and account management.",
+      t('PricingPage.business.benefit1'),
+      t('PricingPage.business.benefit2'),
+      t('PricingPage.business.benefit3'),
+      t('PricingPage.business.benefit4'),
+      t('PricingPage.business.benefit5'),
     ],
     limitations: [],
     prices: {
@@ -95,87 +96,84 @@ export const plansColumns = [
   "enterprise",
 ] as const;
 
-export const comparePlans: PlansRow[] = [
+export const getComparePlans = (t: ReturnType<typeof useTranslations>): PlansRow[] => [
   {
-    feature: "Access to Analytics",
+    feature: t('PricingPage.features.analytics'),
     starter: true,
     pro: true,
     business: true,
-    enterprise: "Custom",
-    tooltip: "All plans include basic analytics for tracking performance.",
+    enterprise: t('PricingPage.features.custom'),
+    tooltip: t('PricingPage.tooltips.analytics'),
   },
   {
-    feature: "Custom Branding",
+    feature: t('PricingPage.features.branding'),
     starter: null,
     pro: true,
     business: true,
-    enterprise: "Unlimited",
-    tooltip: "Custom branding is available from the Pro plan onwards.",
+    enterprise: t('PricingPage.features.unlimited'),
+    tooltip: t('PricingPage.tooltips.branding'),
   },
   {
-    feature: "Priority Support",
+    feature: t('PricingPage.features.support'),
     starter: null,
     pro: true,
     business: true,
-    enterprise: "24/7 Support",
+    enterprise: t('PricingPage.features.support247'),
   },
   {
-    feature: "Advanced Reporting",
+    feature: t('PricingPage.features.reporting'),
     starter: null,
     pro: null,
     business: true,
-    enterprise: "Custom",
-    tooltip:
-      "Advanced reporting is available in Business and Enterprise plans.",
+    enterprise: t('PricingPage.features.custom'),
+    tooltip: t('PricingPage.tooltips.reporting'),
   },
   {
-    feature: "Dedicated Manager",
+    feature: t('PricingPage.features.manager'),
     starter: null,
     pro: null,
     business: null,
-    enterprise: "Available",
-    tooltip: "Enterprise plan includes a dedicated account manager.",
+    enterprise: t('PricingPage.features.available'),
+    tooltip: t('PricingPage.tooltips.manager'),
   },
   {
-    feature: "API Access",
+    feature: t('PricingPage.features.apiAccess'),
     starter: false,
     pro: true,
     business: true,
-    enterprise: "Full",
+    enterprise: t('PricingPage.features.full'),
   },
   {
-    feature: "Monthly Webinars",
+    feature: t('PricingPage.features.webinars'),
     starter: false,
     pro: true,
     business: true,
-    enterprise: "Custom",
-    tooltip: "Pro and higher plans include access to monthly webinars.",
+    enterprise: t('PricingPage.features.custom'),
+    tooltip: t('PricingPage.tooltips.webinars'),
   },
   {
-    feature: "Custom Integrations",
+    feature: t('PricingPage.features.integrations'),
     starter: false,
     pro: false,
     business: true,
-    enterprise: "Available",
-    tooltip:
-      "Custom integrations are available in Business and Enterprise plans.",
+    enterprise: t('PricingPage.features.available'),
+    tooltip: t('PricingPage.tooltips.integrations'),
   },
   {
-    feature: "Roles and Permissions",
+    feature: t('PricingPage.features.roles'),
     starter: null,
     pro: true,
     business: true,
-    enterprise: "Advanced",
-    tooltip:
-      "User roles and permissions management improves with higher plans.",
+    enterprise: t('PricingPage.features.advanced'),
+    tooltip: t('PricingPage.tooltips.roles'),
   },
   {
-    feature: "Onboarding Assistance",
+    feature: t('PricingPage.features.onboarding'),
     starter: false,
     pro: true,
     business: true,
-    enterprise: "Full Service",
-    tooltip: "Higher plans include more comprehensive onboarding assistance.",
+    enterprise: t('PricingPage.features.fullService'),
+    tooltip: t('PricingPage.tooltips.onboarding'),
   },
   // Add more rows as needed
 ];
