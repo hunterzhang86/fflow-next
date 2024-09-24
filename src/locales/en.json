@@ -404,5 +404,12 @@
       "markdownFiles": "Markdown files",
       "subscriptions": "Subscriptions"
     }
+  },
+  "Guides": {
+    "title": "Guides",
+    "description": "This section includes end-to-end guides for developing Next.js 13 apps.",
+    "view": "View",
+    "featured": "Featured",
+    "noGuides": "No guides published."
   }
 }

@@ -45,9 +45,16 @@ export default async function GuidePage({
 }: {
   params: {
     slug: string;
+    locale: string;
   };
 }) {
-  const guide = allGuides.find((guide) => guide.slugAsParams === params.slug);
+  const slug = params.slug
+  ? params.locale + "/" + params.slug
+  : params.locale;
+
+  const guide = allGuides.find((guide) => {
+    return guide.slugAsParams === slug;
+  });
 
   if (!guide) {
     notFound();

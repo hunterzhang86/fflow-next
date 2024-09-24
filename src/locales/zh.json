@@ -404,5 +404,12 @@
       "markdownFiles": "Markdown 文件",
       "subscriptions": "订阅"
     }
+  },
+  "Guides": {
+    "title": "指南",
+    "description": "这个部分包括了开发 Next.js 13 应用的端到端指南。",
+    "view": "查看",
+    "featured": "精选",
+    "noGuides": "没有指南。"
   }
 }

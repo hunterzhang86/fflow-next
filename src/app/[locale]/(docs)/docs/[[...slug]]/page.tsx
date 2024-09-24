@@ -1,11 +1,11 @@
-import { notFound } from "next/navigation";
 import { allDocs } from "contentlayer/generated";
+import { notFound } from "next/navigation";
 
-import { getTableOfContents } from "@/lib/toc";
 import { Mdx } from "@/components/content/mdx-components";
 import { DocsPageHeader } from "@/components/docs/page-header";
 import { DocsPager } from "@/components/docs/pager";
 import { DashboardTableOfContents } from "@/components/shared/toc";
+import { getTableOfContents } from "@/lib/toc";
 
 import "@/styles/mdx.css";
 
@@ -20,8 +20,12 @@ interface DocPageProps {
 }
 
 async function getDocFromParams(params) {
-  const slug = params.slug?.join("/") || "";
-  const doc = allDocs.find((doc) => doc.slugAsParams === slug);
+  const slug = params.slug
+    ? params.locale + "/" + params.slug.join("/")
+    : params.locale;
+  const doc = allDocs.find((doc) => {
+    return doc.slugAsParams === slug;
+  });
 
   if (!doc) return null;
 
