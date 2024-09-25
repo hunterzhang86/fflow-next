@@ -246,8 +246,8 @@
       "declined": "已拒绝"
     },
     "ordersPage": {
-      "heading": "订",
-      "subheading": "看管理您的最新订单。",
+      "heading": "订单",
+      "subheading": "查看和管理您的最新订单。",
       "emptyTitle": "暂无订单",
       "emptyDescription": "您还没有任何订单。开始订购产品吧。",
       "buyProducts": "购买产品"
