@@ -59,7 +59,7 @@ export function BlogHeaderLayout({ locale }: { locale: string }) {
           className="mb-8 flex w-full items-center border-y p-3 text-foreground/90 md:hidden"
         >
           <List className="size-[18px]" />
-          <p className="ml-2.5 text-sm font-medium">Categories</p>
+          <p className="ml-2.5 text-sm font-medium">{t("categories")}</p>
         </Drawer.Trigger>
         <Drawer.Overlay className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm" onClick={closeDrawer} />
         <Drawer.Portal>
@@ -69,7 +69,7 @@ export function BlogHeaderLayout({ locale }: { locale: string }) {
             </div>
             <ul role="list" className="mb-14 w-full p-3 text-muted-foreground">
               <CategoryLink
-                title="All"
+                title={t("all")}
                 href="/blog"
                 active={!slug}
                 clickAction={closeDrawer}
@@ -86,7 +86,7 @@ export function BlogHeaderLayout({ locale }: { locale: string }) {
                 />
               ))}
               <CategoryLink
-                title="Guides"
+                title={t("guides")}
                 href="/guides"
                 active={false}
                 mobile
