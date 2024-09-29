@@ -24,7 +24,7 @@
 
 ## 介绍
 
-使用 Next.js 14、Prisma、Neon、Auth.js v5、Resend、React Email、Shadcn/ui 和 Stripe 的技术栈，为您的 SaaS 项目赋能。
+使用 Next.js 14、Drizzle、Neon、Auth.js v5、Resend、React Email、Next-Intl、Shadcn/ui 和 Stripe 的技术栈，为您的 SaaS 项目赋能。
 
 所有这些都无缝集成在 FFlow Next 中，加速您的开发和 SaaS 之旅。
 

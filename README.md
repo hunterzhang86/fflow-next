@@ -24,7 +24,7 @@
 
 ## Introduction
 
-Empower your next project with the stack of Next.js 14, Prisma, Neon, Auth.js v5, Resend, React Email, Shadcn/ui, and Stripe.
+Empower your next project with the stack of Next.js 14, Drizzle, Neon, Auth.js v5, Resend, React Email, Next-Intl, Shadcn/ui, and Stripe.
 
 All seamlessly integrated with the FFlow Next to accelerate your development and SaaS journey.
 
