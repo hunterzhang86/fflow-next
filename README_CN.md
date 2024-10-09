@@ -1,11 +1,6 @@
-<a href="https://next-saas-stripe-starter.vercel.app">
-  <img alt="FFlow Next" src="public/_static/og_zh.jpg">
-  <h1 align="center">FFlow Next: 您的第一个 SaaS 模板</h1>
+<a href="https://www.fflowlink.com">
+  <img alt="FFlow Next: 您的第一个 SaaS 模板" src="public/_static/og_zh.jpg">
 </a>
-
-<p align="center">
-  帮助您全速启动 SaaS 项目！
-</p>
 
 <p align="center">
   <a href="https://twitter.com/hunterzhang86">

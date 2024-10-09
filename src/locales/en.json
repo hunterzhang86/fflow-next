@@ -4,7 +4,7 @@
   },
   "HeroLanding": {
     "introducing": "Introducing",
-    "kickoff": "Kick off with a bang with",
+    "kickoff": "Your First SaaS Template: ",
     "saasStarter": "FFlow Next",
     "description": "Build your next project using Next.js 14, Drizzle ORM, Neon, Auth.js v5, Resend, React Email, Shadcn/ui, Stripe.",
     "goPricing": "Go Pricing",

@@ -4,7 +4,7 @@
   },
   "HeroLanding": {
     "introducing": "介绍",
-    "kickoff": "帮助您快速启航",
+    "kickoff": "您的第一个 SaaS 模板：",
     "saasStarter": "FFlow Next",
     "description": "使用 Next.js 14、Drizzle ORM、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个 SaaS 项目。",
     "goPricing": "查看定价",
