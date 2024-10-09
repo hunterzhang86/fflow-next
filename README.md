@@ -1,6 +1,6 @@
 <a href="https://next-saas-stripe-starter.vercel.app">
   <img alt="FFlow Next" src="public/_static/og.jpg">
-  <h1 align="center">FFlow Next SaaS Starter</h1>
+  <h1 align="center">FFlow Next: Your First SaaS Template</h1>
 </a>
 
 <p align="center">
@@ -14,15 +14,21 @@
 </p>
 
 <p align="center">
+  <a href="./README.md"><img alt="README in English" src="https://img.shields.io/badge/English-d9d9d9"></a>
+  <a href="./README_CN.md"><img alt="简体中文版自述文件" src="https://img.shields.io/badge/简体中文-d9d9d9"></a>
+</p>
+
+<p align="center">
   <a href="#introduction"><strong>Introduction</strong></a> ·
   <a href="#installation"><strong>Installation</strong></a> ·
-  <a href="#tech-stack--features"><strong>Tech Stack + Features</strong></a> ·
   <a href="#author"><strong>Author</strong></a> ·
   <a href="#credits"><strong>Credits</strong></a>
 </p>
 <br/>
 
 ## Introduction
+
+[Click here to watch the demo video](https://app.guidde.com/share/playbooks/dCsekcnKVF3ySsS7DRHDam)
 
 Empower your next project with the stack of Next.js 14, Drizzle, Neon, Auth.js v5, Resend, React Email, Next-Intl, Shadcn/ui, and Stripe.
 
@@ -67,10 +73,6 @@ pnpm run dev
 ## Roadmap
 - [ ] Upgrade eslint to v9
 - [ ] Add resend for success subscriptions
-
-## Tech Stack + Features
-
-https://github.com/hunterzhang86/fflow-next/assets/62285783/828a4e0f-30e3-4cfe-96ff-4dfd9cd55124
 
 ### Frameworks
 
