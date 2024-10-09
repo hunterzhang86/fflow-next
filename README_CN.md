@@ -1,5 +1,5 @@
 <a href="https://www.fflowlink.com">
-  <img alt="FFlow Next: 您的第一个 SaaS 模板" src="public/_static/og_zh.jpg">
+  <img alt="FFlow Next: 您的第一个出海 SaaS 模板" src="public/_static/og_zh.jpg">
 </a>
 
 <p align="center">

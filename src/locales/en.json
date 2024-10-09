@@ -3,14 +3,14 @@
     "title": "Hello world!"
   },
   "HeroLanding": {
-    "introducing": "Introducing",
-    "kickoff": "Your First SaaS Template: ",
+    "introducing": "Introducing Template",
+    "kickoff": "Your First Overseas SaaS Template: ",
     "saasStarter": "FFlow Next",
-    "description": "Build your next project using Next.js 14, Drizzle ORM, Neon, Auth.js v5, Resend, React Email, Shadcn/ui, Stripe.",
+    "description": "Build your Next Overseas SaaS project using Next.js 14, Next Intl, Drizzle ORM, Neon, Auth.js v5, Resend, React Email, Shadcn/ui, Stripe.",
     "goPricing": "Go Pricing",
     "starOn": "Star on",
     "github": "GitHub",
-    "goIFB": "Go My Blog"
+    "goIFB": "My Blog"
   },
   "layout": {
     "english": "English",

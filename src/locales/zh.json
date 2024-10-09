@@ -3,14 +3,14 @@
     "title": "你好 世界!"
   },
   "HeroLanding": {
-    "introducing": "介绍",
-    "kickoff": "您的第一个 SaaS 模板：",
+    "introducing": "模板介绍",
+    "kickoff": "您的第一个出海 SaaS 模板：",
     "saasStarter": "FFlow Next",
-    "description": "使用 Next.js 14、Drizzle ORM、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个 SaaS 项目。",
+    "description": "使用 Next.js 14、Next Intl、Drizzle ORM、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个 SaaS 出海项目。",
     "goPricing": "查看定价",
     "starOn": "Star on",
     "github": "GitHub",
-    "goIFB": "访问我的博客"
+    "goIFB": "作者博客"
   },
   "layout": {
     "english": "英文",
