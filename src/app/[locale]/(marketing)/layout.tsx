@@ -30,11 +30,6 @@ export default function MarketingLayout({
     signUp: t("Marketing.signUp"),
   };
 
-  console.log(
-    "NEXT_PUBLIC_GOOGLE_ANALYTICS: ",
-    process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
-  );
-
   return (
     <div className="flex min-h-screen flex-col">
       {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
