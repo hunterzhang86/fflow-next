@@ -66,6 +66,7 @@ pnpm run dev
 ## 路线图
 - [ ] 升级 eslint 到 v9
 - [ ] 添加 resend 以支持成功订阅
+- [ ] 添加 google analytics
 
 ### 框架
 

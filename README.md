@@ -68,6 +68,7 @@ pnpm run dev
 ## Roadmap
 - [ ] Upgrade eslint to v9
 - [ ] Add resend for success subscriptions
+- [ ] Add google analytics
 
 ### Frameworks
 
