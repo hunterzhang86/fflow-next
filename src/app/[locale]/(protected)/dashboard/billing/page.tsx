@@ -5,6 +5,7 @@ import { getCurrentUser } from "@/lib/session";
 import { getUserSubscriptionPlan } from "@/lib/subscription";
 import { constructMetadata } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
+import { redirect } from "next/navigation";
 
 export const metadata = constructMetadata({
   title: "Billing – FFlow Next",
@@ -15,12 +16,12 @@ export default async function BillingPage() {
   const t = await getTranslations("BillingPage");
   const user = await getCurrentUser();
 
-  let userSubscriptionPlan = await getUserSubscriptionPlan(user?.id as string);
-  // if (user && user.id && user.role === "USER") {
-  //   userSubscriptionPlan = await getUserSubscriptionPlan(user.id);
-  // } else {
-  //   redirect("/login");
-  // }
+  let userSubscriptionPlan;
+  if (user && user.id && user.role === "USER") {
+    userSubscriptionPlan = await getUserSubscriptionPlan(user.id);
+  } else {
+    redirect("/login");
+  }
 
   return (
     <>
