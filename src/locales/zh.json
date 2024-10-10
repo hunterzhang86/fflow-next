@@ -212,6 +212,7 @@
     "main": {
       "heading": "控制面板",
       "currentRole": "当前角色：{role} — 在设置中更改您的角色。",
+      "loadingCurrentRole": "当前角色：",
       "noContentTitle": "尚未创建内容",
       "noContentDescription": "您还没有任何内容。开始创建内容吧。",
       "addContent": "添加内容"
@@ -547,5 +548,20 @@
   "NewsletterForm": {
     "label": "订阅我们的新闻",
     "button": "订阅"
+  },
+  "CustomerPortalButton": {
+    "openCustomerPortal": "打开订阅门户"
+  },
+  "BillingPage": {
+    "heading": "账单",
+    "subheading": "管理账单和您的订阅计划。",
+    "subscriptionPlan": "订阅计划",
+    "choosePlan": "选择一个计划",
+    "willBeCanceledOnPrefix": "您的计划将在 ",
+    "willBeCanceledOnSuffix": "结束。",
+    "willRenewOnPrefix": "您的计划将在 ",
+    "willRenewOnSuffix": "重新付款。",
+    "youAreCurrentlyOnThe": "您当前已经订阅",
+    "plan": "计划。"
   }
 }

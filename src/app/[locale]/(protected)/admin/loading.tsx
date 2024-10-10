@@ -1,12 +1,15 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import { DashboardHeader } from "@/components/dashboard/header";
+import { useTranslations } from "next-intl";
 
 export default function AdminPanelLoading() {
+  const t = useTranslations("AdminPage");
+
   return (
     <>
       <DashboardHeader
-        heading="Admin Panel"
-        text="Access only for users with ADMIN role."
+        heading={t("heading")}
+        text={t("subheading")}
       />
       <div className="flex flex-col gap-5">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -5,6 +5,7 @@ import { openCustomerPortal } from "@/actions/open-customer-portal";
 
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/shared/icons";
+import { useTranslations } from "next-intl";
 
 interface CustomerPortalButtonProps {
   userStripeId: string;
@@ -13,6 +14,8 @@ interface CustomerPortalButtonProps {
 export function CustomerPortalButton({
   userStripeId,
 }: CustomerPortalButtonProps) {
+  const t = useTranslations("CustomerPortalButton");
+
   let [isPending, startTransition] = useTransition();
   const generateUserStripeSession = openCustomerPortal.bind(null, userStripeId);
 
@@ -24,7 +27,7 @@ export function CustomerPortalButton({
       {isPending ? (
         <Icons.spinner className="mr-2 size-4 animate-spin" />
       ) : null}
-      Open Customer Portal
+      {t("openCustomerPortal")}
     </Button>
   );
 }

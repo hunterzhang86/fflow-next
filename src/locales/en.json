@@ -212,6 +212,7 @@
     "main": {
       "heading": "Dashboard",
       "currentRole": "Current Role: {role} — Change your role in settings.",
+      "loadingCurrentRole": "Current Role :",
       "noContentTitle": "No content created",
       "noContentDescription": "You don't have any content yet. Start creating content.",
       "addContent": "Add Content"
@@ -547,5 +548,18 @@
   "NewsletterForm": {
     "label": "Subscribe to our newsletter",
     "button": "Subscribe"
+  },
+  "CustomerPortalButton": {
+    "openCustomerPortal": "Open Customer Portal"
+  },
+  "BillingPage": {
+    "heading": "Billing",
+    "subheading": "Manage billing and your subscription plan.",
+    "subscriptionPlan": "Subscription Plan",
+    "choosePlan": "Choose a plan",
+    "willBeCanceledOn": "Your plan will be canceled on ",
+    "willRenewOn": "Your plan renews on ",
+    "youAreCurrentlyOnThe": "You are currently on the",
+    "plan": "plan."
   }
 }
