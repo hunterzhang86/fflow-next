@@ -4,7 +4,7 @@ import { BillingInfo } from "@/components/pricing/billing-info";
 import { getCurrentUser } from "@/lib/session";
 import { getUserSubscriptionPlan } from "@/lib/subscription";
 import { constructMetadata } from "@/lib/utils";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { redirect } from "next/navigation";
 
 export const metadata = constructMetadata({
@@ -14,13 +14,14 @@ export const metadata = constructMetadata({
 
 export default async function BillingPage() {
   const t = await getTranslations("BillingPage");
+  const locale = await getLocale();
   const user = await getCurrentUser();
 
   let userSubscriptionPlan;
   if (user && user.id && user.role === "USER") {
     userSubscriptionPlan = await getUserSubscriptionPlan(user.id);
   } else {
-    redirect("/login");
+    redirect("/" + locale + "/login");
   }
 
   return (
