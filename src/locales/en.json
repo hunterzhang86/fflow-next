@@ -561,5 +561,27 @@
     "willRenewOn": "Your plan renews on ",
     "youAreCurrentlyOnThe": "You are currently on the",
     "plan": "plan."
+  },
+  "LoginPage": {
+    "back": "Back",
+    "welcomeBack": "Welcome back",
+    "enterEmail": "Enter your email to sign in to your account",
+    "noAccount": "Don't have an account? Sign Up"
+  },
+  "RegisterPage": {
+    "login": "Login",
+    "createAccount": "Create an account",
+    "enterEmailToCreateAccount": "Enter your email below to create your account",
+    "byClickingContinue": "By clicking continue, you agree to our",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "AuthLayout": {
+    "quote": "FFlow Next has revolutionized our development process. It's incredibly fast and efficient!",
+    "author": "John Doe, Software Engineer",
+    "orContinueWith": "Or continue with",
+    "signUpWithEmail": "Sign Up with Email",
+    "signInWithEmail": "Sign In with Email"
   }
 }

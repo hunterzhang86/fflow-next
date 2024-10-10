@@ -100,7 +100,7 @@
       "reporting": "高级报告在商业版和企业版计划中提供。",
       "manager": "企业版计划包括专属客户经理。",
       "webinars": "专业版及更高版本计划包括访问每月网络研讨会。",
-      "integrations": "自定义集成在商业版和企业版计划中提供。",
+      "integrations": "自定义集成在商业版和企业版计中提供。",
       "roles": "用户角色和权限管理在更高版本计划中得到改进。",
       "onboarding": "更高版本计划包括更全面的入职协助。"
     },
@@ -183,7 +183,7 @@
     "keyCopiedSuccess": "API 密钥已复制到剪贴板。",
     "keyDeletedSuccess": "API 密钥已删除。",
     "keyDeletionError": "API 密钥删除失败。",
-    "apiKeyNamePlaceholder": "输入 API 密钥名称",
+    "apiKeyNamePlaceholder": "输 API 密钥名称",
     "name": "名称",
     "create": "创建",
     "apiKey": "API 密钥",
@@ -286,7 +286,7 @@
       "2": "Next.js 14 和其他前沿技术的集成使 FFlow Next 成为了游戏规则的改变者。",
       "3": "采用 FFlow Next 后，我们团队的生产力飞速提升。强烈推荐！",
       "4": "我对 FFlow Next 的代码质量和清晰文档印象深刻。向团队致敬！",
-      "5": "FFlow Next 为我提供了必要的工具，以高效地管理用户数据。非常感谢！",
+      "5": "FFlow Next 为我提供了必要的工具，以高效管理用户数据。非常感谢！",
       "6": "FFlow Next 在我作为营销经理的角色中发挥了无价的作用。通过 Stripe 的无缝集成，我能够启动具有内置支付功能的定向营动，使我们能够更有效地货币化我们的产品和服务。",
       "7": "感谢 FFlow Next, 我能够在创纪录的时间内创建现代和吸引人的用户界面。入门套件为构建时尚和直观的界面提供了坚实的基础, 使我能够更专注于工作的创造性方面。"
     }
@@ -563,5 +563,27 @@
     "willRenewOnSuffix": "重新付款。",
     "youAreCurrentlyOnThe": "您当前已经订阅",
     "plan": "计划。"
+  },
+  "LoginPage": {
+    "back": "返回",
+    "welcomeBack": "欢迎回来",
+    "enterEmail": "输入您的邮箱以登录您的账户",
+    "noAccount": "还没有账户？注册"
+  },
+  "RegisterPage": {
+    "login": "登录",
+    "createAccount": "创建账户",
+    "enterEmailToCreateAccount": "在下方输入您的邮箱以创建账户",
+    "byClickingContinue": "点击继续，即表示您同意我们的",
+    "termsOfService": "服务条款",
+    "and": "和",
+    "privacyPolicy": "隐私政策"
+  },
+  "AuthLayout": {
+    "quote": "FFlow Next 彻底改变了我们的开发流程。它非常快速和高效！",
+    "author": "张三，软件工程师",
+    "orContinueWith": "或者使用下面登录方式",
+    "signUpWithEmail": "使用邮箱注册",
+    "signInWithEmail": "使用邮箱登录"
   }
 }

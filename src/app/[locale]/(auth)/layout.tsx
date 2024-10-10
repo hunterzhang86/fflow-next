@@ -17,8 +17,8 @@ export default async function AuthLayout({
   const user = await getCurrentUser();
 
   if (user) {
-    if ((user.role as string) === "ADMIN") redirect("/" + locale + "/admin");
-    redirect("/" + locale + "/dashboard");
+    if ((user.role as string) === "ADMIN") redirect(`/${locale}/admin`);
+    redirect(`/${locale}/dashboard`);
   }
 
   return <div className="min-h-screen">{children}</div>;
