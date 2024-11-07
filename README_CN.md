@@ -115,7 +115,7 @@ pnpm run dev
 
 ## 致谢
 
-此项目灵感来源于 shadcn 的 [Taxonomy](https://github.com/shadcn-ui/taxonomy)、Steven Tey 的 [Precedent](https://github.com/steven-tey/precedent) 和 Antonio Erdeljac 的 [Next 13 AI SaaS](https://github.com/AntonioErdeljac/next13-ai-saas)。
+此项目灵感来源于 [next-saas-stripe-starter](https://github.com/mickasmt/next-saas-stripe-starter)、shadcn 的 [Taxonomy](https://github.com/shadcn-ui/taxonomy)、Steven Tey 的 [Precedent](https://github.com/steven-tey/precedent) 和 Antonio Erdeljac 的 [Next 13 AI SaaS](https://github.com/AntonioErdeljac/next13-ai-saas)。
 
 - Shadcn ([@shadcn](https://twitter.com/shadcn))
 - Steven Tey ([@steventey](https://twitter.com/steventey))
