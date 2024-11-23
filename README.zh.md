@@ -115,7 +115,7 @@ https://github.com/hunterzhang86/fflow-next/assets/62285783/828a4e0f-30e3-4cfe-9
 
 ## 作者
 
-由 [@hunterzhang86](https://twitter.com/hunterzhang86) 创建于 2024 年，基于 [MIT 许可证](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md) 发布。
+由 [Hunter Zhang](https://twitter.com/hunterzhang86) 创建于 2024 年，基于 [MIT 许可证](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md) 发布。
 
 ## 致谢
 
@@ -124,3 +124,8 @@ https://github.com/hunterzhang86/fflow-next/assets/62285783/828a4e0f-30e3-4cfe-9
 - Shadcn ([@shadcn](https://twitter.com/shadcn))
 - Steven Tey ([@steventey](https://twitter.com/steventey))
 - Antonio Erdeljac ([@YTCodeAntonio](https://twitter.com/AntonioErdeljac))
+- Hunter Zhang ([@hunterzhang86](https://twitter.com/hunterzhang86))
+
+## 作品
+
+- [跨境星图](https://www.crosshubs.com) - 跨境业务全流程工具导航

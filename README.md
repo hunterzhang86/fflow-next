@@ -115,7 +115,7 @@ https://github.com/hunterzhang86/fflow-next/assets/62285783/828a4e0f-30e3-4cfe-9
 
 ## Author
 
-Created by [@hunterzhang86](https://twitter.com/hunterzhang86) in 2024, released under the [MIT license](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md).
+Created by [Hunter Zhang](https://twitter.com/hunterzhang86) in 2024, released under the [MIT license](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md).
 
 ## Credits
 
@@ -124,3 +124,8 @@ This project was inspired by shadcn's [Taxonomy](https://github.com/shadcn-ui/ta
 - Shadcn ([@shadcn](https://twitter.com/shadcn))
 - Steven Tey ([@steventey](https://twitter.com/steventey))
 - Antonio Erdeljac ([@YTCodeAntonio](https://twitter.com/AntonioErdeljac))
+- Hunter Zhang ([@hunterzhang86](https://twitter.com/hunterzhang86))
+
+## Works
+
+- [Cross Hub](https://www.crosshubs.com) - Ultimate Cross-Border Business Toolkit
