@@ -122,7 +122,6 @@ This project was inspired by [next-saas-stripe-starter](https://github.com/micka
 - Shadcn ([@shadcn](https://twitter.com/shadcn))
 - Steven Tey ([@steventey](https://twitter.com/steventey))
 - Antonio Erdeljac ([@YTCodeAntonio](https://twitter.com/AntonioErdeljac))
-- 
 - Hunter Zhang ([@hunterzhang86](https://twitter.com/hunterzhang86))
 
 ## Works
