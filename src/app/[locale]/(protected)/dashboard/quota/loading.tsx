@@ -1,11 +1,14 @@
+import { useTranslations } from "next-intl";
+
 import { DashboardHeader } from "@/components/dashboard/header";
 
 export default function QuotaLoading() {
+  const t = useTranslations("QuotaPage");
   return (
     <>
       <DashboardHeader
-        heading="Resource Usage Quota"
-        text="Monitor your resource usage and remaining quota for different resources."
+        heading={t("resourceUsageQuota")}
+        text={t("monitorResourceUsage")}
       />
     </>
   );

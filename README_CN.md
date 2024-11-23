@@ -1,11 +1,6 @@
-<a href="https://next-saas-stripe-starter.vercel.app">
-  <img alt="FFlow Next" src="public/_static/og_zh.jpg">
-  <h1 align="center">FFlow Next SaaS 应用模版</h1>
+<a href="https://www.fflowlink.com">
+  <img alt="FFlow Next: 您的第一个出海 SaaS 模板" src="public/_static/og_zh.jpg">
 </a>
-
-<p align="center">
-  帮助您全速启动 SaaS 项目！
-</p>
 
 <p align="center">
   <a href="https://twitter.com/hunterzhang86">
@@ -14,9 +9,13 @@
 </p>
 
 <p align="center">
+  <a href="./README.md"><img alt="README in English" src="https://img.shields.io/badge/English-d9d9d9"></a>
+  <a href="./README_CN.md"><img alt="简体中文版自述文件" src="https://img.shields.io/badge/简体中文-d9d9d9"></a>
+</p>
+
+<p align="center">
   <a href="#introduction"><strong>介绍</strong></a> ·
   <a href="#installation"><strong>安装</strong></a> ·
-  <a href="#tech-stack--features"><strong>技术栈与功能</strong></a> ·
   <a href="#author"><strong>作者</strong></a> ·
   <a href="#credits"><strong>致谢</strong></a>
 </p>
@@ -24,7 +23,7 @@
 
 ## 介绍
 
-使用 Next.js 14、Prisma、Neon、Auth.js v5、Resend、React Email、Shadcn/ui 和 Stripe 的技术栈，为您的 SaaS 项目赋能。
+使用 Next.js 14、Drizzle、Neon、Auth.js v5、Resend、React Email、Next-Intl、Shadcn/ui 和 Stripe 的技术栈，为您的 SaaS 项目赋能。
 
 所有这些都无缝集成在 FFlow Next 中，加速您的开发和 SaaS 之旅。
 
@@ -67,10 +66,7 @@ pnpm run dev
 ## 路线图
 - [ ] 升级 eslint 到 v9
 - [ ] 添加 resend 以支持成功订阅
-
-## 技术栈与功能
-
-https://github.com/hunterzhang86/fflow-next/assets/62285783/828a4e0f-30e3-4cfe-96ff-4dfd9cd55124
+- [ ] 添加 google analytics
 
 ### 框架
 
@@ -119,7 +115,7 @@ https://github.com/hunterzhang86/fflow-next/assets/62285783/828a4e0f-30e3-4cfe-9
 
 ## 致谢
 
-此项目灵感来源于 shadcn 的 [Taxonomy](https://github.com/shadcn-ui/taxonomy)、Steven Tey 的 [Precedent](https://github.com/steven-tey/precedent) 和 Antonio Erdeljac 的 [Next 13 AI SaaS](https://github.com/AntonioErdeljac/next13-ai-saas)。
+此项目灵感来源于 [next-saas-stripe-starter](https://github.com/mickasmt/next-saas-stripe-starter)、shadcn 的 [Taxonomy](https://github.com/shadcn-ui/taxonomy)、Steven Tey 的 [Precedent](https://github.com/steven-tey/precedent) 和 Antonio Erdeljac 的 [Next 13 AI SaaS](https://github.com/AntonioErdeljac/next13-ai-saas)。
 
 - Shadcn ([@shadcn](https://twitter.com/shadcn))
 - Steven Tey ([@steventey](https://twitter.com/steventey))

@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
+import { redirect } from "next/navigation";
 
 import { getCurrentUser } from "@/lib/session";
 
@@ -17,8 +17,8 @@ export default async function AuthLayout({
   const user = await getCurrentUser();
 
   if (user) {
-    if ((user.role as string) === "ADMIN") redirect("/admin");
-    redirect("/dashboard");
+    if ((user.role as string) === "ADMIN") redirect(`/${locale}/admin`);
+    redirect(`/${locale}/dashboard`);
   }
 
   return <div className="min-h-screen">{children}</div>;

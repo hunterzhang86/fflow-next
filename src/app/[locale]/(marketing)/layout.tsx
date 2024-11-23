@@ -1,11 +1,12 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 
+import { getDocsConfig } from "@/config/docs";
+import { getMarketingConfig } from "@/config/marketing";
 import { NavMobile } from "@/components/layout/mobile-nav";
 import { NavBar } from "@/components/layout/navbar";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { getMarketingConfig } from "@/config/marketing";
-import { useTranslations } from "next-intl";
-import { getDocsConfig } from "@/config/docs";
 
 interface MarketingLayoutProps {
   children: React.ReactNode;
@@ -23,16 +24,28 @@ export default function MarketingLayout({
   const docsConfig = getDocsConfig(t);
 
   const translations = {
-    adminPanel: t('Dashboard.sidebar.adminPanel'),
-    dashboard: t('Dashboard.sidebar.dashboard'),
-    login: t('Marketing.login'),
-    signUp: t('Marketing.signUp'),
+    adminPanel: t("Dashboard.sidebar.adminPanel"),
+    dashboard: t("Dashboard.sidebar.dashboard"),
+    login: t("Marketing.login"),
+    signUp: t("Marketing.signUp"),
   };
 
   return (
     <div className="flex min-h-screen flex-col">
-      <NavMobile marketingConfig={marketingConfig} docsConfig={docsConfig} translations={translations} />
-      <NavBar scroll={true} marketingConfig={marketingConfig} docsConfig={docsConfig} translations={translations} />
+      {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+      )}
+      <NavMobile
+        marketingConfig={marketingConfig}
+        docsConfig={docsConfig}
+        translations={translations}
+      />
+      <NavBar
+        scroll={true}
+        marketingConfig={marketingConfig}
+        docsConfig={docsConfig}
+        translations={translations}
+      />
       <main className="flex-1">{children}</main>
       <SiteFooter />
     </div>

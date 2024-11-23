@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Icons } from "@/components/shared/icons";
+import { useTranslations } from "next-intl";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {
   type?: string;
@@ -33,6 +34,8 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
   const [isGoogleLoading, setIsGoogleLoading] = React.useState<boolean>(false);
   const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
   const searchParams = useSearchParams();
+
+  const t = useTranslations("AuthLayout");
 
   async function onSubmit(data: FormData) {
     setIsLoading(true);
@@ -84,7 +87,7 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
             {isLoading && (
               <Icons.spinner className="mr-2 size-4 animate-spin" />
             )}
-            {type === "register" ? "Sign Up with Email" : "Sign In with Email"}
+            {type === "register" ? t("signUpWithEmail") : t("signInWithEmail")}
           </button>
         </div>
       </form>
@@ -94,7 +97,7 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
         </div>
         <div className="relative flex justify-center text-xs uppercase">
           <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
+            {t("orContinueWith")}
           </span>
         </div>
       </div>

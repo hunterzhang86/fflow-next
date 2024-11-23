@@ -16,7 +16,7 @@ export const getSidebarLinks = (t: ReturnType<typeof useTranslations>): SidebarN
         href: `/dashboard/billing`,
         icon: "billing",
         title: t('billing'),
-        authorizeOnly: UserRole.USER,
+        authorizeOnly: UserRole.ADMIN,
       },
       { href: `/dashboard/charts`, icon: "lineChart", title: t('charts') },
       { href: `/dashboard/chat`, icon: "bot", title: t('chatBot') },

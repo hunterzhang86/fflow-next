@@ -1,9 +1,11 @@
 import { DashboardHeader } from "@/components/dashboard/header";
+import { useTranslations } from "next-intl";
 
 export default function APIKeysLoading() {
+  const t = useTranslations("APIKeysPage");
   return (
     <>
-      <DashboardHeader heading="API Keys" text="Manage your API keys here." />
+      <DashboardHeader heading={t("heading")} text={t("subheading")} />
     </>
   );
 }

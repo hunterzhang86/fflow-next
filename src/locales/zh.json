@@ -3,14 +3,14 @@
     "title": "你好 世界!"
   },
   "HeroLanding": {
-    "introducing": "介绍",
-    "kickoff": "帮助您快速启航",
+    "introducing": "模板介绍",
+    "kickoff": "您的第一个出海 SaaS 模板：",
     "saasStarter": "FFlow Next",
-    "description": "使用 Next.js 14、Drizzle ORM、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个 SaaS 项目。",
+    "description": "使用 Next.js 14、Next Intl、Drizzle ORM、Neon、Auth.js v5、Resend、React Email、Shadcn/ui、Stripe 构建您的下一个 SaaS 出海项目。",
     "goPricing": "查看定价",
     "starOn": "Star on",
     "github": "GitHub",
-    "goIFB": "访问我的博客"
+    "goIFB": "作者博客"
   },
   "layout": {
     "english": "英文",
@@ -100,7 +100,7 @@
       "reporting": "高级报告在商业版和企业版计划中提供。",
       "manager": "企业版计划包括专属客户经理。",
       "webinars": "专业版及更高版本计划包括访问每月网络研讨会。",
-      "integrations": "自定义集成在商业版和企业版计划中提供。",
+      "integrations": "自定义集成在商业版和企业版计中提供。",
       "roles": "用户角色和权限管理在更高版本计划中得到改进。",
       "onboarding": "更高版本计划包括更全面的入职协助。"
     },
@@ -183,7 +183,7 @@
     "keyCopiedSuccess": "API 密钥已复制到剪贴板。",
     "keyDeletedSuccess": "API 密钥已删除。",
     "keyDeletionError": "API 密钥删除失败。",
-    "apiKeyNamePlaceholder": "输入 API 密钥名称",
+    "apiKeyNamePlaceholder": "输 API 密钥名称",
     "name": "名称",
     "create": "创建",
     "apiKey": "API 密钥",
@@ -212,6 +212,7 @@
     "main": {
       "heading": "控制面板",
       "currentRole": "当前角色：{role} — 在设置中更改您的角色。",
+      "loadingCurrentRole": "当前角色：",
       "noContentTitle": "尚未创建内容",
       "noContentDescription": "您还没有任何内容。开始创建内容吧。",
       "addContent": "添加内容"
@@ -285,7 +286,7 @@
       "2": "Next.js 14 和其他前沿技术的集成使 FFlow Next 成为了游戏规则的改变者。",
       "3": "采用 FFlow Next 后，我们团队的生产力飞速提升。强烈推荐！",
       "4": "我对 FFlow Next 的代码质量和清晰文档印象深刻。向团队致敬！",
-      "5": "FFlow Next 为我提供了必要的工具，以高效地管理用户数据。非常感谢！",
+      "5": "FFlow Next 为我提供了必要的工具，以高效管理用户数据。非常感谢！",
       "6": "FFlow Next 在我作为营销经理的角色中发挥了无价的作用。通过 Stripe 的无缝集成，我能够启动具有内置支付功能的定向营动，使我们能够更有效地货币化我们的产品和服务。",
       "7": "感谢 FFlow Next, 我能够在创纪录的时间内创建现代和吸引人的用户界面。入门套件为构建时尚和直观的界面提供了坚实的基础, 使我能够更专注于工作的创造性方面。"
     }
@@ -547,5 +548,42 @@
   "NewsletterForm": {
     "label": "订阅我们的新闻",
     "button": "订阅"
+  },
+  "CustomerPortalButton": {
+    "openCustomerPortal": "打开订阅门户"
+  },
+  "BillingPage": {
+    "heading": "账单",
+    "subheading": "管理账单和您的订阅计划。",
+    "subscriptionPlan": "订阅计划",
+    "choosePlan": "选择一个计划",
+    "willBeCanceledOnPrefix": "您的计划将在 ",
+    "willBeCanceledOnSuffix": "结束。",
+    "willRenewOnPrefix": "您的计划将在 ",
+    "willRenewOnSuffix": "重新付款。",
+    "youAreCurrentlyOnThe": "您当前已经订阅",
+    "plan": "计划。"
+  },
+  "LoginPage": {
+    "back": "返回",
+    "welcomeBack": "欢迎回来",
+    "enterEmail": "输入您的邮箱以登录您的账户",
+    "noAccount": "还没有账户？注册"
+  },
+  "RegisterPage": {
+    "login": "登录",
+    "createAccount": "创建账户",
+    "enterEmailToCreateAccount": "在下方输入您的邮箱以创建账户",
+    "byClickingContinue": "点击继续，即表示您同意我们的",
+    "termsOfService": "服务条款",
+    "and": "和",
+    "privacyPolicy": "隐私政策"
+  },
+  "AuthLayout": {
+    "quote": "FFlow Next 彻底改变了我们的开发流程。它非常快速和高效！",
+    "author": "张三，软件工程师",
+    "orContinueWith": "或者使用下面登录方式",
+    "signUpWithEmail": "使用邮箱注册",
+    "signInWithEmail": "使用邮箱登录"
   }
 }

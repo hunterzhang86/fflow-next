@@ -3,14 +3,14 @@
     "title": "Hello world!"
   },
   "HeroLanding": {
-    "introducing": "Introducing",
-    "kickoff": "Kick off with a bang with",
+    "introducing": "Introducing Template",
+    "kickoff": "Your First Overseas SaaS Template: ",
     "saasStarter": "FFlow Next",
-    "description": "Build your next project using Next.js 14, Drizzle ORM, Neon, Auth.js v5, Resend, React Email, Shadcn/ui, Stripe.",
+    "description": "Build your Next Overseas SaaS project using Next.js 14, Next Intl, Drizzle ORM, Neon, Auth.js v5, Resend, React Email, Shadcn/ui, Stripe.",
     "goPricing": "Go Pricing",
     "starOn": "Star on",
     "github": "GitHub",
-    "goIFB": "Go My Blog"
+    "goIFB": "My Blog"
   },
   "layout": {
     "english": "English",
@@ -212,6 +212,7 @@
     "main": {
       "heading": "Dashboard",
       "currentRole": "Current Role: {role} — Change your role in settings.",
+      "loadingCurrentRole": "Current Role :",
       "noContentTitle": "No content created",
       "noContentDescription": "You don't have any content yet. Start creating content.",
       "addContent": "Add Content"
@@ -547,5 +548,40 @@
   "NewsletterForm": {
     "label": "Subscribe to our newsletter",
     "button": "Subscribe"
+  },
+  "CustomerPortalButton": {
+    "openCustomerPortal": "Open Customer Portal"
+  },
+  "BillingPage": {
+    "heading": "Billing",
+    "subheading": "Manage billing and your subscription plan.",
+    "subscriptionPlan": "Subscription Plan",
+    "choosePlan": "Choose a plan",
+    "willBeCanceledOn": "Your plan will be canceled on ",
+    "willRenewOn": "Your plan renews on ",
+    "youAreCurrentlyOnThe": "You are currently on the",
+    "plan": "plan."
+  },
+  "LoginPage": {
+    "back": "Back",
+    "welcomeBack": "Welcome back",
+    "enterEmail": "Enter your email to sign in to your account",
+    "noAccount": "Don't have an account? Sign Up"
+  },
+  "RegisterPage": {
+    "login": "Login",
+    "createAccount": "Create an account",
+    "enterEmailToCreateAccount": "Enter your email below to create your account",
+    "byClickingContinue": "By clicking continue, you agree to our",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "AuthLayout": {
+    "quote": "FFlow Next has revolutionized our development process. It's incredibly fast and efficient!",
+    "author": "John Doe, Software Engineer",
+    "orContinueWith": "Or continue with",
+    "signUpWithEmail": "Sign Up with Email",
+    "signInWithEmail": "Sign In with Email"
   }
 }
