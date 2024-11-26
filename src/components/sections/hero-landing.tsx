@@ -1,18 +1,18 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import { env } from "@/env.mjs";
+import { siteConfig } from "@/config/site";
 import { cn, nFormatter } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "@/components/link/link";
 import { Icons } from "@/components/shared/icons";
-import { siteConfig } from "@/config/site";
 
 interface HeroLandingProps {
   locale: string;
 }
 
 export default async function HeroLanding({ locale }: HeroLandingProps) {
-  const t = useTranslations("HeroLanding");
+  const t = getTranslations("HeroLanding");
   const { stargazers_count: stars } = await fetch(
     "https://api.github.com/repos/hunterzhang86/fflow-next",
     {
@@ -90,8 +90,8 @@ export default async function HeroLanding({ locale }: HeroLandingProps) {
           >
             <Icons.gitHub className="mr-2 size-4" />
             <p>
-              <span className="hidden sm:inline-block">{t("starOn")}</span> GitHub{" "}
-              <span className="font-semibold">{nFormatter(stars)}</span>
+              <span className="hidden sm:inline-block">{t("starOn")}</span>{" "}
+              GitHub <span className="font-semibold">{nFormatter(stars)}</span>
             </p>
           </Link>
         </div>
