@@ -12,7 +12,7 @@ interface HeroLandingProps {
 }
 
 export default async function HeroLanding({ locale }: HeroLandingProps) {
-  const t = getTranslations("HeroLanding");
+  const t = await getTranslations("HeroLanding");
   const { stargazers_count: stars } = await fetch(
     "https://api.github.com/repos/hunterzhang86/fflow-next",
     {
