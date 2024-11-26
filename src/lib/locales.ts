@@ -2,10 +2,10 @@ import { LocalePrefix } from "next-intl/dist/types/src/routing/types";
 
 import { createSharedPathnamesNavigation } from 'next-intl/navigation';
 
-const localePrefix: LocalePrefix = 'as-needed';
+const localePrefix: LocalePrefix = 'always';
 // FIXME: Update this configuration file based on your project information
 export const AppConfig = {
-  name: 'SaaS Template',
+  name: 'FFlow Next',
   locales: [
     {
       id: 'en',
@@ -13,7 +13,7 @@ export const AppConfig = {
     },
     { id: 'zh', name: '中文' },
   ],
-  defaultLocale: 'en',
+  defaultLocale: 'zh',
   localePrefix,
 };
 
