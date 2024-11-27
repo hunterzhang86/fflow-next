@@ -108,7 +108,8 @@
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.1",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "vercel": "39.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -142,5 +143,8 @@
     "tailwindcss": "^3.4.6",
     "typescript": "5.5.3",
     "unist-util-visit": "^5.0.0"
+  },
+  "overrides": {
+    "vercel": "$vercel"
   }
 }
