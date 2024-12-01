@@ -27,7 +27,7 @@ export default function LocaleSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button className="p-2 focus-visible:ring-offset-0" variant="ghost">
-          <Languages className="size-6" />
+          <Languages className="size-5" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
